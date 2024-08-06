@@ -1,0 +1,146 @@
+.imageBase {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.imageBasepadding {
+  padding: var(--token-DNZ8WQ0kN_Nu);
+}
+.imageBasewidth_w100 {
+  width: var(--token-2utqFeXKo4fY);
+}
+.imageBasewidth_w99 {
+  width: var(--token-PITsREHQ3DCb);
+}
+.imageBasewidth_w97 {
+  width: var(--token-VHN0qff4pu40);
+}
+.imageBasewidth_w95 {
+  width: var(--token-68NmkAeXvOQX);
+}
+.imageBasewidth_w90 {
+  width: var(--token-6xd9S-KNmZRy);
+}
+.imageBasewidth_w83 {
+  width: var(--token-wjA43emTrOAL);
+}
+.imageBasewidth_w75 {
+  width: var(--token-S8OhXXjG7a01);
+}
+.imageBasewidth_w66 {
+  width: var(--token-HllraYDyYmkz);
+}
+.imageBasewidth_w50 {
+  width: var(--token-KLAU8REipuvV);
+}
+.imageBasewidth_w33 {
+  width: var(--token-XbUWQakeFT3Z);
+}
+.imageBasewidth_w25 {
+  width: var(--token-C_fBtaSIxVHo);
+}
+.imageBasewidth_w13 {
+  width: var(--token-Zo1KcKgWAZOr);
+}
+.imageBasewidth_w10 {
+  width: var(--token-bfZH3Kis2NP6);
+}
+.imageBasewidth_w5 {
+  width: var(--token-DEgVXldwmhlZ);
+}
+.imageBasewidth_w3 {
+  width: var(--token-1T94wzenqTBR);
+}
+.imageBasewidth_w1 {
+  width: var(--token-FA0xRawcKeqH);
+}
+.imageBasewidth_hug {
+  width: auto;
+  justify-self: flex-start;
+  display: inline-flex;
+}
+.imageBasewidth_stretch {
+  width: 100%;
+  min-width: 0;
+}
+.imageBaseheight_h100 {
+  height: var(--token-2utqFeXKo4fY);
+}
+.imageBaseheight_h99 {
+  height: var(--token-PITsREHQ3DCb);
+}
+.imageBaseheight_h97 {
+  height: var(--token-VHN0qff4pu40);
+}
+.imageBaseheight_h95 {
+  height: var(--token-68NmkAeXvOQX);
+}
+.imageBaseheight_h90 {
+  height: var(--token-6xd9S-KNmZRy);
+}
+.imageBaseheight_h83 {
+  height: var(--token-wjA43emTrOAL);
+}
+.imageBaseheight_h75 {
+  height: var(--token-S8OhXXjG7a01);
+}
+.imageBaseheight_h66 {
+  height: var(--token-HllraYDyYmkz);
+}
+.imageBaseheight_h50 {
+  height: var(--token-KLAU8REipuvV);
+}
+.imageBaseheight_h33 {
+  height: var(--token-XbUWQakeFT3Z);
+}
+.imageBaseheight_h25 {
+  height: var(--token-C_fBtaSIxVHo);
+}
+.imageBaseheight_h13 {
+  height: var(--token-Zo1KcKgWAZOr);
+}
+.imageBaseheight_h10 {
+  height: var(--token-bfZH3Kis2NP6);
+}
+.imageBaseheight_h5 {
+  height: var(--token-DEgVXldwmhlZ);
+}
+.imageBaseheight_h3 {
+  height: var(--token-1T94wzenqTBR);
+}
+.imageBaseheight_h1 {
+  height: var(--token-FA0xRawcKeqH);
+}
+.imageBaseheight_hug {
+  height: auto;
+}
+.imageBaseheight_stretch {
+  height: 100%;
+  min-height: 0;
+}
+.imageStack {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.img {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.img > picture > img {
+  object-fit: cover;
+}

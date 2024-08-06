@@ -1,0 +1,108 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-start;
+  padding: var(--token-MPdhq9cbz5NC);
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+.freeBoxsize_xxs {
+  width: var(--token-NEhTB-e0_KXF);
+  height: var(--token-NEhTB-e0_KXF);
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.freeBoxsize_xs {
+  width: var(--token-Y5ElMPZ0R-KJ);
+  height: var(--token-Gl4n7i6AMIO4);
+  flex-shrink: 0;
+}
+.freeBoxsize_sm {
+  width: var(--token-xsnkr3PqmyZ3);
+  height: var(--token-ev0MCwfyo0go);
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.freeBoxsize_md {
+  width: var(--token--ZGgjdnYujjf);
+  height: var(--token-3sWrI7NoZbER);
+  flex-shrink: 0;
+}
+.freeBoxsize_lg {
+  width: var(--token-N1e9CcudajTF);
+  height: var(--token-7HJQ-R2_Di2t);
+  flex-shrink: 0;
+}
+.freeBoxsize_xl {
+  width: var(--token-bxyiWhbUVzkZ);
+  height: var(--token-ZzNdt01b0DT3);
+  flex-shrink: 0;
+}
+.freeBoxsize_xxl {
+  width: var(--token-0nDO0Pl4tHt8);
+  height: var(--token-WnGRwfjWSPxA);
+  flex-shrink: 0;
+}
+.freeBoxdisabled {
+  opacity: 0.5;
+}
+.svg {
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  color: var(--token-34pC0B6OwjEu);
+  min-width: 0;
+  min-height: 0;
+}
+.svgboldColor_themePrimary {
+  color: var(--token-_eC41RIJ-zhs);
+}
+.svgboldColor_themeSecondary {
+  color: var(--token-6HTXklK6cE6X);
+}
+.svgboldColor_themeStandard {
+  color: var(--token-vTgApEByT5tQ);
+}
+.svgboldColor_success {
+  color: var(--token-93CdaKL6VxaW);
+}
+.svgboldColor_information {
+  color: var(--token-93CdaKL6VxaW);
+}
+.svgboldColor_warning {
+  color: var(--token-jsfRPUeIFGG2);
+}
+.svgboldColor_error {
+  color: var(--token-jsfRPUeIFGG2);
+}
+.svgsubtleColor_basic {
+  color: var(--token-NvWOFUkT-Fvx);
+}
+.svgsubtleColor_themePrimary {
+  color: var(--token-Keqx5L2eGEEh);
+}
+.svgsubtleColor_success {
+  color: var(--token-ohfyiy2Pju1Q);
+}
+.svgsubtleColor_information {
+  color: var(--token-nDDFBRufXKN1);
+}
+.svgsubtleColor_warning {
+  color: var(--token-xOXPm5v6UtFq);
+}
+.svgsubtleColor_error {
+  color: var(--token-JoXw85kWrEZO);
+}

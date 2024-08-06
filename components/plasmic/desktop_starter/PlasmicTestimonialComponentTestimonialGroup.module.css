@@ -1,0 +1,57 @@
+.testimonialGroup {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  max-width: 1140px;
+  position: relative;
+  min-width: 0;
+  padding: 0px;
+}
+.testimonialGroup > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: stretch;
+  min-width: 0;
+  margin-left: calc(0px - var(--token-7lgpHGu3s939));
+  width: calc(100% + var(--token-7lgpHGu3s939));
+  margin-top: calc(0px - var(--token-7lgpHGu3s939));
+  height: calc(100% + var(--token-7lgpHGu3s939));
+}
+.testimonialGroup > :global(.__wab_flex-container) > *,
+.testimonialGroup > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.testimonialGroup > :global(.__wab_flex-container) > picture > img,
+.testimonialGroup
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: var(--token-7lgpHGu3s939);
+  margin-top: var(--token-7lgpHGu3s939);
+}
+.testimonialItemWrapper {
+  display: grid;
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  grid-auto-rows: auto;
+  grid-auto-columns: 1fr;
+}
+.freeBox {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}

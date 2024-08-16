@@ -251,10 +251,20 @@ function PlasmicBadge__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.badgeBase,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.badgeBasecolor_none]: hasVariant($state, "color", "none"),
           [sty.badgeBasecolor_purple]: hasVariant($state, "color", "purple"),

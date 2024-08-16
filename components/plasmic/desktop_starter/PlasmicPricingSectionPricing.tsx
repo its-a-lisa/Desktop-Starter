@@ -108,7 +108,6 @@ export type PlasmicPricingSectionPricing__OverridesType = {
   h2?: Flex__<"h2">;
   text?: Flex__<"div">;
   pricingGroup?: Flex__<"div">;
-  container?: Flex__<typeof Container>;
 };
 
 export interface DefaultPricingSectionPricingProps {
@@ -216,18 +215,11 @@ function PlasmicPricingSectionPricing__RenderFunc(props: {
                 )}
               />
 
-              <Container
-                data-plasmic-name={"container"}
-                data-plasmic-override={overrides.container}
-                className={classNames("__wab_instance", sty.container)}
-                containerSlot={
-                  <PricingComponentPricingItem
-                    className={classNames(
-                      "__wab_instance",
-                      sty.pricingComponentPricingItem__mt3Av
-                    )}
-                  />
-                }
+              <PricingComponentPricingItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.pricingComponentPricingItem__gpNeS
+                )}
               />
             </Stack__>
           </div>
@@ -249,22 +241,19 @@ const PlasmicDescendants = {
     "pricingArea",
     "h2",
     "text",
-    "pricingGroup",
-    "container"
+    "pricingGroup"
   ],
   pricingSection: [
     "pricingSection",
     "pricingArea",
     "h2",
     "text",
-    "pricingGroup",
-    "container"
+    "pricingGroup"
   ],
-  pricingArea: ["pricingArea", "h2", "text", "pricingGroup", "container"],
+  pricingArea: ["pricingArea", "h2", "text", "pricingGroup"],
   h2: ["h2"],
   text: ["text"],
-  pricingGroup: ["pricingGroup", "container"],
-  container: ["container"]
+  pricingGroup: ["pricingGroup"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -276,7 +265,6 @@ type NodeDefaultElementType = {
   h2: "h2";
   text: "div";
   pricingGroup: "div";
-  container: typeof Container;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -344,7 +332,6 @@ export const PlasmicPricingSectionPricing = Object.assign(
     h2: makeNodeComponent("h2"),
     text: makeNodeComponent("text"),
     pricingGroup: makeNodeComponent("pricingGroup"),
-    container: makeNodeComponent("container"),
 
     // Metadata about props expected for PlasmicPricingSectionPricing
     internalVariantProps: PlasmicPricingSectionPricing__VariantProps,

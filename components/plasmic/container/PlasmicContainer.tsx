@@ -1188,10 +1188,20 @@ function PlasmicContainer__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.container,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.containerbackgroundChanges_bright]: hasVariant(
             $state,
@@ -2869,6 +2879,11 @@ function PlasmicContainer__RenderFunc(props: {
           data-plasmic-name={"image"}
           data-plasmic-override={overrides.image}
           className={classNames(projectcss.all, sty.image, {
+            [sty.imageincludeIcon]: hasVariant(
+              $state,
+              "includeIcon",
+              "includeIcon"
+            ),
             [sty.imageincludeImage]: hasVariant(
               $state,
               "includeImage",
@@ -2885,7 +2900,13 @@ function PlasmicContainer__RenderFunc(props: {
             data-plasmic-name={"img"}
             data-plasmic-override={overrides.img}
             alt={""}
-            className={classNames(sty.img)}
+            className={classNames(sty.img, {
+              [sty.imgincludeIcon]: hasVariant(
+                $state,
+                "includeIcon",
+                "includeIcon"
+              )
+            })}
             displayHeight={"100%"}
             displayMaxHeight={"none"}
             displayMaxWidth={"100%"}
@@ -2893,6 +2914,23 @@ function PlasmicContainer__RenderFunc(props: {
             displayMinWidth={"0"}
             displayWidth={"100%"}
             loading={"lazy"}
+            src={
+              hasVariant($state, "includeIcon", "includeIcon")
+                ? (() => {
+                    try {
+                      return $props.imageUrl;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                : undefined
+            }
           />
         </div>
         <div

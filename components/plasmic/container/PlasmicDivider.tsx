@@ -139,10 +139,20 @@ function PlasmicDivider__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.root,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           )
         }
       )}

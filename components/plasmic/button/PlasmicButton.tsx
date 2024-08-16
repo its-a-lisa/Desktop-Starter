@@ -81,19 +81,20 @@ export type PlasmicButton__VariantMembers = {
   size: "small" | "large" | "expressiveLarge";
   shape: "circle" | "sharp" | "rounded";
   background:
-    | "primary"
-    | "secondary"
-    | "tertiary"
+    | "main"
+    | "ancillary"
+    | "accent"
     | "destructive"
     | "action"
     | "standard";
-  text:
-    | "primary"
-    | "secondary"
-    | "tertiary"
+  border:
+    | "main"
+    | "ancillary"
+    | "accent"
+    | "standard"
     | "destructive"
-    | "action"
-    | "standard";
+    | "option";
+  text: "main" | "ancillary" | "accent" | "destructive" | "action" | "standard";
   isDisabled: "isDisabled";
   iconOnly: "iconOnly";
   showStartIcon: "showStartIcon";
@@ -104,10 +105,13 @@ export type PlasmicButton__VariantsArgs = {
   size?: SingleChoiceArg<"small" | "large" | "expressiveLarge">;
   shape?: SingleChoiceArg<"circle" | "sharp" | "rounded">;
   background?: SingleChoiceArg<
-    "primary" | "secondary" | "tertiary" | "destructive" | "action" | "standard"
+    "main" | "ancillary" | "accent" | "destructive" | "action" | "standard"
+  >;
+  border?: SingleChoiceArg<
+    "main" | "ancillary" | "accent" | "standard" | "destructive" | "option"
   >;
   text?: SingleChoiceArg<
-    "primary" | "secondary" | "tertiary" | "destructive" | "action" | "standard"
+    "main" | "ancillary" | "accent" | "destructive" | "action" | "standard"
   >;
   isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
   iconOnly?: SingleBooleanChoiceArg<"iconOnly">;
@@ -120,6 +124,7 @@ export const PlasmicButton__VariantProps = new Array<VariantPropType>(
   "size",
   "shape",
   "background",
+  "border",
   "text",
   "isDisabled",
   "iconOnly",
@@ -165,10 +170,13 @@ export interface DefaultButtonProps extends pp.BaseButtonProps {
   size?: SingleChoiceArg<"small" | "large" | "expressiveLarge">;
   shape?: SingleChoiceArg<"circle" | "sharp" | "rounded">;
   background?: SingleChoiceArg<
-    "primary" | "secondary" | "tertiary" | "destructive" | "action" | "standard"
+    "main" | "ancillary" | "accent" | "destructive" | "action" | "standard"
+  >;
+  border?: SingleChoiceArg<
+    "main" | "ancillary" | "accent" | "standard" | "destructive" | "option"
   >;
   text?: SingleChoiceArg<
-    "primary" | "secondary" | "tertiary" | "destructive" | "action" | "standard"
+    "main" | "ancillary" | "accent" | "destructive" | "action" | "standard"
   >;
   iconOnly?: SingleBooleanChoiceArg<"iconOnly">;
 }
@@ -257,6 +265,12 @@ function PlasmicButton__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.text
+      },
+      {
+        path: "border",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.border
       }
     ],
     [$props, $ctx, $refs]
@@ -300,61 +314,62 @@ function PlasmicButton__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.root,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.rootanatomy_ghost]: hasVariant($state, "anatomy", "ghost"),
           [sty.rootanatomy_naked]: hasVariant($state, "anatomy", "naked"),
           [sty.rootanatomy_outlined]: hasVariant($state, "anatomy", "outlined"),
           [sty.rootanatomy_solid]: hasVariant($state, "anatomy", "solid"),
+          [sty.rootbackground_accent]: hasVariant(
+            $state,
+            "background",
+            "accent"
+          ),
           [sty.rootbackground_action]: hasVariant(
             $state,
             "background",
             "action"
           ),
-          [sty.rootbackground_action____focusVisibleWithin]:
-            hasVariant($state, "background", "action") &&
-            triggers.focusVisibleWithin_root,
+          [sty.rootbackground_ancillary]: hasVariant(
+            $state,
+            "background",
+            "ancillary"
+          ),
           [sty.rootbackground_destructive]: hasVariant(
             $state,
             "background",
             "destructive"
           ),
-          [sty.rootbackground_destructive____focusVisibleWithin]:
-            hasVariant($state, "background", "destructive") &&
-            triggers.focusVisibleWithin_root,
-          [sty.rootbackground_primary]: hasVariant(
-            $state,
-            "background",
-            "primary"
-          ),
-          [sty.rootbackground_primary____focusVisibleWithin]:
-            hasVariant($state, "background", "primary") &&
-            triggers.focusVisibleWithin_root,
-          [sty.rootbackground_secondary]: hasVariant(
-            $state,
-            "background",
-            "secondary"
-          ),
-          [sty.rootbackground_secondary____focusVisibleWithin]:
-            hasVariant($state, "background", "secondary") &&
-            triggers.focusVisibleWithin_root,
+          [sty.rootbackground_main]: hasVariant($state, "background", "main"),
           [sty.rootbackground_standard]: hasVariant(
             $state,
             "background",
             "standard"
           ),
-          [sty.rootbackground_tertiary]: hasVariant(
+          [sty.rootborder_accent]: hasVariant($state, "border", "accent"),
+          [sty.rootborder_ancillary]: hasVariant($state, "border", "ancillary"),
+          [sty.rootborder_destructive]: hasVariant(
             $state,
-            "background",
-            "tertiary"
+            "border",
+            "destructive"
           ),
-          [sty.rootbackground_tertiary____focusVisibleWithin]:
-            hasVariant($state, "background", "tertiary") &&
-            triggers.focusVisibleWithin_root,
+          [sty.rootborder_main]: hasVariant($state, "border", "main"),
+          [sty.rootborder_option]: hasVariant($state, "border", "option"),
+          [sty.rootborder_standard]: hasVariant($state, "border", "standard"),
           [sty.rooticonOnly]: hasVariant($state, "iconOnly", "iconOnly"),
           [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
           [sty.rootshape_circle]: hasVariant($state, "shape", "circle"),
@@ -372,8 +387,8 @@ function PlasmicButton__RenderFunc(props: {
           ),
           [sty.rootsize_large]: hasVariant($state, "size", "large"),
           [sty.rootsize_small]: hasVariant($state, "size", "small"),
-          [sty.roottext_primary]: hasVariant($state, "text", "primary"),
-          [sty.roottext_secondary]: hasVariant($state, "text", "secondary"),
+          [sty.roottext_ancillary]: hasVariant($state, "text", "ancillary"),
+          [sty.roottext_main]: hasVariant($state, "text", "main"),
           [sty.roottext_standard]: hasVariant($state, "text", "standard")
         }
       )}
@@ -411,10 +426,10 @@ function PlasmicButton__RenderFunc(props: {
               "anatomy",
               "solid"
             ),
-            [sty.startIconContainerbackground_secondary]: hasVariant(
+            [sty.startIconContainerbackground_ancillary]: hasVariant(
               $state,
               "background",
-              "secondary"
+              "ancillary"
             ),
             [sty.startIconContainericonOnly]: hasVariant(
               $state,
@@ -458,55 +473,55 @@ function PlasmicButton__RenderFunc(props: {
                 "anatomy",
                 "outlined"
               ),
+              [sty.slotTargetStartIconbackground_accent]: hasVariant(
+                $state,
+                "background",
+                "accent"
+              ),
               [sty.slotTargetStartIconbackground_action]: hasVariant(
                 $state,
                 "background",
                 "action"
+              ),
+              [sty.slotTargetStartIconbackground_ancillary]: hasVariant(
+                $state,
+                "background",
+                "ancillary"
               ),
               [sty.slotTargetStartIconbackground_destructive]: hasVariant(
                 $state,
                 "background",
                 "destructive"
               ),
-              [sty.slotTargetStartIconbackground_secondary]: hasVariant(
-                $state,
-                "background",
-                "secondary"
-              ),
-              [sty.slotTargetStartIconbackground_tertiary]: hasVariant(
-                $state,
-                "background",
-                "tertiary"
-              ),
               [sty.slotTargetStartIconsize_expressiveLarge]: hasVariant(
                 $state,
                 "size",
                 "expressiveLarge"
+              ),
+              [sty.slotTargetStartIcontext_accent]: hasVariant(
+                $state,
+                "text",
+                "accent"
               ),
               [sty.slotTargetStartIcontext_action]: hasVariant(
                 $state,
                 "text",
                 "action"
               ),
+              [sty.slotTargetStartIcontext_ancillary]: hasVariant(
+                $state,
+                "text",
+                "ancillary"
+              ),
               [sty.slotTargetStartIcontext_destructive]: hasVariant(
                 $state,
                 "text",
                 "destructive"
               ),
-              [sty.slotTargetStartIcontext_primary]: hasVariant(
+              [sty.slotTargetStartIcontext_main]: hasVariant(
                 $state,
                 "text",
-                "primary"
-              ),
-              [sty.slotTargetStartIcontext_secondary]: hasVariant(
-                $state,
-                "text",
-                "secondary"
-              ),
-              [sty.slotTargetStartIcontext_tertiary]: hasVariant(
-                $state,
-                "text",
-                "tertiary"
+                "main"
               )
             })
           })}
@@ -573,30 +588,30 @@ function PlasmicButton__RenderFunc(props: {
                 "anatomy",
                 "outlined"
               ),
+              [sty.slotTargetChildrenbackground_accent]: hasVariant(
+                $state,
+                "background",
+                "accent"
+              ),
               [sty.slotTargetChildrenbackground_action]: hasVariant(
                 $state,
                 "background",
                 "action"
+              ),
+              [sty.slotTargetChildrenbackground_ancillary]: hasVariant(
+                $state,
+                "background",
+                "ancillary"
               ),
               [sty.slotTargetChildrenbackground_destructive]: hasVariant(
                 $state,
                 "background",
                 "destructive"
               ),
-              [sty.slotTargetChildrenbackground_primary]: hasVariant(
+              [sty.slotTargetChildrenbackground_main]: hasVariant(
                 $state,
                 "background",
-                "primary"
-              ),
-              [sty.slotTargetChildrenbackground_secondary]: hasVariant(
-                $state,
-                "background",
-                "secondary"
-              ),
-              [sty.slotTargetChildrenbackground_tertiary]: hasVariant(
-                $state,
-                "background",
-                "tertiary"
+                "main"
               ),
               [sty.slotTargetChildrenisDisabled]: hasVariant(
                 $state,
@@ -623,35 +638,35 @@ function PlasmicButton__RenderFunc(props: {
                 "size",
                 "small"
               ),
+              [sty.slotTargetChildrentext_accent]: hasVariant(
+                $state,
+                "text",
+                "accent"
+              ),
               [sty.slotTargetChildrentext_action]: hasVariant(
                 $state,
                 "text",
                 "action"
+              ),
+              [sty.slotTargetChildrentext_ancillary]: hasVariant(
+                $state,
+                "text",
+                "ancillary"
               ),
               [sty.slotTargetChildrentext_destructive]: hasVariant(
                 $state,
                 "text",
                 "destructive"
               ),
-              [sty.slotTargetChildrentext_primary]: hasVariant(
+              [sty.slotTargetChildrentext_main]: hasVariant(
                 $state,
                 "text",
-                "primary"
-              ),
-              [sty.slotTargetChildrentext_secondary]: hasVariant(
-                $state,
-                "text",
-                "secondary"
+                "main"
               ),
               [sty.slotTargetChildrentext_standard]: hasVariant(
                 $state,
                 "text",
                 "standard"
-              ),
-              [sty.slotTargetChildrentext_tertiary]: hasVariant(
-                $state,
-                "text",
-                "tertiary"
               )
             })
           })}
@@ -670,10 +685,10 @@ function PlasmicButton__RenderFunc(props: {
               "anatomy",
               "outlined"
             ),
-            [sty.endIconContainerbackground_secondary]: hasVariant(
+            [sty.endIconContainerbackground_ancillary]: hasVariant(
               $state,
               "background",
-              "secondary"
+              "ancillary"
             ),
             [sty.endIconContainershowEndIcon]: hasVariant(
               $state,
@@ -712,50 +727,50 @@ function PlasmicButton__RenderFunc(props: {
                 "anatomy",
                 "outlined"
               ),
+              [sty.slotTargetEndIconbackground_accent]: hasVariant(
+                $state,
+                "background",
+                "accent"
+              ),
               [sty.slotTargetEndIconbackground_action]: hasVariant(
                 $state,
                 "background",
                 "action"
+              ),
+              [sty.slotTargetEndIconbackground_ancillary]: hasVariant(
+                $state,
+                "background",
+                "ancillary"
               ),
               [sty.slotTargetEndIconbackground_destructive]: hasVariant(
                 $state,
                 "background",
                 "destructive"
               ),
-              [sty.slotTargetEndIconbackground_secondary]: hasVariant(
+              [sty.slotTargetEndIcontext_accent]: hasVariant(
                 $state,
-                "background",
-                "secondary"
-              ),
-              [sty.slotTargetEndIconbackground_tertiary]: hasVariant(
-                $state,
-                "background",
-                "tertiary"
+                "text",
+                "accent"
               ),
               [sty.slotTargetEndIcontext_action]: hasVariant(
                 $state,
                 "text",
                 "action"
               ),
+              [sty.slotTargetEndIcontext_ancillary]: hasVariant(
+                $state,
+                "text",
+                "ancillary"
+              ),
               [sty.slotTargetEndIcontext_destructive]: hasVariant(
                 $state,
                 "text",
                 "destructive"
               ),
-              [sty.slotTargetEndIcontext_primary]: hasVariant(
+              [sty.slotTargetEndIcontext_main]: hasVariant(
                 $state,
                 "text",
-                "primary"
-              ),
-              [sty.slotTargetEndIcontext_secondary]: hasVariant(
-                $state,
-                "text",
-                "secondary"
-              ),
-              [sty.slotTargetEndIcontext_tertiary]: hasVariant(
-                $state,
-                "text",
-                "tertiary"
+                "main"
               )
             })
           })}
@@ -780,10 +795,10 @@ function PlasmicButton__RenderFunc(props: {
               "anatomy",
               "outlined"
             ),
-            [sty.actionContainerbackground_secondary]: hasVariant(
+            [sty.actionContainerbackground_ancillary]: hasVariant(
               $state,
               "background",
-              "secondary"
+              "ancillary"
             ),
             [sty.actionContainershowEndIcon]: hasVariant(
               $state,
@@ -822,50 +837,50 @@ function PlasmicButton__RenderFunc(props: {
                 "anatomy",
                 "outlined"
               ),
+              [sty.slotTargetEndIcon2background_accent]: hasVariant(
+                $state,
+                "background",
+                "accent"
+              ),
               [sty.slotTargetEndIcon2background_action]: hasVariant(
                 $state,
                 "background",
                 "action"
+              ),
+              [sty.slotTargetEndIcon2background_ancillary]: hasVariant(
+                $state,
+                "background",
+                "ancillary"
               ),
               [sty.slotTargetEndIcon2background_destructive]: hasVariant(
                 $state,
                 "background",
                 "destructive"
               ),
-              [sty.slotTargetEndIcon2background_secondary]: hasVariant(
+              [sty.slotTargetEndIcon2text_accent]: hasVariant(
                 $state,
-                "background",
-                "secondary"
-              ),
-              [sty.slotTargetEndIcon2background_tertiary]: hasVariant(
-                $state,
-                "background",
-                "tertiary"
+                "text",
+                "accent"
               ),
               [sty.slotTargetEndIcon2text_action]: hasVariant(
                 $state,
                 "text",
                 "action"
               ),
+              [sty.slotTargetEndIcon2text_ancillary]: hasVariant(
+                $state,
+                "text",
+                "ancillary"
+              ),
               [sty.slotTargetEndIcon2text_destructive]: hasVariant(
                 $state,
                 "text",
                 "destructive"
               ),
-              [sty.slotTargetEndIcon2text_primary]: hasVariant(
+              [sty.slotTargetEndIcon2text_main]: hasVariant(
                 $state,
                 "text",
-                "primary"
-              ),
-              [sty.slotTargetEndIcon2text_secondary]: hasVariant(
-                $state,
-                "text",
-                "secondary"
-              ),
-              [sty.slotTargetEndIcon2text_tertiary]: hasVariant(
-                $state,
-                "text",
-                "tertiary"
+                "main"
               )
             })
           })}

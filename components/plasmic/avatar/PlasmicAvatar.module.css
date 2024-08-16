@@ -131,14 +131,7 @@
 .img___7IwPe > picture > img {
   object-fit: cover;
 }
-.slotTargetAvatarInitialsSlot {
-  color: var(--token-lWEO2ZudSDrD);
-}
 .text__hBQcc {
   position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
   text-align: center;
-  min-width: 0;
 }

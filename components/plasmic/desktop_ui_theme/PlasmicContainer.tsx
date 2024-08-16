@@ -1230,10 +1230,20 @@ function PlasmicContainer__RenderFunc(props: {
         plasmic_container_css.plasmic_tokens,
         sty.container,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.containerbackgroundChanges_bright]: hasVariant(
             $state,
@@ -2894,6 +2904,11 @@ function PlasmicContainer__RenderFunc(props: {
               $state,
               "contentPadding",
               "topXs"
+            ),
+            [sty.contentoverflowVisible]: hasVariant(
+              $state,
+              "overflowVisible",
+              "overflowVisible"
             ),
             [sty.contentoverlayLayout_flipLayout]: hasVariant(
               $state,

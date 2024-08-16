@@ -69,50 +69,151 @@ import sty from "./PlasmicImage.module.css"; // plasmic-import: p-kJ8jBM6L2n/css
 createPlasmicElementProxy;
 
 export type PlasmicImage__VariantMembers = {
-  aspectRatio: "_11" | "_43" | "_32" | "_169" | "_21" | "_31" | "_41";
-  altAspectRatio: "_11" | "_43" | "_32" | "_169" | "_21" | "_31" | "_41";
-  size: "sm" | "md" | "large";
   padding: "padding";
+  width:
+    | "w100"
+    | "w99"
+    | "w97"
+    | "w95"
+    | "w90"
+    | "w83"
+    | "w75"
+    | "w66"
+    | "w50"
+    | "w33"
+    | "w25"
+    | "w13"
+    | "w10"
+    | "w5"
+    | "w3"
+    | "w1"
+    | "hug"
+    | "stretch";
+  height:
+    | "h100"
+    | "h99"
+    | "h97"
+    | "h95"
+    | "h90"
+    | "h83"
+    | "h75"
+    | "h66"
+    | "h50"
+    | "h33"
+    | "h25"
+    | "h13"
+    | "h10"
+    | "h5"
+    | "h3"
+    | "h1"
+    | "hug"
+    | "stretch";
 };
 export type PlasmicImage__VariantsArgs = {
-  aspectRatio?: SingleChoiceArg<
-    "_11" | "_43" | "_32" | "_169" | "_21" | "_31" | "_41"
-  >;
-  altAspectRatio?: SingleChoiceArg<
-    "_11" | "_43" | "_32" | "_169" | "_21" | "_31" | "_41"
-  >;
-  size?: SingleChoiceArg<"sm" | "md" | "large">;
   padding?: SingleBooleanChoiceArg<"padding">;
+  width?: SingleChoiceArg<
+    | "w100"
+    | "w99"
+    | "w97"
+    | "w95"
+    | "w90"
+    | "w83"
+    | "w75"
+    | "w66"
+    | "w50"
+    | "w33"
+    | "w25"
+    | "w13"
+    | "w10"
+    | "w5"
+    | "w3"
+    | "w1"
+    | "hug"
+    | "stretch"
+  >;
+  height?: SingleChoiceArg<
+    | "h100"
+    | "h99"
+    | "h97"
+    | "h95"
+    | "h90"
+    | "h83"
+    | "h75"
+    | "h66"
+    | "h50"
+    | "h33"
+    | "h25"
+    | "h13"
+    | "h10"
+    | "h5"
+    | "h3"
+    | "h1"
+    | "hug"
+    | "stretch"
+  >;
 };
 type VariantPropType = keyof PlasmicImage__VariantsArgs;
 export const PlasmicImage__VariantProps = new Array<VariantPropType>(
-  "aspectRatio",
-  "altAspectRatio",
-  "size",
-  "padding"
+  "padding",
+  "width",
+  "height"
 );
 
 export type PlasmicImage__ArgsType = {
-  imageSlot?: React.ReactNode;
+  imageUrl?: string;
 };
 type ArgPropType = keyof PlasmicImage__ArgsType;
-export const PlasmicImage__ArgProps = new Array<ArgPropType>("imageSlot");
+export const PlasmicImage__ArgProps = new Array<ArgPropType>("imageUrl");
 
 export type PlasmicImage__OverridesType = {
   imageBase?: Flex__<"div">;
   imageStack?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
 };
 
 export interface DefaultImageProps {
-  imageSlot?: React.ReactNode;
-  aspectRatio?: SingleChoiceArg<
-    "_11" | "_43" | "_32" | "_169" | "_21" | "_31" | "_41"
-  >;
-  altAspectRatio?: SingleChoiceArg<
-    "_11" | "_43" | "_32" | "_169" | "_21" | "_31" | "_41"
-  >;
-  size?: SingleChoiceArg<"sm" | "md" | "large">;
+  imageUrl?: string;
   padding?: SingleBooleanChoiceArg<"padding">;
+  width?: SingleChoiceArg<
+    | "w100"
+    | "w99"
+    | "w97"
+    | "w95"
+    | "w90"
+    | "w83"
+    | "w75"
+    | "w66"
+    | "w50"
+    | "w33"
+    | "w25"
+    | "w13"
+    | "w10"
+    | "w5"
+    | "w3"
+    | "w1"
+    | "hug"
+    | "stretch"
+  >;
+  height?: SingleChoiceArg<
+    | "h100"
+    | "h99"
+    | "h97"
+    | "h95"
+    | "h90"
+    | "h83"
+    | "h75"
+    | "h66"
+    | "h50"
+    | "h33"
+    | "h25"
+    | "h13"
+    | "h10"
+    | "h5"
+    | "h3"
+    | "h1"
+    | "hug"
+    | "stretch"
+  >;
   className?: string;
 }
 
@@ -148,28 +249,22 @@ function PlasmicImage__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "aspectRatio",
-        type: "private",
-        variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.aspectRatio
-      },
-      {
-        path: "altAspectRatio",
-        type: "private",
-        variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.altAspectRatio
-      },
-      {
-        path: "size",
-        type: "private",
-        variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.size
-      },
-      {
         path: "padding",
         type: "private",
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.padding
+      },
+      {
+        path: "width",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.width
+      },
+      {
+        path: "height",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.height
       }
     ],
     [$props, $ctx, $refs]
@@ -197,118 +292,90 @@ function PlasmicImage__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.imageBase,
         {
-          [sty.imageBasealtAspectRatio__11]: hasVariant(
+          [sty.imageBaseheight_h100]: hasVariant($state, "height", "h100"),
+          [sty.imageBaseheight_h10]: hasVariant($state, "height", "h10"),
+          [sty.imageBaseheight_h13]: hasVariant($state, "height", "h13"),
+          [sty.imageBaseheight_h1]: hasVariant($state, "height", "h1"),
+          [sty.imageBaseheight_h25]: hasVariant($state, "height", "h25"),
+          [sty.imageBaseheight_h33]: hasVariant($state, "height", "h33"),
+          [sty.imageBaseheight_h3]: hasVariant($state, "height", "h3"),
+          [sty.imageBaseheight_h50]: hasVariant($state, "height", "h50"),
+          [sty.imageBaseheight_h5]: hasVariant($state, "height", "h5"),
+          [sty.imageBaseheight_h66]: hasVariant($state, "height", "h66"),
+          [sty.imageBaseheight_h75]: hasVariant($state, "height", "h75"),
+          [sty.imageBaseheight_h83]: hasVariant($state, "height", "h83"),
+          [sty.imageBaseheight_h90]: hasVariant($state, "height", "h90"),
+          [sty.imageBaseheight_h95]: hasVariant($state, "height", "h95"),
+          [sty.imageBaseheight_h97]: hasVariant($state, "height", "h97"),
+          [sty.imageBaseheight_h99]: hasVariant($state, "height", "h99"),
+          [sty.imageBaseheight_hug]: hasVariant($state, "height", "hug"),
+          [sty.imageBaseheight_stretch]: hasVariant(
             $state,
-            "altAspectRatio",
-            "_11"
-          ),
-          [sty.imageBasealtAspectRatio__169]: hasVariant(
-            $state,
-            "altAspectRatio",
-            "_169"
-          ),
-          [sty.imageBasealtAspectRatio__21]: hasVariant(
-            $state,
-            "altAspectRatio",
-            "_21"
-          ),
-          [sty.imageBasealtAspectRatio__31]: hasVariant(
-            $state,
-            "altAspectRatio",
-            "_31"
-          ),
-          [sty.imageBasealtAspectRatio__32]: hasVariant(
-            $state,
-            "altAspectRatio",
-            "_32"
-          ),
-          [sty.imageBasealtAspectRatio__41]: hasVariant(
-            $state,
-            "altAspectRatio",
-            "_41"
-          ),
-          [sty.imageBasealtAspectRatio__43]: hasVariant(
-            $state,
-            "altAspectRatio",
-            "_43"
-          ),
-          [sty.imageBaseaspectRatio__11]: hasVariant(
-            $state,
-            "aspectRatio",
-            "_11"
-          ),
-          [sty.imageBaseaspectRatio__169]: hasVariant(
-            $state,
-            "aspectRatio",
-            "_169"
-          ),
-          [sty.imageBaseaspectRatio__21]: hasVariant(
-            $state,
-            "aspectRatio",
-            "_21"
-          ),
-          [sty.imageBaseaspectRatio__31]: hasVariant(
-            $state,
-            "aspectRatio",
-            "_31"
-          ),
-          [sty.imageBaseaspectRatio__32]: hasVariant(
-            $state,
-            "aspectRatio",
-            "_32"
-          ),
-          [sty.imageBaseaspectRatio__41]: hasVariant(
-            $state,
-            "aspectRatio",
-            "_41"
-          ),
-          [sty.imageBaseaspectRatio__43]: hasVariant(
-            $state,
-            "aspectRatio",
-            "_43"
+            "height",
+            "stretch"
           ),
           [sty.imageBasepadding]: hasVariant($state, "padding", "padding"),
-          [sty.imageBasesize_large]: hasVariant($state, "size", "large"),
-          [sty.imageBasesize_sm]: hasVariant($state, "size", "sm")
+          [sty.imageBasewidth_hug]: hasVariant($state, "width", "hug"),
+          [sty.imageBasewidth_stretch]: hasVariant($state, "width", "stretch"),
+          [sty.imageBasewidth_w100]: hasVariant($state, "width", "w100"),
+          [sty.imageBasewidth_w10]: hasVariant($state, "width", "w10"),
+          [sty.imageBasewidth_w13]: hasVariant($state, "width", "w13"),
+          [sty.imageBasewidth_w1]: hasVariant($state, "width", "w1"),
+          [sty.imageBasewidth_w25]: hasVariant($state, "width", "w25"),
+          [sty.imageBasewidth_w33]: hasVariant($state, "width", "w33"),
+          [sty.imageBasewidth_w3]: hasVariant($state, "width", "w3"),
+          [sty.imageBasewidth_w50]: hasVariant($state, "width", "w50"),
+          [sty.imageBasewidth_w5]: hasVariant($state, "width", "w5"),
+          [sty.imageBasewidth_w66]: hasVariant($state, "width", "w66"),
+          [sty.imageBasewidth_w75]: hasVariant($state, "width", "w75"),
+          [sty.imageBasewidth_w83]: hasVariant($state, "width", "w83"),
+          [sty.imageBasewidth_w90]: hasVariant($state, "width", "w90"),
+          [sty.imageBasewidth_w95]: hasVariant($state, "width", "w95"),
+          [sty.imageBasewidth_w97]: hasVariant($state, "width", "w97"),
+          [sty.imageBasewidth_w99]: hasVariant($state, "width", "w99")
         }
       )}
     >
       <div
         data-plasmic-name={"imageStack"}
         data-plasmic-override={overrides.imageStack}
-        className={classNames(projectcss.all, sty.imageStack, {
-          [sty.imageStackaspectRatio__11]: hasVariant(
-            $state,
-            "aspectRatio",
-            "_11"
-          )
-        })}
+        className={classNames(projectcss.all, sty.imageStack)}
       >
-        {renderPlasmicSlot({
-          defaultContents: (
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__ozTIl)}
-              displayHeight={"100%"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"100%"}
-              loading={"lazy"}
-            />
-          ),
-
-          value: args.imageSlot
-        })}
+        <PlasmicImg__
+          data-plasmic-name={"img"}
+          data-plasmic-override={overrides.img}
+          alt={""}
+          className={classNames(sty.img)}
+          displayHeight={"100%"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"100%"}
+          loading={"lazy"}
+          src={(() => {
+            try {
+              return $props.imageUrl;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()}
+        />
       </div>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  imageBase: ["imageBase", "imageStack"],
-  imageStack: ["imageStack"]
+  imageBase: ["imageBase", "imageStack", "img"],
+  imageStack: ["imageStack", "img"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -316,6 +383,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   imageBase: "div";
   imageStack: "div";
+  img: typeof PlasmicImg__;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -379,6 +447,7 @@ export const PlasmicImage = Object.assign(
   {
     // Helper components rendering sub-elements
     imageStack: makeNodeComponent("imageStack"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicImage
     internalVariantProps: PlasmicImage__VariantProps,

@@ -65,7 +65,6 @@ import Button from "../../Button"; // plasmic-import: 3BnfwULcRUyf/component
 import Badge from "../../Badge"; // plasmic-import: pnXQiYjPocAS/component
 
 import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
-import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -419,8 +418,7 @@ function PlasmicCourseCard__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
-    screen: useScreenVariantsohEUf6Jd0EV8()
+    mode: useMode()
   });
 
   return (
@@ -447,10 +445,20 @@ function PlasmicCourseCard__RenderFunc(props: {
         plasmic_button_css.plasmic_tokens,
         sty.card,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.cardbackgroundChanges_darken]: hasVariant(
             $state,

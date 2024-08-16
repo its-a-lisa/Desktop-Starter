@@ -330,10 +330,20 @@ function PlasmicButton__RenderFunc(props: {
         plasmic_container_css.plasmic_tokens,
         sty.root,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.root___focusVisibleWithin_background_action]:

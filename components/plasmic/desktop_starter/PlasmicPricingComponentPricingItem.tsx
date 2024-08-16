@@ -206,10 +206,20 @@ function PlasmicPricingComponentPricingItem__RenderFunc(props: {
         plasmic_list_item_css.plasmic_tokens,
         sty.root,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.rootadvert_special]: hasVariant($state, "advert", "special"),
           [sty.rootadvert_typical]: hasVariant($state, "advert", "typical")

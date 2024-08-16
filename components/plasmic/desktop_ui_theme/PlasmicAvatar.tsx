@@ -299,10 +299,20 @@ function PlasmicAvatar__RenderFunc(props: {
         plasmic_container_css.plasmic_tokens,
         sty.avatarBase,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.avatarBasecolor_none]: hasVariant($state, "color", "none"),
           [sty.avatarBasecolor_purple]: hasVariant($state, "color", "purple"),

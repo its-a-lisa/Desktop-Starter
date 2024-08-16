@@ -156,7 +156,6 @@ export type PlasmicSiteCard__OverridesType = {
   contentStack?: Flex__<"div">;
   profilePhotoStack?: Flex__<"div">;
   image?: Flex__<typeof Image>;
-  img?: Flex__<typeof PlasmicImg__>;
   headlineStack?: Flex__<"div">;
   h1?: Flex__<"h1">;
   h2?: Flex__<"h2">;
@@ -297,10 +296,20 @@ function PlasmicSiteCard__RenderFunc(props: {
         plasmic_button_css.plasmic_tokens,
         sty.card,
         {
+          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "darkGrayscale"
+          ),
           [plasmic_core_css.global_mode_dark]: hasVariant(
             globalVariants,
             "mode",
             "dark"
+          ),
+          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+            globalVariants,
+            "mode",
+            "grayscale"
           ),
           [sty.cardbackgroundChanges_darken]: hasVariant(
             $state,
@@ -443,23 +452,7 @@ function PlasmicSiteCard__RenderFunc(props: {
             <Image
               data-plasmic-name={"image"}
               data-plasmic-override={overrides.image}
-              altAspectRatio={"_43"}
               className={classNames("__wab_instance", sty.image)}
-              imageSlot={
-                <PlasmicImg__
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
-                  alt={""}
-                  className={classNames(sty.img)}
-                  displayHeight={"100%"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"100%"}
-                  loading={"lazy"}
-                />
-              }
               padding={true}
             />
           </div>
@@ -687,7 +680,6 @@ const PlasmicDescendants = {
     "contentStack",
     "profilePhotoStack",
     "image",
-    "img",
     "headlineStack",
     "h1",
     "h2",
@@ -703,7 +695,6 @@ const PlasmicDescendants = {
     "contentStack",
     "profilePhotoStack",
     "image",
-    "img",
     "headlineStack",
     "h1",
     "h2",
@@ -712,9 +703,8 @@ const PlasmicDescendants = {
     "bodyStack",
     "p"
   ],
-  profilePhotoStack: ["profilePhotoStack", "image", "img"],
-  image: ["image", "img"],
-  img: ["img"],
+  profilePhotoStack: ["profilePhotoStack", "image"],
+  image: ["image"],
   headlineStack: ["headlineStack", "h1", "h2"],
   h1: ["h1"],
   h2: ["h2"],
@@ -734,7 +724,6 @@ type NodeDefaultElementType = {
   contentStack: "div";
   profilePhotoStack: "div";
   image: typeof Image;
-  img: typeof PlasmicImg__;
   headlineStack: "div";
   h1: "h1";
   h2: "h2";
@@ -810,7 +799,6 @@ export const PlasmicSiteCard = Object.assign(
     contentStack: makeNodeComponent("contentStack"),
     profilePhotoStack: makeNodeComponent("profilePhotoStack"),
     image: makeNodeComponent("image"),
-    img: makeNodeComponent("img"),
     headlineStack: makeNodeComponent("headlineStack"),
     h1: makeNodeComponent("h1"),
     h2: makeNodeComponent("h2"),

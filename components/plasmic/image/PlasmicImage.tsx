@@ -108,6 +108,7 @@ export type PlasmicImage__VariantMembers = {
     | "h1"
     | "hug"
     | "stretch";
+  radii: "circle" | "lg" | "md" | "sm" | "xl";
 };
 export type PlasmicImage__VariantsArgs = {
   padding?: SingleBooleanChoiceArg<"padding">;
@@ -151,12 +152,14 @@ export type PlasmicImage__VariantsArgs = {
     | "hug"
     | "stretch"
   >;
+  radii?: SingleChoiceArg<"circle" | "lg" | "md" | "sm" | "xl">;
 };
 type VariantPropType = keyof PlasmicImage__VariantsArgs;
 export const PlasmicImage__VariantProps = new Array<VariantPropType>(
   "padding",
   "width",
-  "height"
+  "height",
+  "radii"
 );
 
 export type PlasmicImage__ArgsType = {
@@ -214,6 +217,7 @@ export interface DefaultImageProps {
     | "hug"
     | "stretch"
   >;
+  radii?: SingleChoiceArg<"circle" | "lg" | "md" | "sm" | "xl">;
   className?: string;
 }
 
@@ -265,6 +269,12 @@ function PlasmicImage__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.height
+      },
+      {
+        path: "radii",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.radii
       }
     ],
     [$props, $ctx, $refs]
@@ -315,6 +325,10 @@ function PlasmicImage__RenderFunc(props: {
             "stretch"
           ),
           [sty.imageBasepadding]: hasVariant($state, "padding", "padding"),
+          [sty.imageBaseradii_circle]: hasVariant($state, "radii", "circle"),
+          [sty.imageBaseradii_lg]: hasVariant($state, "radii", "lg"),
+          [sty.imageBaseradii_md]: hasVariant($state, "radii", "md"),
+          [sty.imageBaseradii_sm]: hasVariant($state, "radii", "sm"),
           [sty.imageBasewidth_hug]: hasVariant($state, "width", "hug"),
           [sty.imageBasewidth_stretch]: hasVariant($state, "width", "stretch"),
           [sty.imageBasewidth_w100]: hasVariant($state, "width", "w100"),
@@ -339,13 +353,23 @@ function PlasmicImage__RenderFunc(props: {
       <div
         data-plasmic-name={"imageStack"}
         data-plasmic-override={overrides.imageStack}
-        className={classNames(projectcss.all, sty.imageStack)}
+        className={classNames(projectcss.all, sty.imageStack, {
+          [sty.imageStackradii_circle]: hasVariant($state, "radii", "circle"),
+          [sty.imageStackradii_lg]: hasVariant($state, "radii", "lg"),
+          [sty.imageStackradii_md]: hasVariant($state, "radii", "md"),
+          [sty.imageStackradii_sm]: hasVariant($state, "radii", "sm")
+        })}
       >
         <PlasmicImg__
           data-plasmic-name={"img"}
           data-plasmic-override={overrides.img}
           alt={""}
-          className={classNames(sty.img)}
+          className={classNames(sty.img, {
+            [sty.imgradii_circle]: hasVariant($state, "radii", "circle"),
+            [sty.imgradii_lg]: hasVariant($state, "radii", "lg"),
+            [sty.imgradii_md]: hasVariant($state, "radii", "md"),
+            [sty.imgradii_sm]: hasVariant($state, "radii", "sm")
+          })}
           displayHeight={"100%"}
           displayMaxHeight={"none"}
           displayMaxWidth={"100%"}

@@ -877,6 +877,14 @@
   --plasmic-token-theme-container-color-border-brand-standard-subtle: var(
     --token-0uj5R0B7dgdy
   );
+  --token--6RVn5m1SsQA: var(--token-Y0K1k-y_PS2a);
+  --plasmic-token-theme-color-link-active: var(--token--6RVn5m1SsQA);
+  --token-GhZSkJhKhSV9: var(--token-lBWX8Kk_SXjv);
+  --plasmic-token-theme-color-link-normal: var(--token-GhZSkJhKhSV9);
+  --token--qsCKGaca_zG: var(--token-uqJ3-jooecSZ);
+  --plasmic-token-theme-color-link-normal-hover: var(--token--qsCKGaca_zG);
+  --token-QQzYCEtOsG7k: var(--token-_FuPH4CUSL8G);
+  --plasmic-token-theme-color-link-visited: var(--token-QQzYCEtOsG7k);
 }
 
 .plasmic_tokens {

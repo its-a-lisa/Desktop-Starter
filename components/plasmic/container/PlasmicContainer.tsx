@@ -391,13 +391,13 @@ export type PlasmicContainer__VariantsArgs = {
     | "contraster"
     | "contrastest"
   >;
-  layer01?: MultiChoiceArg<
+  layer01?: SingleChoiceArg<
     "backgroundUniversal" | "backgroundSubtle" | "backgroundBold"
   >;
-  layer02?: MultiChoiceArg<
+  layer02?: SingleChoiceArg<
     "backgroundUniversal" | "backgroundSubtle" | "backgroundBold"
   >;
-  layer03?: MultiChoiceArg<
+  layer03?: SingleChoiceArg<
     "backgroundUniversal" | "backgroundSubtle" | "backgroundBold"
   >;
   borderColor?: SingleChoiceArg<
@@ -748,13 +748,13 @@ export interface DefaultContainerProps {
     | "contraster"
     | "contrastest"
   >;
-  layer01?: MultiChoiceArg<
+  layer01?: SingleChoiceArg<
     "backgroundUniversal" | "backgroundSubtle" | "backgroundBold"
   >;
-  layer02?: MultiChoiceArg<
+  layer02?: SingleChoiceArg<
     "backgroundUniversal" | "backgroundSubtle" | "backgroundBold"
   >;
-  layer03?: MultiChoiceArg<
+  layer03?: SingleChoiceArg<
     "backgroundUniversal" | "backgroundSubtle" | "backgroundBold"
   >;
   borderColor?: SingleChoiceArg<

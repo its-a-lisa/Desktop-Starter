@@ -206,7 +206,7 @@ function PlasmicHeroSectionHero__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.freeBox__hKxrs)}
               >
                 <Button
-                  anatomy={["outlined"]}
+                  anatomy={["ghost"]}
                   className={classNames("__wab_instance", sty.button__pfW5B)}
                   endIcon={
                     <svg
@@ -233,7 +233,7 @@ function PlasmicHeroSectionHero__RenderFunc(props: {
                   </div>
                 </Button>
                 <Button
-                  anatomy={["outlined"]}
+                  anatomy={["ghost"]}
                   className={classNames("__wab_instance", sty.button__jvnRj)}
                   endIcon={
                     <svg
@@ -260,7 +260,7 @@ function PlasmicHeroSectionHero__RenderFunc(props: {
                   </div>
                 </Button>
                 <Button
-                  anatomy={["outlined"]}
+                  anatomy={["ghost"]}
                   className={classNames("__wab_instance", sty.button__eVyZz)}
                   endIcon={
                     <svg

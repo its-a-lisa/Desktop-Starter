@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Container from "../../Container"; // plasmic-import: yjb-qhVvhQe-/component
+import Statistic from "../../Statistic"; // plasmic-import: 61_eQwEAF2yv/component
 
 import { useScreenVariants as useScreenVariantst0N9QbVX87V } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: T0n9qbV-X87V/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
@@ -96,10 +97,12 @@ type VariantPropType = keyof PlasmicSocialProofSectionSocialProof__VariantsArgs;
 export const PlasmicSocialProofSectionSocialProof__VariantProps =
   new Array<VariantPropType>();
 
-export type PlasmicSocialProofSectionSocialProof__ArgsType = {};
+export type PlasmicSocialProofSectionSocialProof__ArgsType = {
+  onVariableChange?: (val: string) => void;
+};
 type ArgPropType = keyof PlasmicSocialProofSectionSocialProof__ArgsType;
 export const PlasmicSocialProofSectionSocialProof__ArgProps =
-  new Array<ArgPropType>();
+  new Array<ArgPropType>("onVariableChange");
 
 export type PlasmicSocialProofSectionSocialProof__OverridesType = {
   socialProofContainer?: Flex__<typeof Container>;
@@ -107,11 +110,17 @@ export type PlasmicSocialProofSectionSocialProof__OverridesType = {
   socialProofArea?: Flex__<"div">;
   socialProofNumbersStack?: Flex__<"div">;
   columns?: Flex__<"div">;
+  column?: Flex__<"div">;
+  statistic?: Flex__<typeof Statistic>;
+  h4?: Flex__<"h4">;
+  text?: Flex__<"div">;
   socialProofCompaniesStack?: Flex__<"div">;
+  h6?: Flex__<"h6">;
   freeBox?: Flex__<"div">;
 };
 
 export interface DefaultSocialProofSectionSocialProofProps {
+  onVariableChange?: (val: string) => void;
   className?: string;
 }
 
@@ -143,6 +152,30 @@ function PlasmicSocialProofSectionSocialProof__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "variable",
+        type: "readonly",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => [
+          { value: "99%", label: "Open Rates" },
+          { value: "5.2X", label: "Average Traffic Increase" },
+          { value: "6000", label: "Trusted Client" }
+        ],
+
+        onChangeProp: "onVariableChange"
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantst0N9QbVX87V(),
@@ -200,69 +233,96 @@ function PlasmicSocialProofSectionSocialProof__RenderFunc(props: {
                 data-plasmic-override={overrides.columns}
                 className={classNames(projectcss.all, sty.columns)}
               >
-                <div className={classNames(projectcss.all, sty.column__lomCl)}>
-                  <h4
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h4,
-                      projectcss.__wab_text,
-                      sty.h4___2NBe0
-                    )}
-                  >
-                    {"99%"}
-                  </h4>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___4FeQl
-                    )}
-                  >
-                    {"Open Rates"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__afZzs)}>
-                  <h4
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h4,
-                      projectcss.__wab_text,
-                      sty.h4__s9RwR
-                    )}
-                  >
-                    {"5,2X"}
-                  </h4>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___8UwSb
-                    )}
-                  >
-                    {"Average TRAFFIC INCREASE"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__fSph6)}>
-                  <h4
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h4,
-                      projectcss.__wab_text,
-                      sty.h4__czVp
-                    )}
-                  >
-                    {"6000+"}
-                  </h4>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__o19QI
-                    )}
-                  >
-                    {"Trusted Client "}
-                  </div>
-                </div>
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $state.variable;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      data-plasmic-name={"column"}
+                      data-plasmic-override={overrides.column}
+                      className={classNames(projectcss.all, sty.column)}
+                      key={currentIndex}
+                    >
+                      <Statistic
+                        data-plasmic-name={"statistic"}
+                        data-plasmic-override={overrides.statistic}
+                        border={"none"}
+                        className={classNames("__wab_instance", sty.statistic)}
+                        primaryNumber={
+                          <h4
+                            data-plasmic-name={"h4"}
+                            data-plasmic-override={overrides.h4}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h4,
+                              projectcss.__wab_text,
+                              sty.h4
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return currentItem.value;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "1774";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </h4>
+                        }
+                        statLabel={
+                          <div
+                            data-plasmic-name={"text"}
+                            data-plasmic-override={overrides.text}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return currentItem.label;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "Active Users";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        }
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div
@@ -273,17 +333,20 @@ function PlasmicSocialProofSectionSocialProof__RenderFunc(props: {
                 sty.socialProofCompaniesStack
               )}
             >
-              <div
+              <h6
+                data-plasmic-name={"h6"}
+                data-plasmic-override={overrides.h6}
                 className={classNames(
                   projectcss.all,
+                  projectcss.h6,
                   projectcss.__wab_text,
-                  sty.text__kozKd
+                  sty.h6
                 )}
               >
                 {
                   "Our design partners include the world\u2019s leading product-led companies"
                 }
-              </div>
+              </h6>
               <Stack__
                 as={"div"}
                 data-plasmic-name={"freeBox"}
@@ -380,7 +443,12 @@ const PlasmicDescendants = {
     "socialProofArea",
     "socialProofNumbersStack",
     "columns",
+    "column",
+    "statistic",
+    "h4",
+    "text",
     "socialProofCompaniesStack",
+    "h6",
     "freeBox"
   ],
   socialProofSection: [
@@ -388,19 +456,41 @@ const PlasmicDescendants = {
     "socialProofArea",
     "socialProofNumbersStack",
     "columns",
+    "column",
+    "statistic",
+    "h4",
+    "text",
     "socialProofCompaniesStack",
+    "h6",
     "freeBox"
   ],
   socialProofArea: [
     "socialProofArea",
     "socialProofNumbersStack",
     "columns",
+    "column",
+    "statistic",
+    "h4",
+    "text",
     "socialProofCompaniesStack",
+    "h6",
     "freeBox"
   ],
-  socialProofNumbersStack: ["socialProofNumbersStack", "columns"],
-  columns: ["columns"],
-  socialProofCompaniesStack: ["socialProofCompaniesStack", "freeBox"],
+  socialProofNumbersStack: [
+    "socialProofNumbersStack",
+    "columns",
+    "column",
+    "statistic",
+    "h4",
+    "text"
+  ],
+  columns: ["columns", "column", "statistic", "h4", "text"],
+  column: ["column", "statistic", "h4", "text"],
+  statistic: ["statistic", "h4", "text"],
+  h4: ["h4"],
+  text: ["text"],
+  socialProofCompaniesStack: ["socialProofCompaniesStack", "h6", "freeBox"],
+  h6: ["h6"],
   freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -412,7 +502,12 @@ type NodeDefaultElementType = {
   socialProofArea: "div";
   socialProofNumbersStack: "div";
   columns: "div";
+  column: "div";
+  statistic: typeof Statistic;
+  h4: "h4";
+  text: "div";
   socialProofCompaniesStack: "div";
+  h6: "h6";
   freeBox: "div";
 };
 
@@ -484,7 +579,12 @@ export const PlasmicSocialProofSectionSocialProof = Object.assign(
     socialProofArea: makeNodeComponent("socialProofArea"),
     socialProofNumbersStack: makeNodeComponent("socialProofNumbersStack"),
     columns: makeNodeComponent("columns"),
+    column: makeNodeComponent("column"),
+    statistic: makeNodeComponent("statistic"),
+    h4: makeNodeComponent("h4"),
+    text: makeNodeComponent("text"),
     socialProofCompaniesStack: makeNodeComponent("socialProofCompaniesStack"),
+    h6: makeNodeComponent("h6"),
     freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicSocialProofSectionSocialProof

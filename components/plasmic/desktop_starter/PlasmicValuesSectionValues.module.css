@@ -30,32 +30,24 @@
   padding: var(--token-kQZS23F4WJ1j);
 }
 .h2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  text-align: center;
-  text-decoration-line: none;
-  text-overflow: clip;
   font-size: var(--token-z7uRR_SChSrc);
+  font-weight: 700;
   color: var(--token-mRcLmUjIWezI);
   font-family: var(--token-vgNVdg-g9HJ_);
-  font-weight: 700;
-  min-width: 0;
+  text-align: center;
+  position: relative;
 }
 .text__udDnf {
+  font-size: var(--token-S1_5tr5MMIHQ);
+  color: var(--token-m2XKFkte8gPB);
+  font-family: var(--token-vgNVdg-g9HJ_);
+  font-weight: 300;
+  text-align: center;
   position: relative;
   width: 100%;
   height: auto;
   max-width: 895px;
   margin-top: 32px;
-  text-align: center;
-  text-decoration-line: none;
-  text-overflow: clip;
-  font-size: var(--token-S1_5tr5MMIHQ);
-  color: var(--token-m2XKFkte8gPB);
-  font-family: var(--token-vgNVdg-g9HJ_);
-  font-weight: 300;
   min-width: 0;
 }
 .valuesGroup {
@@ -748,7 +740,7 @@
   margin-top: 1px;
   margin-left: 24px;
 }
-.svg__u2Mcd {
+.svg__pFVcq {
   position: relative;
   object-fit: cover;
   left: auto;

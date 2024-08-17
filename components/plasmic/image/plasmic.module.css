@@ -9,6 +9,16 @@
   --plasmic-token-image-padding-sm: var(--token-hBT0gbS-Rl3q);
   --token-DNZ8WQ0kN_Nu: var(--token-b3CwEocSWMMK);
   --plasmic-token-image-padding-none: var(--token-DNZ8WQ0kN_Nu);
+  --token-iExDjXvFgplv: var(--token-6WVZWyU4A9gH);
+  --plasmic-token-image-radii-lg: var(--token-iExDjXvFgplv);
+  --token-MQbV70h76T1n: var(--token-3YfeYBOUJRlS);
+  --plasmic-token-image-radii-md: var(--token-MQbV70h76T1n);
+  --token-P_LAMZ4eB4hQ: var(--token-yi9ryH5tK1Nr);
+  --plasmic-token-image-radii-xl: var(--token-P_LAMZ4eB4hQ);
+  --token-ut756la3KStl: var(--token-FTUKsE1tfjB_);
+  --plasmic-token-image-radii-circle: var(--token-ut756la3KStl);
+  --token-sfzJzAprh-mU: var(--token-6aQE6n7Ryiwe);
+  --plasmic-token-image-radii-sm: var(--token-sfzJzAprh-mU);
 }
 
 .plasmic_tokens {

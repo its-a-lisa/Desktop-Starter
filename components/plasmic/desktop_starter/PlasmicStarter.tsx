@@ -125,9 +125,7 @@ export type PlasmicStarter__OverridesType = {
   footerSectionFooter?: Flex__<typeof FooterSectionFooter>;
 };
 
-export interface DefaultStarterProps {
-  className?: string;
-}
+export interface DefaultStarterProps {}
 
 const $$ = {};
 
@@ -158,137 +156,178 @@ function PlasmicStarter__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "socialProofSectionSocialProof.variable",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   const globalVariants = ensureGlobalVariants({
     mode: useMode(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
   return (
-    <div
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
-      data-plasmic-root={true}
-      data-plasmic-for-node={forNode}
-      className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
-        projectcss.plasmic_tokens,
-        plasmic_core_css.plasmic_tokens,
-        plasmic_semantic_css.plasmic_tokens,
-        plasmic_desktop_ui_theme_css.plasmic_tokens,
-        plasmic_advance_card_css.plasmic_tokens,
-        plasmic_form_input_css.plasmic_tokens,
-        plasmic_icon_css.plasmic_tokens,
-        plasmic_statistic_css.plasmic_tokens,
-        plasmic_avatar_css.plasmic_tokens,
-        plasmic_button_css.plasmic_tokens,
-        plasmic_image_css.plasmic_tokens,
-        plasmic_container_css.plasmic_tokens,
-        plasmic_switch_css.plasmic_tokens,
-        plasmic_badge_css.plasmic_tokens,
-        plasmic_menu_item_css.plasmic_tokens,
-        plasmic_separator_css.plasmic_tokens,
-        plasmic_form_checkbox_css.plasmic_tokens,
-        plasmic_form_select_css.plasmic_tokens,
-        plasmic_list_item_css.plasmic_tokens,
-        sty.root,
-        {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
-            globalVariants,
-            "mode",
-            "darkGrayscale"
-          ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
-            globalVariants,
-            "mode",
-            "dark"
-          ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
-            globalVariants,
-            "mode",
-            "grayscale"
-          ),
-          [sty.rootglobal_mode_dark]: hasVariant(globalVariants, "mode", "dark")
+    <React.Fragment>
+      <Head></Head>
+
+      <style>{`
+        body {
+          margin: 0;
         }
-      )}
-    >
-      <HeroSectionHero
-        data-plasmic-name={"heroSectionHero"}
-        data-plasmic-override={overrides.heroSectionHero}
-        className={classNames("__wab_instance", sty.heroSectionHero)}
-      />
+      `}</style>
 
-      <SocialProofSectionSocialProof
-        data-plasmic-name={"socialProofSectionSocialProof"}
-        data-plasmic-override={overrides.socialProofSectionSocialProof}
-        className={classNames(
-          "__wab_instance",
-          sty.socialProofSectionSocialProof
-        )}
-      />
+      <div className={projectcss.plasmic_page_wrapper}>
+        <div
+          data-plasmic-name={"root"}
+          data-plasmic-override={overrides.root}
+          data-plasmic-root={true}
+          data-plasmic-for-node={forNode}
+          className={classNames(
+            projectcss.all,
+            projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
+            plasmic_core_css.plasmic_tokens,
+            plasmic_semantic_css.plasmic_tokens,
+            plasmic_desktop_ui_theme_css.plasmic_tokens,
+            plasmic_advance_card_css.plasmic_tokens,
+            plasmic_form_input_css.plasmic_tokens,
+            plasmic_icon_css.plasmic_tokens,
+            plasmic_statistic_css.plasmic_tokens,
+            plasmic_avatar_css.plasmic_tokens,
+            plasmic_button_css.plasmic_tokens,
+            plasmic_image_css.plasmic_tokens,
+            plasmic_container_css.plasmic_tokens,
+            plasmic_switch_css.plasmic_tokens,
+            plasmic_badge_css.plasmic_tokens,
+            plasmic_menu_item_css.plasmic_tokens,
+            plasmic_separator_css.plasmic_tokens,
+            plasmic_form_checkbox_css.plasmic_tokens,
+            plasmic_form_select_css.plasmic_tokens,
+            plasmic_list_item_css.plasmic_tokens,
+            sty.root,
+            {
+              [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+                globalVariants,
+                "mode",
+                "darkGrayscale"
+              ),
+              [plasmic_core_css.global_mode_dark]: hasVariant(
+                globalVariants,
+                "mode",
+                "dark"
+              ),
+              [plasmic_core_css.global_mode_grayscale]: hasVariant(
+                globalVariants,
+                "mode",
+                "grayscale"
+              ),
+              [sty.rootglobal_mode_dark]: hasVariant(
+                globalVariants,
+                "mode",
+                "dark"
+              )
+            }
+          )}
+        >
+          <HeroSectionHero
+            data-plasmic-name={"heroSectionHero"}
+            data-plasmic-override={overrides.heroSectionHero}
+            className={classNames("__wab_instance", sty.heroSectionHero)}
+          />
 
-      <ValuesSectionValues
-        data-plasmic-name={"valuesSectionValues"}
-        data-plasmic-override={overrides.valuesSectionValues}
-        className={classNames("__wab_instance", sty.valuesSectionValues)}
-      />
+          <SocialProofSectionSocialProof
+            data-plasmic-name={"socialProofSectionSocialProof"}
+            data-plasmic-override={overrides.socialProofSectionSocialProof}
+            className={classNames(
+              "__wab_instance",
+              sty.socialProofSectionSocialProof
+            )}
+            onVariableChange={generateStateOnChangeProp($state, [
+              "socialProofSectionSocialProof",
+              "variable"
+            ])}
+          />
 
-      <AboutSectionAbout
-        data-plasmic-name={"aboutSectionAbout"}
-        data-plasmic-override={overrides.aboutSectionAbout}
-        className={classNames("__wab_instance", sty.aboutSectionAbout, {
-          [sty.aboutSectionAboutglobal_mode_dark]: hasVariant(
-            globalVariants,
-            "mode",
-            "dark"
-          )
-        })}
-      />
+          <ValuesSectionValues
+            data-plasmic-name={"valuesSectionValues"}
+            data-plasmic-override={overrides.valuesSectionValues}
+            className={classNames("__wab_instance", sty.valuesSectionValues)}
+          />
 
-      <MissionSectionMission
-        data-plasmic-name={"missionSectionMission"}
-        data-plasmic-override={overrides.missionSectionMission}
-        className={classNames("__wab_instance", sty.missionSectionMission)}
-      />
+          <AboutSectionAbout
+            data-plasmic-name={"aboutSectionAbout"}
+            data-plasmic-override={overrides.aboutSectionAbout}
+            className={classNames("__wab_instance", sty.aboutSectionAbout, {
+              [sty.aboutSectionAboutglobal_mode_dark]: hasVariant(
+                globalVariants,
+                "mode",
+                "dark"
+              )
+            })}
+          />
 
-      <TestimonialSectionTestimonials
-        data-plasmic-name={"testimonialSectionTestimonials"}
-        data-plasmic-override={overrides.testimonialSectionTestimonials}
-        className={classNames(
-          "__wab_instance",
-          sty.testimonialSectionTestimonials
-        )}
-      />
+          <MissionSectionMission
+            data-plasmic-name={"missionSectionMission"}
+            data-plasmic-override={overrides.missionSectionMission}
+            className={classNames("__wab_instance", sty.missionSectionMission)}
+          />
 
-      <PricingSectionPricing
-        data-plasmic-name={"pricingSectionPricing"}
-        data-plasmic-override={overrides.pricingSectionPricing}
-        className={classNames("__wab_instance", sty.pricingSectionPricing)}
-      />
+          <TestimonialSectionTestimonials
+            data-plasmic-name={"testimonialSectionTestimonials"}
+            data-plasmic-override={overrides.testimonialSectionTestimonials}
+            className={classNames(
+              "__wab_instance",
+              sty.testimonialSectionTestimonials
+            )}
+          />
 
-      <FeaturesSectionFeatures
-        data-plasmic-name={"featuresSectionFeatures"}
-        data-plasmic-override={overrides.featuresSectionFeatures}
-        className={classNames("__wab_instance", sty.featuresSectionFeatures)}
-      />
+          <PricingSectionPricing
+            data-plasmic-name={"pricingSectionPricing"}
+            data-plasmic-override={overrides.pricingSectionPricing}
+            className={classNames("__wab_instance", sty.pricingSectionPricing)}
+          />
 
-      <CallToActionSectionCallToAction
-        data-plasmic-name={"callToActionSectionCallToAction"}
-        data-plasmic-override={overrides.callToActionSectionCallToAction}
-        className={classNames(
-          "__wab_instance",
-          sty.callToActionSectionCallToAction
-        )}
-      />
+          <FeaturesSectionFeatures
+            data-plasmic-name={"featuresSectionFeatures"}
+            data-plasmic-override={overrides.featuresSectionFeatures}
+            className={classNames(
+              "__wab_instance",
+              sty.featuresSectionFeatures
+            )}
+          />
 
-      <FooterSectionFooter
-        data-plasmic-name={"footerSectionFooter"}
-        data-plasmic-override={overrides.footerSectionFooter}
-        className={classNames("__wab_instance", sty.footerSectionFooter)}
-      />
-    </div>
+          <CallToActionSectionCallToAction
+            data-plasmic-name={"callToActionSectionCallToAction"}
+            data-plasmic-override={overrides.callToActionSectionCallToAction}
+            className={classNames(
+              "__wab_instance",
+              sty.callToActionSectionCallToAction
+            )}
+          />
+
+          <FooterSectionFooter
+            data-plasmic-name={"footerSectionFooter"}
+            data-plasmic-override={overrides.footerSectionFooter}
+            className={classNames("__wab_instance", sty.footerSectionFooter)}
+          />
+        </div>
+      </div>
+    </React.Fragment>
   ) as React.ReactElement | null;
 }
 
@@ -413,7 +452,15 @@ export const PlasmicStarter = Object.assign(
 
     // Metadata about props expected for PlasmicStarter
     internalVariantProps: PlasmicStarter__VariantProps,
-    internalArgProps: PlasmicStarter__ArgProps
+    internalArgProps: PlasmicStarter__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

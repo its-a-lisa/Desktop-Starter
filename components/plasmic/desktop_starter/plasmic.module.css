@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Libre+Franklin%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Montserrat%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&display=swap");
 
 .plasmic_tokens {
-  --token-4H0cSs7J9dl4: #ffffff;
-  --plasmic-token-site-base-color: var(--token-4H0cSs7J9dl4);
-  --token-4qXn4C1XZ7tm: #131313;
-  --plasmic-token-site-border-color: var(--token-4qXn4C1XZ7tm);
   --token-myD-3jHf5uAe: 1rem;
   --plasmic-token-card-padding-md: var(--token-myD-3jHf5uAe);
   --token-YX12fyW3hha7: 10rem;
@@ -40,7 +36,7 @@
   --mixin-W943Zrug214W_font-size: var(--token-nzhJo5rxzpC3);
   --mixin-W943Zrug214W_font-weight: 400;
   --mixin-W943Zrug214W_font-style: normal;
-  --mixin-W943Zrug214W_color: var(--token-pk_1Z9QFM4r7);
+  --mixin-W943Zrug214W_color: var(--token-mRcLmUjIWezI);
   --mixin-W943Zrug214W_text-align: left;
   --mixin-W943Zrug214W_text-transform: none;
   --mixin-W943Zrug214W_line-height: var(--token-4DuRNCAeoDYh);
@@ -49,28 +45,29 @@
   --mixin-W943Zrug214W_user-select: text;
   --mixin-W943Zrug214W_text-decoration-line: none;
   --mixin-W943Zrug214W_text-overflow: clip;
-  --mixin-RTHc_srDggCs_color: var(--token-pk_1Z9QFM4r7);
+  --mixin-RTHc_srDggCs_color: var(--token-mRcLmUjIWezI);
   --mixin-RTHc_srDggCs_font-weight: 700;
-  --mixin-RTHc_srDggCs_font-size: 3.8rem;
+  --mixin-RTHc_srDggCs_font-size: var(--token-Hhy2Zb267Ny-);
   --mixin-RTHc_srDggCs_line-height: var(--token-7WnIFLPpk8UJ);
   --mixin-RTHc_srDggCs_letter-spacing: -1px;
+  --mixin-RTHc_srDggCs_font-family: var(--token-vgNVdg-g9HJ_);
   --mixin-RTHc_srDggCs_white-space: pre-wrap;
-  --mixin-olAhwRsZA0cU_color: var(--token-pk_1Z9QFM4r7);
-  --mixin-olAhwRsZA0cU_font-size: var(--token-KC1sj0wdsKaW);
+  --mixin-olAhwRsZA0cU_color: var(--token-mRcLmUjIWezI);
+  --mixin-olAhwRsZA0cU_font-size: var(--token-z7uRR_SChSrc);
   --mixin-olAhwRsZA0cU_font-weight: 700;
   --mixin-olAhwRsZA0cU_letter-spacing: -0.5px;
   --mixin-olAhwRsZA0cU_line-height: var(--token-mXZ3BhGXehjy);
   --mixin-olAhwRsZA0cU_font-family: var(--token-vgNVdg-g9HJ_);
   --mixin-olAhwRsZA0cU_white-space: pre-wrap;
-  --mixin-rTt1pyikTnvP_color: #0070f3;
+  --mixin-rTt1pyikTnvP_color: var(--token-GhZSkJhKhSV9);
   --mixin-rTt1pyikTnvP_white-space: pre-wrap;
-  --mixin-KPQatqT2A_Re_color: var(--token-pk_1Z9QFM4r7);
-  --mixin-KPQatqT2A_Re_font-size: var(--token-Q2X4JhBy_hV8);
+  --mixin-KPQatqT2A_Re_color: var(--token-mRcLmUjIWezI);
+  --mixin-KPQatqT2A_Re_font-size: var(--token-y0FlP_YYIbFJ);
   --mixin-KPQatqT2A_Re_font-weight: 600;
   --mixin-KPQatqT2A_Re_line-height: var(--token-7WnIFLPpk8UJ);
   --mixin-KPQatqT2A_Re_white-space: pre-wrap;
-  --mixin-BmUAMfMv8gVk_color: var(--token-pk_1Z9QFM4r7);
-  --mixin-BmUAMfMv8gVk_font-size: var(--token-4hF_LwIOL-pD);
+  --mixin-BmUAMfMv8gVk_color: var(--token-mRcLmUjIWezI);
+  --mixin-BmUAMfMv8gVk_font-size: var(--token-XT-l5IwECj_e);
   --mixin-BmUAMfMv8gVk_font-weight: 600;
   --mixin-BmUAMfMv8gVk_line-height: var(--token-7WnIFLPpk8UJ);
   --mixin-BmUAMfMv8gVk_white-space: pre-wrap;
@@ -142,21 +139,26 @@
   --mixin-y8vzETlfbjNq_position: relative;
   --mixin-y8vzETlfbjNq_list-style-type: decimal;
   --mixin-y8vzETlfbjNq_white-space: pre-wrap;
-  --mixin-64R_3CzvwIv8_color: var(--token-pk_1Z9QFM4r7);
-  --mixin-64R_3CzvwIv8_font-size: var(--token-B2IUd2TRCN8k);
+  --mixin-64R_3CzvwIv8_color: var(--token-mRcLmUjIWezI);
+  --mixin-64R_3CzvwIv8_font-size: var(--token-E1OlTv7JS0-x);
   --mixin-64R_3CzvwIv8_font-weight: 600;
   --mixin-64R_3CzvwIv8_line-height: var(--token-7WnIFLPpk8UJ);
   --mixin-64R_3CzvwIv8_white-space: pre-wrap;
-  --mixin-UMSPG45njjJc_color: var(--token-pk_1Z9QFM4r7);
-  --mixin-UMSPG45njjJc_font-size: var(--token-CFFEqlmqKUYW);
+  --mixin-UMSPG45njjJc_color: var(--token-mRcLmUjIWezI);
+  --mixin-UMSPG45njjJc_font-size: var(--token-S_KBT56c610F);
   --mixin-UMSPG45njjJc_font-weight: 600;
   --mixin-UMSPG45njjJc_line-height: var(--token-7WnIFLPpk8UJ);
   --mixin-UMSPG45njjJc_white-space: pre-wrap;
-  --mixin-L5R2iXb8A5Vp_color: #3291ff;
+  --mixin-L5R2iXb8A5Vp_color: var(--token--qsCKGaca_zG);
   --mixin-L5R2iXb8A5Vp_white-space: pre-wrap;
   --mixin-ssgTrtst_Sr-_white-space: pre-wrap;
   --mixin-uqIpCF_meFfP_font-size: var(--token-YUUshI2lfBP0);
   --mixin-uqIpCF_meFfP_white-space: pre-wrap;
+  --mixin-FA-rkEBhR6vp_color: var(--token-QQzYCEtOsG7k);
+  --mixin-FA-rkEBhR6vp_white-space: pre-wrap;
+  --mixin-T9mnUiu9lZ7q_white-space: pre-wrap;
+  --mixin-V5EnVv9viHUi_color: var(--token-pk_1Z9QFM4r7);
+  --mixin-V5EnVv9viHUi_white-space: pre-wrap;
 }
 
 .plasmic_mixins {
@@ -198,6 +200,12 @@
   --plasmic-mixin-column-heading_white-space: var(
     --mixin-baylxRMMJrN9_white-space
   );
+  --mixin-2TaNgjetpdw1_white-space: pre-wrap;
+  --plasmic-mixin-item-heading_white-space: var(
+    --mixin-2TaNgjetpdw1_white-space
+  );
+  --mixin-AYUwZr2pF9pZ_white-space: pre-wrap;
+  --plasmic-mixin-item-body_white-space: var(--mixin-AYUwZr2pF9pZ_white-space);
 }
 
 :where(.all) {
@@ -531,6 +539,7 @@ h1:where(.root_reset_tags) {
   font-size: var(--mixin-RTHc_srDggCs_font-size);
   line-height: var(--mixin-RTHc_srDggCs_line-height);
   letter-spacing: var(--mixin-RTHc_srDggCs_letter-spacing);
+  font-family: var(--mixin-RTHc_srDggCs_font-family);
 }
 
 :where(.root_reset) h2:where(.h2),
@@ -719,4 +728,27 @@ p:where(.root_reset.p),
 :where(.root_reset_tags) p,
 p:where(.root_reset_tags) {
   font-size: var(--mixin-uqIpCF_meFfP_font-size);
+}
+
+:where(.root_reset) a:where(.a):visited,
+a:where(.root_reset.a):visited,
+:where(.root_reset .__wab_expr_html_text) a:visited,
+:where(.root_reset_tags) a:visited,
+a:where(.root_reset_tags):visited {
+  color: var(--mixin-FA-rkEBhR6vp_color);
+}
+
+:where(.root_reset) a:where(.a):link,
+a:where(.root_reset.a):link,
+:where(.root_reset .__wab_expr_html_text) a:link,
+:where(.root_reset_tags) a:link,
+a:where(.root_reset_tags):link {
+}
+
+:where(.root_reset) a:where(.a):not(:link),
+a:where(.root_reset.a):not(:link),
+:where(.root_reset .__wab_expr_html_text) a:not(:link),
+:where(.root_reset_tags) a:not(:link),
+a:where(.root_reset_tags):not(:link) {
+  color: var(--mixin-V5EnVv9viHUi_color);
 }

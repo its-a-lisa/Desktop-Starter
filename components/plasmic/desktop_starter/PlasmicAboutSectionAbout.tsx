@@ -60,8 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Container from "../../Container"; // plasmic-import: yjb-qhVvhQe-/component
-import Button from "../../Button"; // plasmic-import: 3AR6h0473ToW/component
-import UtilityComponentBasic from "../../UtilityComponentBasic"; // plasmic-import: LZp_U1bOR5lV/component
+import AboutComponentAboutItem from "../../AboutComponentAboutItem"; // plasmic-import: fxrbwQEUqKmL/component
 
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
@@ -89,9 +88,6 @@ import plasmic_list_item_css from "../list_item/plasmic.module.css"; // plasmic-
 import projectcss from "./plasmic.module.css"; // plasmic-import: xoA7omHX1aucC3LFX3rgWp/projectcss
 import sty from "./PlasmicAboutSectionAbout.module.css"; // plasmic-import: ljjoE6e4rGJl/css
 
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: 1l0k0f8No_g4/icon
-import FaArrowRightsvgIcon from "../icons/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: laMKK4I5P9un/icon
-
 createPlasmicElementProxy;
 
 export type PlasmicAboutSectionAbout__VariantMembers = {};
@@ -108,10 +104,6 @@ export type PlasmicAboutSectionAbout__OverridesType = {
   aboutContainer?: Flex__<typeof Container>;
   aboutSection?: Flex__<"div">;
   aboutGroup?: Flex__<"div">;
-  aboutItem1?: Flex__<"div">;
-  aboutItem2?: Flex__<"div">;
-  utilityComponentBasic?: Flex__<typeof UtilityComponentBasic>;
-  aboutItem3?: Flex__<"div">;
 };
 
 export interface DefaultAboutSectionAboutProps {
@@ -171,352 +163,31 @@ function PlasmicAboutSectionAbout__RenderFunc(props: {
             data-plasmic-override={overrides.aboutGroup}
             className={classNames(projectcss.all, sty.aboutGroup)}
           >
-            <div
-              data-plasmic-name={"aboutItem1"}
-              data-plasmic-override={overrides.aboutItem1}
-              className={classNames(projectcss.all, sty.aboutItem1)}
-            >
-              <div className={classNames(projectcss.all, sty.columns__xxX1R)}>
-                <div className={classNames(projectcss.all, sty.column___8TpPg)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__z0MnZ)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"500px"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/desktop_starter/images/image19.png",
-                      fullWidth: 1040,
-                      fullHeight: 1040,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
-                <div className={classNames(projectcss.all, sty.column__oPUt)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__duWn)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__ilfF9)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__bXzhJ)}
-                        displayHeight={"2px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"26px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/desktop_starter/images/image20.svg",
-                          fullWidth: 300,
-                          fullHeight: 23,
-                          aspectRatio: 13
-                        }}
-                      />
+            <AboutComponentAboutItem
+              className={classNames(
+                "__wab_instance",
+                sty.aboutComponentAboutItem__yWaOo
+              )}
+              overlayContainer={"bottomLeft"}
+              reverseDirections={true}
+            />
 
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__b4KwF
-                        )}
-                      >
-                        {"Lorem Ipsum"}
-                      </div>
-                    </div>
-                    <h3
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h3,
-                        projectcss.__wab_text,
-                        sty.h3__yuJ42
-                      )}
-                    >
-                      {"Lorem Ipsum"}
-                    </h3>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__z30AM
-                      )}
-                    >
-                      {
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-                      }
-                    </div>
-                    <Button
-                      background={"primary"}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__dGUjr
-                      )}
-                      endIcon={
-                        <IconIcon
-                          className={classNames(projectcss.all, sty.svg__gNlxu)}
-                          role={"img"}
-                        />
-                      }
-                      startIcon={
-                        <svg
-                          className={classNames(projectcss.all, sty.svg__gi9AX)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___6Ctnd
-                        )}
-                      >
-                        {"lorem Ipsum"}
-                      </div>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"aboutItem2"}
-              data-plasmic-override={overrides.aboutItem2}
-              className={classNames(projectcss.all, sty.aboutItem2)}
-            >
-              <div className={classNames(projectcss.all, sty.columns__sl5X7)}>
-                <div className={classNames(projectcss.all, sty.column___3BtpB)}>
-                  <UtilityComponentBasic
-                    data-plasmic-name={"utilityComponentBasic"}
-                    data-plasmic-override={overrides.utilityComponentBasic}
-                    className={classNames(
-                      "__wab_instance",
-                      sty.utilityComponentBasic
-                    )}
-                  />
-                </div>
-                <div className={classNames(projectcss.all, sty.column__lMuzf)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__oh28C)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"500px"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/desktop_starter/images/image21.png",
-                      fullWidth: 1040,
-                      fullHeight: 1040,
-                      aspectRatio: undefined
-                    }}
-                  />
+            <AboutComponentAboutItem
+              className={classNames(
+                "__wab_instance",
+                sty.aboutComponentAboutItem__n6M31
+              )}
+              overlayContainer={"topLeft"}
+            />
 
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__lilpl)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__efdRs)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__a5Isv)}
-                        displayHeight={"24px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"24px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/desktop_starter/images/image22.svg",
-                          fullWidth: 150,
-                          fullHeight: 150,
-                          aspectRatio: 1
-                        }}
-                      />
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__thj65
-                        )}
-                      >
-                        {
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"aboutItem3"}
-              data-plasmic-override={overrides.aboutItem3}
-              className={classNames(projectcss.all, sty.aboutItem3)}
-            >
-              <div className={classNames(projectcss.all, sty.columns__eMvZ3)}>
-                <div className={classNames(projectcss.all, sty.column___31RSt)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__xvchj)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"500px"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/desktop_starter/images/image23.png",
-                      fullWidth: 1040,
-                      fullHeight: 1040,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__arrfy)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__iOihl)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__cdoht)}
-                        displayHeight={"24px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"24px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/desktop_starter/images/image22.svg",
-                          fullWidth: 150,
-                          fullHeight: 150,
-                          aspectRatio: 1
-                        }}
-                      />
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__qmYjg
-                        )}
-                      >
-                        {
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__uT9Lz)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__d3LlS)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zEtpt)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__zYzA4)}
-                        displayHeight={"2px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"26px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/desktop_starter/images/image20.svg",
-                          fullWidth: 300,
-                          fullHeight: 23,
-                          aspectRatio: 13
-                        }}
-                      />
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__jx00O
-                        )}
-                      >
-                        {"Lorem Ipsum"}
-                      </div>
-                    </div>
-                    <h3
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h3,
-                        projectcss.__wab_text,
-                        sty.h3___0HgtM
-                      )}
-                    >
-                      {"Lorem Ipsum"}
-                    </h3>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__j1R5
-                      )}
-                    >
-                      {
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-                      }
-                    </div>
-                    <Button
-                      background={"primary"}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__n7UmK
-                      )}
-                      endIcon={
-                        <IconIcon
-                          className={classNames(
-                            projectcss.all,
-                            sty.svg___92QHi
-                          )}
-                          role={"img"}
-                        />
-                      }
-                      startIcon={
-                        <svg
-                          className={classNames(projectcss.all, sty.svg__coIDx)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__o0M9N
-                        )}
-                      >
-                        {"lorem Ipsum"}
-                      </div>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <AboutComponentAboutItem
+              className={classNames(
+                "__wab_instance",
+                sty.aboutComponentAboutItem__jYiC
+              )}
+              overlayContainer={"topRight"}
+              reverseDirections={true}
+            />
           </div>
         </div>
       }
@@ -526,34 +197,9 @@ function PlasmicAboutSectionAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  aboutContainer: [
-    "aboutContainer",
-    "aboutSection",
-    "aboutGroup",
-    "aboutItem1",
-    "aboutItem2",
-    "utilityComponentBasic",
-    "aboutItem3"
-  ],
-  aboutSection: [
-    "aboutSection",
-    "aboutGroup",
-    "aboutItem1",
-    "aboutItem2",
-    "utilityComponentBasic",
-    "aboutItem3"
-  ],
-  aboutGroup: [
-    "aboutGroup",
-    "aboutItem1",
-    "aboutItem2",
-    "utilityComponentBasic",
-    "aboutItem3"
-  ],
-  aboutItem1: ["aboutItem1"],
-  aboutItem2: ["aboutItem2", "utilityComponentBasic"],
-  utilityComponentBasic: ["utilityComponentBasic"],
-  aboutItem3: ["aboutItem3"]
+  aboutContainer: ["aboutContainer", "aboutSection", "aboutGroup"],
+  aboutSection: ["aboutSection", "aboutGroup"],
+  aboutGroup: ["aboutGroup"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -562,10 +208,6 @@ type NodeDefaultElementType = {
   aboutContainer: typeof Container;
   aboutSection: "div";
   aboutGroup: "div";
-  aboutItem1: "div";
-  aboutItem2: "div";
-  utilityComponentBasic: typeof UtilityComponentBasic;
-  aboutItem3: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -630,10 +272,6 @@ export const PlasmicAboutSectionAbout = Object.assign(
     // Helper components rendering sub-elements
     aboutSection: makeNodeComponent("aboutSection"),
     aboutGroup: makeNodeComponent("aboutGroup"),
-    aboutItem1: makeNodeComponent("aboutItem1"),
-    aboutItem2: makeNodeComponent("aboutItem2"),
-    utilityComponentBasic: makeNodeComponent("utilityComponentBasic"),
-    aboutItem3: makeNodeComponent("aboutItem3"),
 
     // Metadata about props expected for PlasmicAboutSectionAbout
     internalVariantProps: PlasmicAboutSectionAbout__VariantProps,

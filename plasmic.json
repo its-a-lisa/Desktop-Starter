@@ -47,7 +47,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "dNqcW7FYVqnkjtbdVGjyS8",
@@ -75,7 +76,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "4JFyEcvXaxQ6TZ3SJQYzp6",
@@ -129,7 +131,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "6PoNur73nfoJqbzNtkNpAX",
@@ -171,7 +174,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "wjwfXMtbnYisAPU4bK5cC5",
@@ -219,7 +223,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "nVTL6BvP7Knk1RSNkBbJCm",
@@ -310,7 +315,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "d4FLWyib3U2TEbmJ38D5i3",
@@ -394,7 +400,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "d9PrY1SRs2wAiwFXTkwPXt",
@@ -573,7 +580,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "87d7TuXZRr3ZmtRaMhbt33",
@@ -2445,7 +2453,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ivrmEdvdUKbShkHq3Wnmy4",
@@ -2541,7 +2550,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "bEVQSMSYHutfoPgsCgDaki",
@@ -2600,7 +2610,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "2ejMdvJDoJWjwd6DCNSCHJ",
@@ -2649,7 +2660,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "teUZ7d8BEHskoXuvEf1pBj",
@@ -2703,7 +2715,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
@@ -2746,7 +2759,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -3589,20 +3603,6 @@
       "cssFilePath": "plasmic/desktop_starter/plasmic.module.css",
       "components": [
         {
-          "id": "HNOwCg7C_NPJ",
-          "name": "Page",
-          "type": "managed",
-          "projectId": "xoA7omHX1aucC3LFX3rgWp",
-          "renderModuleFilePath": "plasmic/desktop_starter/PlasmicPage.tsx",
-          "importSpec": {
-            "modulePath": "../pages/page.tsx"
-          },
-          "cssFilePath": "plasmic/desktop_starter/PlasmicPage.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "path": "/page"
-        },
-        {
           "id": "BMgctX7BjP1K",
           "name": "TestimonialComponentTestimonialItem",
           "type": "managed",
@@ -3652,7 +3652,7 @@
           },
           "cssFilePath": "plasmic/desktop_starter/PlasmicStarter.module.css",
           "scheme": "blackbox",
-          "componentType": "component",
+          "componentType": "page",
           "path": "/starter"
         },
         {
@@ -3795,6 +3795,19 @@
             "modulePath": "UtilityComponentBasic.tsx"
           },
           "cssFilePath": "plasmic/desktop_starter/PlasmicUtilityComponentBasic.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "fxrbwQEUqKmL",
+          "name": "AboutComponentAboutItem",
+          "type": "managed",
+          "projectId": "xoA7omHX1aucC3LFX3rgWp",
+          "renderModuleFilePath": "plasmic/desktop_starter/PlasmicAboutComponentAboutItem.tsx",
+          "importSpec": {
+            "modulePath": "AboutComponentAboutItem.tsx"
+          },
+          "cssFilePath": "plasmic/desktop_starter/PlasmicAboutComponentAboutItem.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }

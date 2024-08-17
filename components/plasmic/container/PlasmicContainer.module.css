@@ -181,13 +181,13 @@
   border-color: var(--token-aDcQrU9WwS9_);
 }
 .containerborderStyle__2Px {
-  border-width: 2px;
+  border-width: var(--token-brN1p3eDIMEA);
 }
 .containerborderStyle__3Px {
-  border-width: 3px;
+  border-width: var(--token-RyPZgXKOtzHS);
 }
 .containerborderStyle__4Px {
-  border-width: 4px;
+  border-width: var(--token-T7Y5czxxXVFY);
 }
 .containerborderStyle_dashed {
   border-style: dashed;

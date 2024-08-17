@@ -4031,6 +4031,46 @@
       }
     },
     {
+      "name": "container.border.01",
+      "type": "spacing",
+      "value": "1px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d9PrY1SRs2wAiwFXTkwPXt",
+        "id": "brN1p3eDIMEA"
+      }
+    },
+    {
+      "name": "container.border.02",
+      "type": "spacing",
+      "value": "2px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d9PrY1SRs2wAiwFXTkwPXt",
+        "id": "q1opRgFrh26M"
+      }
+    },
+    {
+      "name": "container.border.03",
+      "type": "spacing",
+      "value": "3px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d9PrY1SRs2wAiwFXTkwPXt",
+        "id": "RyPZgXKOtzHS"
+      }
+    },
+    {
+      "name": "container.border.04",
+      "type": "spacing",
+      "value": "4px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d9PrY1SRs2wAiwFXTkwPXt",
+        "id": "T7Y5czxxXVFY"
+      }
+    },
+    {
       "name": "container.border.clear",
       "type": "color",
       "value": "#FFFFFF00",
@@ -6568,6 +6608,56 @@
       "meta": {
         "projectId": "d4FLWyib3U2TEbmJ38D5i3",
         "id": "hBT0gbS-Rl3q"
+      }
+    },
+    {
+      "name": "image.radii.circle",
+      "type": "spacing",
+      "value": "50%",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d4FLWyib3U2TEbmJ38D5i3",
+        "id": "ut756la3KStl"
+      }
+    },
+    {
+      "name": "image.radii.lg",
+      "type": "spacing",
+      "value": "0.75rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d4FLWyib3U2TEbmJ38D5i3",
+        "id": "iExDjXvFgplv"
+      }
+    },
+    {
+      "name": "image.radii.md",
+      "type": "spacing",
+      "value": "0.375rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d4FLWyib3U2TEbmJ38D5i3",
+        "id": "MQbV70h76T1n"
+      }
+    },
+    {
+      "name": "image.radii.sm",
+      "type": "spacing",
+      "value": "0.125rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d4FLWyib3U2TEbmJ38D5i3",
+        "id": "sfzJzAprh-mU"
+      }
+    },
+    {
+      "name": "image.radii.xl",
+      "type": "spacing",
+      "value": "1rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "d4FLWyib3U2TEbmJ38D5i3",
+        "id": "P_LAMZ4eB4hQ"
       }
     },
     {
@@ -11311,26 +11401,6 @@
       }
     },
     {
-      "name": "site.base.color",
-      "type": "color",
-      "value": "#FFFFFF",
-      "category": "color",
-      "meta": {
-        "projectId": "xoA7omHX1aucC3LFX3rgWp",
-        "id": "4H0cSs7J9dl4"
-      }
-    },
-    {
-      "name": "site.border.color",
-      "type": "color",
-      "value": "#131313",
-      "category": "color",
-      "meta": {
-        "projectId": "xoA7omHX1aucC3LFX3rgWp",
-        "id": "4qXn4C1XZ7tm"
-      }
-    },
-    {
       "name": "site.font-size.caption",
       "type": "fontsize",
       "value": "16px",
@@ -12708,6 +12778,46 @@
       "meta": {
         "projectId": "6eqm1KNiFrAWEs21Xh4t1D",
         "id": "hMtGWHIOQZBL"
+      }
+    },
+    {
+      "name": "theme.color.link.active",
+      "type": "color",
+      "value": "#0D4EA6",
+      "category": "color",
+      "meta": {
+        "projectId": "6eqm1KNiFrAWEs21Xh4t1D",
+        "id": "-6RVn5m1SsQA"
+      }
+    },
+    {
+      "name": "theme.color.link.normal",
+      "type": "color",
+      "value": "#186ADE",
+      "category": "color",
+      "meta": {
+        "projectId": "6eqm1KNiFrAWEs21Xh4t1D",
+        "id": "GhZSkJhKhSV9"
+      }
+    },
+    {
+      "name": "theme.color.link.normal.hover",
+      "type": "color",
+      "value": "#0D4EA6",
+      "category": "color",
+      "meta": {
+        "projectId": "6eqm1KNiFrAWEs21Xh4t1D",
+        "id": "-qsCKGaca_zG"
+      }
+    },
+    {
+      "name": "theme.color.link.visited",
+      "type": "color",
+      "value": "#6B30AB",
+      "category": "color",
+      "meta": {
+        "projectId": "6eqm1KNiFrAWEs21Xh4t1D",
+        "id": "QQzYCEtOsG7k"
       }
     },
     {

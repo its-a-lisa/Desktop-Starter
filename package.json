@@ -14,7 +14,7 @@
     "@plasmicpkgs/plasmic-basic-components": "^0.0.223",
     "@plasmicpkgs/plasmic-nav": "^0.0.173",
     "@plasmicpkgs/plasmic-tabs": "^0.0.44",
-    "next": "14.2.5",
+    "next": "14.2.10",
     "react": "^18",
     "react-dom": "^18"
   },

@@ -59,7 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,13 +69,28 @@ import plasmic_semantic_css from "../semantic/plasmic.module.css"; // plasmic-im
 import projectcss from "./plasmic.module.css"; // plasmic-import: nVTL6BvP7Knk1RSNkBbJCm/projectcss
 import sty from "./PlasmicIcon.module.css"; // plasmic-import: X9_ep2TqKQPK/css
 
-import FaStarSolidsvgIcon from "./icons/PlasmicIcon__FaStarSolidsvg"; // plasmic-import: AryIHXd_TIRF/icon
+import FaStarSolidSvgIcon from "./icons/PlasmicIcon__FaStarSolidSvg"; // plasmic-import: AryIHXd_TIRF/icon
 
 createPlasmicElementProxy;
 
 export type PlasmicIcon__VariantMembers = {
-  size: "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-  disabled: "disabled";
+  isDisabled: "isDisabled";
+  size:
+    | "body2Xs"
+    | "bodyXs"
+    | "bodySm"
+    | "bodyMd"
+    | "bodyLg"
+    | "bodyXl"
+    | "body2Xl"
+    | "body3Xl"
+    | "heading2Xl"
+    | "heading3Xl"
+    | "heading4Xl"
+    | "heading5Xl"
+    | "headingXl"
+    | "headingLg"
+    | "headingMd";
   boldColor:
     | "basic"
     | "themePrimary"
@@ -96,8 +112,24 @@ export type PlasmicIcon__VariantMembers = {
   removePadding: "removePadding";
 };
 export type PlasmicIcon__VariantsArgs = {
-  size?: SingleChoiceArg<"xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl">;
-  disabled?: SingleBooleanChoiceArg<"disabled">;
+  isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
+  size?: SingleChoiceArg<
+    | "body2Xs"
+    | "bodyXs"
+    | "bodySm"
+    | "bodyMd"
+    | "bodyLg"
+    | "bodyXl"
+    | "body2Xl"
+    | "body3Xl"
+    | "heading2Xl"
+    | "heading3Xl"
+    | "heading4Xl"
+    | "heading5Xl"
+    | "headingXl"
+    | "headingLg"
+    | "headingMd"
+  >;
   boldColor?: SingleChoiceArg<
     | "basic"
     | "themePrimary"
@@ -122,8 +154,8 @@ export type PlasmicIcon__VariantsArgs = {
 };
 type VariantPropType = keyof PlasmicIcon__VariantsArgs;
 export const PlasmicIcon__VariantProps = new Array<VariantPropType>(
+  "isDisabled",
   "size",
-  "disabled",
   "boldColor",
   "subtleColor",
   "removePadding"
@@ -142,8 +174,24 @@ export type PlasmicIcon__OverridesType = {
 
 export interface DefaultIconProps {
   children?: React.ReactNode;
-  size?: SingleChoiceArg<"xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl">;
-  disabled?: SingleBooleanChoiceArg<"disabled">;
+  isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
+  size?: SingleChoiceArg<
+    | "body2Xs"
+    | "bodyXs"
+    | "bodySm"
+    | "bodyMd"
+    | "bodyLg"
+    | "bodyXl"
+    | "body2Xl"
+    | "body3Xl"
+    | "heading2Xl"
+    | "heading3Xl"
+    | "heading4Xl"
+    | "heading5Xl"
+    | "headingXl"
+    | "headingLg"
+    | "headingMd"
+  >;
   boldColor?: SingleChoiceArg<
     | "basic"
     | "themePrimary"
@@ -185,7 +233,16 @@ function PlasmicIcon__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -206,10 +263,10 @@ function PlasmicIcon__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.size
       },
       {
-        path: "disabled",
+        path: "isDisabled",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.disabled
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.isDisabled
       },
       {
         path: "boldColor",
@@ -240,7 +297,8 @@ function PlasmicIcon__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme(),
+    screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
   return (
@@ -259,19 +317,19 @@ function PlasmicIcon__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.rootboldColor_success]: hasVariant(
@@ -284,9 +342,9 @@ function PlasmicIcon__RenderFunc(props: {
             "boldColor",
             "themePrimary"
           ),
-          [sty.rootsize_sm]: hasVariant($state, "size", "sm"),
-          [sty.rootsize_xs]: hasVariant($state, "size", "xs"),
-          [sty.rootsize_xxs]: hasVariant($state, "size", "xxs")
+          [sty.rootsize_body2Xs]: hasVariant($state, "size", "body2Xs"),
+          [sty.rootsize_bodySm]: hasVariant($state, "size", "bodySm"),
+          [sty.rootsize_bodyXs]: hasVariant($state, "size", "bodyXs")
         }
       )}
     >
@@ -304,14 +362,29 @@ function PlasmicIcon__RenderFunc(props: {
             "boldColor",
             "themePrimary"
           ),
-          [sty.freeBoxdisabled]: hasVariant($state, "disabled", "disabled"),
-          [sty.freeBoxsize_lg]: hasVariant($state, "size", "lg"),
-          [sty.freeBoxsize_md]: hasVariant($state, "size", "md"),
-          [sty.freeBoxsize_sm]: hasVariant($state, "size", "sm"),
-          [sty.freeBoxsize_xl]: hasVariant($state, "size", "xl"),
-          [sty.freeBoxsize_xs]: hasVariant($state, "size", "xs"),
-          [sty.freeBoxsize_xxl]: hasVariant($state, "size", "xxl"),
-          [sty.freeBoxsize_xxs]: hasVariant($state, "size", "xxs"),
+          [sty.freeBoxisDisabled]: hasVariant(
+            $state,
+            "isDisabled",
+            "isDisabled"
+          ),
+          [sty.freeBoxsize_body2Xl]: hasVariant($state, "size", "body2Xl"),
+          [sty.freeBoxsize_body2Xs]: hasVariant($state, "size", "body2Xs"),
+          [sty.freeBoxsize_body3Xl]: hasVariant($state, "size", "body3Xl"),
+          [sty.freeBoxsize_bodyLg]: hasVariant($state, "size", "bodyLg"),
+          [sty.freeBoxsize_bodyMd]: hasVariant($state, "size", "bodyMd"),
+          [sty.freeBoxsize_bodySm]: hasVariant($state, "size", "bodySm"),
+          [sty.freeBoxsize_bodyXl]: hasVariant($state, "size", "bodyXl"),
+          [sty.freeBoxsize_bodyXs]: hasVariant($state, "size", "bodyXs"),
+          [sty.freeBoxsize_heading2Xl]: hasVariant(
+            $state,
+            "size",
+            "heading2Xl"
+          ),
+          [sty.freeBoxsize_heading3Xl]: hasVariant(
+            $state,
+            "size",
+            "heading3Xl"
+          ),
           [sty.freeBoxsubtleColor_success]: hasVariant(
             $state,
             "subtleColor",
@@ -321,7 +394,7 @@ function PlasmicIcon__RenderFunc(props: {
       >
         {renderPlasmicSlot({
           defaultContents: (
-            <FaStarSolidsvgIcon
+            <FaStarSolidSvgIcon
               className={classNames(projectcss.all, sty.svg__pSqZn)}
               role={"img"}
             />
@@ -368,6 +441,66 @@ function PlasmicIcon__RenderFunc(props: {
               $state,
               "boldColor",
               "warning"
+            ),
+            [sty.slotTargetChildrensize_body2Xs]: hasVariant(
+              $state,
+              "size",
+              "body2Xs"
+            ),
+            [sty.slotTargetChildrensize_body3Xl]: hasVariant(
+              $state,
+              "size",
+              "body3Xl"
+            ),
+            [sty.slotTargetChildrensize_bodyLg]: hasVariant(
+              $state,
+              "size",
+              "bodyLg"
+            ),
+            [sty.slotTargetChildrensize_bodyMd]: hasVariant(
+              $state,
+              "size",
+              "bodyMd"
+            ),
+            [sty.slotTargetChildrensize_bodySm]: hasVariant(
+              $state,
+              "size",
+              "bodySm"
+            ),
+            [sty.slotTargetChildrensize_bodyXl]: hasVariant(
+              $state,
+              "size",
+              "bodyXl"
+            ),
+            [sty.slotTargetChildrensize_bodyXs]: hasVariant(
+              $state,
+              "size",
+              "bodyXs"
+            ),
+            [sty.slotTargetChildrensize_heading4Xl]: hasVariant(
+              $state,
+              "size",
+              "heading4Xl"
+            ),
+            [sty.slotTargetChildrensize_heading5Xl]: hasVariant(
+              $state,
+              "size",
+              "heading5Xl"
+            ),
+            [sty.slotTargetChildrensize_headingLg]: hasVariant(
+              $state,
+              "size",
+              "headingLg"
+            ),
+            [sty.slotTargetChildrensize_headingMd]: hasVariant(
+              $state,
+              "size",
+              "headingMd"
+            ),
+            [sty.slotTargetChildrensize_headingXl]: hasVariant(
+              $state,
+              "size",
+              "headingXl"
             ),
             [sty.slotTargetChildrensubtleColor_basic]: hasVariant(
               $state,

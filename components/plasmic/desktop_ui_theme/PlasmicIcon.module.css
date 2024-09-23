@@ -16,49 +16,49 @@
   max-width: 100%;
 }
 .freeBoxsize_xxs {
-  width: var(--token-NEhTB-e0_KXF);
-  height: var(--token-NEhTB-e0_KXF);
+  width: var(--token-NRYopZLrloX5);
+  height: var(--token-NRYopZLrloX5);
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 .freeBoxsize_xs {
-  width: var(--token-Y5ElMPZ0R-KJ);
-  height: var(--token-Gl4n7i6AMIO4);
+  width: var(--token-98pmln98wKyT);
+  height: var(--token-S4bEol-lySdu);
   flex-shrink: 0;
 }
 .freeBoxsize_sm {
-  width: var(--token-xsnkr3PqmyZ3);
-  height: var(--token-ev0MCwfyo0go);
+  width: var(--token-IWzHl2hOWKDW);
+  height: var(--token-XKwVoT5m5H_J);
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 .freeBoxsize_md {
-  width: var(--token--ZGgjdnYujjf);
-  height: var(--token-3sWrI7NoZbER);
+  width: var(--token-g884LbKZyxza);
+  height: var(--token-IP4rnCns95mR);
   flex-shrink: 0;
 }
 .freeBoxsize_lg {
-  width: var(--token-N1e9CcudajTF);
-  height: var(--token-7HJQ-R2_Di2t);
+  width: var(--token-qVszCot_dDDY);
+  height: var(--token-1IUn_NhlZ-Zp);
   flex-shrink: 0;
 }
 .freeBoxsize_xl {
-  width: var(--token-bxyiWhbUVzkZ);
-  height: var(--token-ZzNdt01b0DT3);
+  width: var(--token-4eCIG1ZkiqOO);
+  height: var(--token-_zBa7xUD690C);
   flex-shrink: 0;
 }
 .freeBoxsize_xxl {
-  width: var(--token-0nDO0Pl4tHt8);
-  height: var(--token-WnGRwfjWSPxA);
+  width: var(--token-xQS4TCbs0Lb-);
+  height: var(--token-JdPKcztF87Dd);
   flex-shrink: 0;
 }
 .freeBoxdisabled {
   opacity: 0.5;
 }
 .slotTargetChildren {
-  color: var(--token-NvWOFUkT-Fvx);
+  color: #12121280;
 }
 .slotTargetChildrenboldColor_basic {
   color: var(--token-cRFpyIORwg8Y);
@@ -76,7 +76,7 @@
   color: var(--token-93CdaKL6VxaW);
 }
 .slotTargetChildrenboldColor_information {
-  color: var(--token-GlGk70pHdYsK);
+  color: #186ade;
 }
 .slotTargetChildrenboldColor_warning {
   color: var(--token-jsfRPUeIFGG2);

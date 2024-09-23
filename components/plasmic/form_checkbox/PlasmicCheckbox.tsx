@@ -61,7 +61,7 @@ import {
 
 import * as pp from "@plasmicapp/react-web";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -71,35 +71,35 @@ import plasmic_core_css from "../core/plasmic.module.css"; // plasmic-import: 3B
 import projectcss from "./plasmic.module.css"; // plasmic-import: bEVQSMSYHutfoPgsCgDaki/projectcss
 import sty from "./PlasmicCheckbox.module.css"; // plasmic-import: Npitl5y2_6BQ/css
 
-import FaSquareRegularsvgIcon from "./icons/PlasmicIcon__FaSquareRegularsvg"; // plasmic-import: omU8kWpQWe9D/icon
-import FaSquareCheckRegularsvgIcon from "./icons/PlasmicIcon__FaSquareCheckRegularsvg"; // plasmic-import: xXgLo02AR7Kn/icon
-import FaSquareMinusRegularsvgIcon from "./icons/PlasmicIcon__FaSquareMinusRegularsvg"; // plasmic-import: sNKHTFy0gM13/icon
+import FaSquareRegularSvgIcon from "./icons/PlasmicIcon__FaSquareRegularSvg"; // plasmic-import: omU8kWpQWe9D/icon
+import FaSquareCheckRegularSvgIcon from "./icons/PlasmicIcon__FaSquareCheckRegularSvg"; // plasmic-import: xXgLo02AR7Kn/icon
+import FaSquareMinusRegularSvgIcon from "./icons/PlasmicIcon__FaSquareMinusRegularSvg"; // plasmic-import: sNKHTFy0gM13/icon
 
 createPlasmicElementProxy;
 
 export type PlasmicCheckbox__VariantMembers = {
   isDisabled: "isDisabled";
+  size: "small" | "medium" | "large";
   isChecked: "isChecked";
   noLabel: "noLabel";
   isIndeterminate: "isIndeterminate";
-  size: "s" | "md" | "lg";
   reverse: "reverse";
 };
 export type PlasmicCheckbox__VariantsArgs = {
   isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
+  size?: SingleChoiceArg<"small" | "medium" | "large">;
   isChecked?: SingleBooleanChoiceArg<"isChecked">;
   noLabel?: SingleBooleanChoiceArg<"noLabel">;
   isIndeterminate?: SingleBooleanChoiceArg<"isIndeterminate">;
-  size?: SingleChoiceArg<"s" | "md" | "lg">;
   reverse?: SingleBooleanChoiceArg<"reverse">;
 };
 type VariantPropType = keyof PlasmicCheckbox__VariantsArgs;
 export const PlasmicCheckbox__VariantProps = new Array<VariantPropType>(
   "isDisabled",
+  "size",
   "isChecked",
   "noLabel",
   "isIndeterminate",
-  "size",
   "reverse"
 );
 
@@ -132,7 +132,7 @@ export interface DefaultCheckboxProps extends pp.CheckboxProps {
   "aria-label"?: string;
   "aria-labelledby"?: string;
   onChange?: (isChecked: boolean) => void;
-  size?: SingleChoiceArg<"s" | "md" | "lg">;
+  size?: SingleChoiceArg<"small" | "medium" | "large">;
   reverse?: SingleBooleanChoiceArg<"reverse">;
 }
 
@@ -153,7 +153,16 @@ function PlasmicCheckbox__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -224,7 +233,7 @@ function PlasmicCheckbox__RenderFunc(props: {
   };
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -246,19 +255,19 @@ function PlasmicCheckbox__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
@@ -271,7 +280,7 @@ function PlasmicCheckbox__RenderFunc(props: {
           ),
           [sty.rootnoLabel]: hasVariant($state, "noLabel", "noLabel"),
           [sty.rootreverse]: hasVariant($state, "reverse", "reverse"),
-          [sty.rootsize_s]: hasVariant($state, "size", "s")
+          [sty.rootsize_small]: hasVariant($state, "size", "small")
         }
       )}
       data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
@@ -300,10 +309,10 @@ function PlasmicCheckbox__RenderFunc(props: {
           data-plasmic-override={overrides.svg}
           PlasmicIconType={
             hasVariant($state, "isIndeterminate", "isIndeterminate")
-              ? FaSquareMinusRegularsvgIcon
+              ? FaSquareMinusRegularSvgIcon
               : hasVariant($state, "isChecked", "isChecked")
-              ? FaSquareCheckRegularsvgIcon
-              : FaSquareRegularsvgIcon
+              ? FaSquareCheckRegularSvgIcon
+              : FaSquareRegularSvgIcon
           }
           className={classNames(projectcss.all, sty.svg, {
             [sty.svg___focusVisibleWithin]: triggers.focusVisibleWithin_root,
@@ -316,9 +325,9 @@ function PlasmicCheckbox__RenderFunc(props: {
             ),
             [sty.svgnoLabel]: hasVariant($state, "noLabel", "noLabel"),
             [sty.svgreverse]: hasVariant($state, "reverse", "reverse"),
-            [sty.svgsize_lg]: hasVariant($state, "size", "lg"),
-            [sty.svgsize_md]: hasVariant($state, "size", "md"),
-            [sty.svgsize_s]: hasVariant($state, "size", "s")
+            [sty.svgsize_large]: hasVariant($state, "size", "large"),
+            [sty.svgsize_medium]: hasVariant($state, "size", "medium"),
+            [sty.svgsize_small]: hasVariant($state, "size", "small")
           })}
           role={"img"}
         />
@@ -368,8 +377,16 @@ function PlasmicCheckbox__RenderFunc(props: {
                 "noLabel",
                 "noLabel"
               ),
-              [sty.slotTargetChildrensize_lg]: hasVariant($state, "size", "lg"),
-              [sty.slotTargetChildrensize_s]: hasVariant($state, "size", "s")
+              [sty.slotTargetChildrensize_large]: hasVariant(
+                $state,
+                "size",
+                "large"
+              ),
+              [sty.slotTargetChildrensize_small]: hasVariant(
+                $state,
+                "size",
+                "small"
+              )
             })
           })}
         </div>

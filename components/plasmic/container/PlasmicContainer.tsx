@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -1034,7 +1034,16 @@ function PlasmicContainer__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -1169,7 +1178,7 @@ function PlasmicContainer__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -1188,19 +1197,19 @@ function PlasmicContainer__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.container,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.containerbackgroundChanges_bright]: hasVariant(

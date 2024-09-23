@@ -62,10 +62,10 @@
   background: var(--token-dE5O1-uyKtQ3);
 }
 .rootbackground_destructive {
-  background: var(--token-c7Mnm_MHEMS7);
+  background: #d91f11;
 }
 .rootbackground_action {
-  background: var(--token-Q6N9dz5ZYvfy);
+  background: #186ade;
 }
 .rootemphasis_bold {
   background: var(--token-aRzt214wsm8P);
@@ -145,10 +145,10 @@
   color: var(--token-wOgmEqJDwUQn);
 }
 .slotTargetStartIconforeground_destructive {
-  color: var(--token-ak4aqK8QJFZS);
+  color: #d91f11;
 }
 .slotTargetStartIconforeground_action {
-  color: var(--token-TNXJenzpRl90);
+  color: #186ade;
 }
 .rootemphasis_subtle:hover .slotTargetStartIconemphasis_subtle {
   color: var(--token-obhTHuNrBKmX);
@@ -166,10 +166,10 @@
   color: var(--token-wOgmEqJDwUQn);
 }
 .rootbackground_destructive:active .slotTargetStartIconbackground_destructive {
-  color: var(--token-ak4aqK8QJFZS);
+  color: #d91f11;
 }
 .rootbackground_action:active .slotTargetStartIconbackground_action {
-  color: var(--token-TNXJenzpRl90);
+  color: #186ade;
 }
 .rootemphasis_subtle:active .slotTargetStartIconemphasis_subtle {
   color: var(--token-obhTHuNrBKmX);
@@ -237,10 +237,10 @@
   color: var(--token-DhpobCUw1Y2_);
 }
 .slotTargetChildrenforeground_destructive {
-  color: var(--token-KBkn5a6_8AuD);
+  color: #d91f11;
 }
 .slotTargetChildrenforeground_action {
-  color: var(--token-4aEfE5XqPB-X);
+  color: #186ade;
 }
 .slotTargetChildrenunnamedVariant {
   font-weight: 600;
@@ -258,10 +258,10 @@
   color: var(--token-DhpobCUw1Y2_);
 }
 .rootbackground_destructive:active .slotTargetChildrenbackground_destructive {
-  color: var(--token-KBkn5a6_8AuD);
+  color: #d91f11;
 }
 .rootbackground_action:active .slotTargetChildrenbackground_action {
-  color: var(--token-4aEfE5XqPB-X);
+  color: #186ade;
 }
 .endIconContainer {
   position: relative;
@@ -304,10 +304,10 @@
   color: var(--token-wOgmEqJDwUQn);
 }
 .slotTargetEndIconforeground_destructive {
-  color: var(--token-ak4aqK8QJFZS);
+  color: #d91f11;
 }
 .slotTargetEndIconforeground_action {
-  color: var(--token-TNXJenzpRl90);
+  color: #186ade;
 }
 .rootemphasis_subtle:hover .slotTargetEndIconemphasis_subtle {
   color: var(--token-obhTHuNrBKmX);
@@ -325,10 +325,10 @@
   color: var(--token-wOgmEqJDwUQn);
 }
 .rootbackground_destructive:active .slotTargetEndIconbackground_destructive {
-  color: var(--token-ak4aqK8QJFZS);
+  color: #d91f11;
 }
 .rootbackground_action:active .slotTargetEndIconbackground_action {
-  color: var(--token-TNXJenzpRl90);
+  color: #186ade;
 }
 .rootemphasis_subtle:active .slotTargetEndIconemphasis_subtle {
   color: var(--token-obhTHuNrBKmX);

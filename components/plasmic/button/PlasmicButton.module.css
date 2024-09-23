@@ -1,7 +1,7 @@
 .root {
   display: flex;
   flex-direction: row;
-  background: var(--token-7hcuJPlaYmqp);
+  background: var(--token-4Rk8McbiF71C);
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
@@ -12,7 +12,7 @@
   -webkit-transition-property: background;
   -webkit-transition-duration: 0.1s;
   border-radius: var(--token-b4uJCYBglIzv);
-  border: 1px solid var(--token-2PxS9uOmpJtG);
+  border: 1px solid var(--token-FPx9bnMEPsOk);
 }
 .root > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -139,31 +139,23 @@
 }
 .root:hover {
   background: linear-gradient(
-      var(--token-7hcuJPlaYmqp),
-      var(--token-7hcuJPlaYmqp)
+      var(--token-3VkZAC7SK5D1),
+      var(--token-3VkZAC7SK5D1)
     ),
-    var(--token-rQqpxHUU5LQP);
+    var(--token-4Rk8McbiF71C);
 }
-.root:focus-within {
-  box-shadow: 0px 0px 0px 1px var(--token-L5Jm3kgWukCd);
-  background: linear-gradient(
-      var(--token-7hcuJPlaYmqp),
-      var(--token-7hcuJPlaYmqp)
-    ),
-    var(--token-RRjAe7FlwZZy);
-  outline: none;
-}
-.root___focusVisibleWithin {
-  box-shadow: 0px 0px 0px 1px var(--token-L5Jm3kgWukCd);
-  background: linear-gradient(
-      var(--token-7hcuJPlaYmqp),
-      var(--token-7hcuJPlaYmqp)
-    ),
-    var(--token-RRjAe7FlwZZy);
-  outline: none;
+.root:focus {
+  outline-style: solid;
+  outline-width: thin;
+  outline-color: var(--token-vrPv_HM35OM2);
+  outline-offset: 2px;
 }
 .root:active {
-  background: var(--token--q6x4i-QJlKF);
+  background: linear-gradient(
+      var(--token-rJm1LfJ-Gdnt),
+      var(--token-rJm1LfJ-Gdnt)
+    ),
+    var(--token-4Rk8McbiF71C);
 }
 .contentGroup {
   display: flex;
@@ -270,7 +262,7 @@
   display: none;
 }
 .slotTargetChildren {
-  color: var(--token-2AiSuX3qcmlO);
+  color: var(--token-SqdwYONL5_n6);
   font-weight: 500;
   white-space: pre;
   font-size: var(--token-nzhJo5rxzpC3);
@@ -294,16 +286,16 @@
   font-size: var(--token-B2IUd2TRCN8k);
 }
 .slotTargetChildrenbackground_ancillary {
-  color: var(--token-2AiSuX3qcmlO);
+  color: var(--token-SqdwYONL5_n6);
 }
 .slotTargetChildrenbackground_accent {
-  color: var(--token-2AiSuX3qcmlO);
+  color: var(--token-SqdwYONL5_n6);
 }
 .slotTargetChildrenbackground_destructive {
-  color: var(--token-2AiSuX3qcmlO);
+  color: var(--token-SqdwYONL5_n6);
 }
 .slotTargetChildrenbackground_action {
-  color: var(--token-2AiSuX3qcmlO);
+  color: var(--token-SqdwYONL5_n6);
 }
 .slotTargetChildrentext_main {
   color: var(--token-WLBAYClhTigc);

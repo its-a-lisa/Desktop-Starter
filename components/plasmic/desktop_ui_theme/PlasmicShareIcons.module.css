@@ -59,7 +59,7 @@
   position: relative;
   object-fit: cover;
   max-width: 100%;
-  color: var(--token-34pC0B6OwjEu);
+  color: #171717;
   height: 1em;
 }
 .bookmarkStack {
@@ -93,6 +93,6 @@
   position: relative;
   object-fit: cover;
   max-width: 100%;
-  color: var(--token-34pC0B6OwjEu);
+  color: #171717;
   height: 1em;
 }

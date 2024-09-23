@@ -59,14 +59,14 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_core_css from "../core/plasmic.module.css"; // plasmic-import: 3BHMWCYAenCmWb8ThbnzeF/projectcss
 import plasmic_switch_css from "../switch/plasmic.module.css"; // plasmic-import: i4n9AbVD4xq7VvHzvrVDh9/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_avatar_css from "../avatar/plasmic.module.css"; // plasmic-import: wjwfXMtbnYisAPU4bK5cC5/projectcss
 import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import: 4JFyEcvXaxQ6TZ3SJQYzp6/projectcss
 import plasmic_form_input_css from "../form_input/plasmic.module.css"; // plasmic-import: teUZ7d8BEHskoXuvEf1pBj/projectcss
@@ -88,6 +88,7 @@ createPlasmicElementProxy;
 
 export type PlasmicContainer__VariantMembers = {
   includeIcon: "includeIcon";
+  testIcon: "testIcon";
   includeImage: "includeImage";
   backgroundColor:
     | "mainBold"
@@ -373,6 +374,7 @@ export type PlasmicContainer__VariantMembers = {
 };
 export type PlasmicContainer__VariantsArgs = {
   includeIcon?: SingleBooleanChoiceArg<"includeIcon">;
+  testIcon?: SingleBooleanChoiceArg<"testIcon">;
   includeImage?: SingleBooleanChoiceArg<"includeImage">;
   backgroundColor?: SingleChoiceArg<
     | "mainBold"
@@ -679,6 +681,7 @@ export type PlasmicContainer__VariantsArgs = {
 type VariantPropType = keyof PlasmicContainer__VariantsArgs;
 export const PlasmicContainer__VariantProps = new Array<VariantPropType>(
   "includeIcon",
+  "testIcon",
   "includeImage",
   "backgroundColor",
   "backgroundChanges",
@@ -705,6 +708,7 @@ export type PlasmicContainer__ArgsType = {
   imageWidth?: string;
   imageHeight?: string;
   iconUrl?: string;
+  test?: string;
 };
 type ArgPropType = keyof PlasmicContainer__ArgsType;
 export const PlasmicContainer__ArgProps = new Array<ArgPropType>(
@@ -712,7 +716,8 @@ export const PlasmicContainer__ArgProps = new Array<ArgPropType>(
   "imageUrl",
   "imageWidth",
   "imageHeight",
-  "iconUrl"
+  "iconUrl",
+  "test"
 );
 
 export type PlasmicContainer__OverridesType = {
@@ -721,8 +726,8 @@ export type PlasmicContainer__OverridesType = {
   content?: Flex__<"div">;
   image?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
+  image2?: Flex__<"div">;
   icon?: Flex__<"div">;
-  svg?: Flex__<"svg">;
 };
 
 export interface DefaultContainerProps {
@@ -731,7 +736,9 @@ export interface DefaultContainerProps {
   imageWidth?: string;
   imageHeight?: string;
   iconUrl?: string;
+  test?: string;
   includeIcon?: SingleBooleanChoiceArg<"includeIcon">;
+  testIcon?: SingleBooleanChoiceArg<"testIcon">;
   includeImage?: SingleBooleanChoiceArg<"includeImage">;
   backgroundColor?: SingleChoiceArg<
     | "mainBold"
@@ -1054,7 +1061,20 @@ function PlasmicContainer__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {
+          imageUrl: "https://www.svgrepo.com/show/532033/cloud.svg",
+          iconUrl: "https://www.svgrepo.com/show/532033/cloud.svg",
+          test: "url('https://www.svgrepo.com/show/532033/cloud.svg')"
+        },
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -1183,6 +1203,59 @@ function PlasmicContainer__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.overflowVisible
+      },
+      {
+        path: "testIcon",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.testIcon
+      },
+      {
+        path: "variable",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return "url(" + $props.iconUrl + ")";
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "variable2",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return `url("https://www.svgrepo.com/show/532033/cloud.svg")`;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "variable3",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({
+          backgroundImage:
+            "url('https://www.svgrepo.com/show/532033/cloud.svg')"
+        })
       }
     ],
     [$props, $ctx, $refs]
@@ -1195,7 +1268,7 @@ function PlasmicContainer__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -1213,7 +1286,7 @@ function PlasmicContainer__RenderFunc(props: {
         projectcss.plasmic_tokens,
         plasmic_core_css.plasmic_tokens,
         plasmic_switch_css.plasmic_tokens,
-        plasmic_badge_css.plasmic_tokens,
+        plasmic_label_css.plasmic_tokens,
         plasmic_avatar_css.plasmic_tokens,
         plasmic_button_css.plasmic_tokens,
         plasmic_form_input_css.plasmic_tokens,
@@ -1230,19 +1303,19 @@ function PlasmicContainer__RenderFunc(props: {
         plasmic_container_css.plasmic_tokens,
         sty.container,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.containerbackgroundChanges_bright]: hasVariant(
@@ -1994,7 +2067,14 @@ function PlasmicContainer__RenderFunc(props: {
           [sty.containershadow_sm]: hasVariant($state, "shadow", "sm"),
           [sty.containershadow_xl]: hasVariant($state, "shadow", "xl"),
           [sty.containershadow_xs]: hasVariant($state, "shadow", "xs"),
-          [sty.containershadow_xxl]: hasVariant($state, "shadow", "xxl")
+          [sty.containershadow_xxl]: hasVariant($state, "shadow", "xxl"),
+          [sty.containertestIcon_containerPadding_all4Xl]:
+            hasVariant($state, "testIcon", "testIcon") &&
+            hasVariant($state, "containerPadding", "all4Xl"),
+          [sty.containertestIcon_containerPadding_all4Xl_contentPadding_top4Xl]:
+            hasVariant($state, "testIcon", "testIcon") &&
+            hasVariant($state, "containerPadding", "all4Xl") &&
+            hasVariant($state, "contentPadding", "top4Xl")
         }
       )}
     >
@@ -2386,7 +2466,8 @@ function PlasmicContainer__RenderFunc(props: {
             $state,
             "overlayPadding",
             "topXs"
-          )
+          ),
+          [sty.overlaytestIcon]: hasVariant($state, "testIcon", "testIcon")
         })}
       >
         <Stack__
@@ -2919,7 +3000,11 @@ function PlasmicContainer__RenderFunc(props: {
               $state,
               "overlayLayout",
               "horizontalBaseline"
-            )
+            ),
+            [sty.contenttestIcon_containerPadding_all4Xl_contentPadding_top4Xl]:
+              hasVariant($state, "testIcon", "testIcon") &&
+              hasVariant($state, "containerPadding", "all4Xl") &&
+              hasVariant($state, "contentPadding", "top4Xl")
           })}
         >
           {renderPlasmicSlot({
@@ -2931,6 +3016,11 @@ function PlasmicContainer__RenderFunc(props: {
           data-plasmic-name={"image"}
           data-plasmic-override={overrides.image}
           className={classNames(projectcss.all, sty.image, {
+            [sty.imageincludeIcon]: hasVariant(
+              $state,
+              "includeIcon",
+              "includeIcon"
+            ),
             [sty.imageincludeImage]: hasVariant(
               $state,
               "includeImage",
@@ -2940,14 +3030,28 @@ function PlasmicContainer__RenderFunc(props: {
               $state,
               "overlayLayout",
               "flipLayout"
-            )
+            ),
+            [sty.imagetestIcon]: hasVariant($state, "testIcon", "testIcon")
           })}
         >
           <PlasmicImg__
             data-plasmic-name={"img"}
             data-plasmic-override={overrides.img}
             alt={""}
-            className={classNames(sty.img)}
+            className={classNames(sty.img, {
+              [sty.imgincludeIcon]: hasVariant(
+                $state,
+                "includeIcon",
+                "includeIcon"
+              ),
+              [sty.imgincludeIcon_includeImage]:
+                hasVariant($state, "includeImage", "includeImage") &&
+                hasVariant($state, "includeIcon", "includeIcon"),
+              [sty.imgtestIcon]: hasVariant($state, "testIcon", "testIcon"),
+              [sty.imgtestIcon_includeImage]:
+                hasVariant($state, "includeImage", "includeImage") &&
+                hasVariant($state, "testIcon", "testIcon")
+            })}
             displayHeight={"100%"}
             displayMaxHeight={"none"}
             displayMaxWidth={"100%"}
@@ -2955,21 +3059,101 @@ function PlasmicContainer__RenderFunc(props: {
             displayMinWidth={"0"}
             displayWidth={"100%"}
             loading={"lazy"}
-            src={(() => {
-              try {
-                return $props.imageUrl;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
+            src={
+              hasVariant($state, "testIcon", "testIcon")
+                ? (() => {
+                    try {
+                      return $props.iconUrl;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                : hasVariant($state, "includeIcon", "includeIcon")
+                ? (() => {
+                    try {
+                      return $props.iconUrl;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                : (() => {
+                    try {
+                      return $props.imageUrl;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+            }
           />
         </div>
+        {(
+          hasVariant($state, "includeImage", "includeImage")
+            ? true
+            : hasVariant($state, "testIcon", "testIcon")
+            ? true
+            : hasVariant($state, "includeIcon", "includeIcon")
+            ? true
+            : false
+        ) ? (
+          <div
+            data-plasmic-name={"image2"}
+            data-plasmic-override={overrides.image2}
+            className={classNames(projectcss.all, sty.image2, {
+              [sty.image2includeIcon]: hasVariant(
+                $state,
+                "includeIcon",
+                "includeIcon"
+              ),
+              [sty.image2includeImage]: hasVariant(
+                $state,
+                "includeImage",
+                "includeImage"
+              ),
+              [sty.image2overlayLayout_flipLayout]: hasVariant(
+                $state,
+                "overlayLayout",
+                "flipLayout"
+              ),
+              [sty.image2testIcon]: hasVariant($state, "testIcon", "testIcon")
+            })}
+          >
+            <svg
+              className={classNames(projectcss.all, sty.svg__vcz0N, {
+                [sty.svgtestIcon__vcz0NGFwJf]: hasVariant(
+                  $state,
+                  "testIcon",
+                  "testIcon"
+                ),
+                [sty.svgtestIcon_containerPadding_all4Xl__vcz0NGFwJfNpZmA]:
+                  hasVariant($state, "testIcon", "testIcon") &&
+                  hasVariant($state, "containerPadding", "all4Xl"),
+                [sty.svgtestIcon_containerPadding_all4Xl_contentPadding_top4Xl__vcz0NGFwJfNpZmANbDjs]:
+                  hasVariant($state, "testIcon", "testIcon") &&
+                  hasVariant($state, "containerPadding", "all4Xl") &&
+                  hasVariant($state, "contentPadding", "top4Xl")
+              })}
+              role={"img"}
+            />
+          </div>
+        ) : null}
         <div
           data-plasmic-name={"icon"}
           data-plasmic-override={overrides.icon}
@@ -2983,13 +3167,12 @@ function PlasmicContainer__RenderFunc(props: {
               $state,
               "overlayLayout",
               "flipLayout"
-            )
+            ),
+            [sty.icontestIcon]: hasVariant($state, "testIcon", "testIcon")
           })}
         >
           <svg
-            data-plasmic-name={"svg"}
-            data-plasmic-override={overrides.svg}
-            className={classNames(projectcss.all, sty.svg)}
+            className={classNames(projectcss.all, sty.svg___3HXc1)}
             role={"img"}
           />
         </div>
@@ -2999,13 +3182,21 @@ function PlasmicContainer__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  container: ["container", "overlay", "content", "image", "img", "icon", "svg"],
-  overlay: ["overlay", "content", "image", "img", "icon", "svg"],
+  container: [
+    "container",
+    "overlay",
+    "content",
+    "image",
+    "img",
+    "image2",
+    "icon"
+  ],
+  overlay: ["overlay", "content", "image", "img", "image2", "icon"],
   content: ["content"],
   image: ["image", "img"],
   img: ["img"],
-  icon: ["icon", "svg"],
-  svg: ["svg"]
+  image2: ["image2"],
+  icon: ["icon"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -3016,8 +3207,8 @@ type NodeDefaultElementType = {
   content: "div";
   image: "div";
   img: typeof PlasmicImg__;
+  image2: "div";
   icon: "div";
-  svg: "svg";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -3084,8 +3275,8 @@ export const PlasmicContainer = Object.assign(
     content: makeNodeComponent("content"),
     image: makeNodeComponent("image"),
     img: makeNodeComponent("img"),
+    image2: makeNodeComponent("image2"),
     icon: makeNodeComponent("icon"),
-    svg: makeNodeComponent("svg"),
 
     // Metadata about props expected for PlasmicContainer
     internalVariantProps: PlasmicContainer__VariantProps,

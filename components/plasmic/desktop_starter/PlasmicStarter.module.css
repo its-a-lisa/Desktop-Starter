@@ -19,7 +19,7 @@
 .root > * {
   grid-column: 4;
 }
-.rootglobal_mode_dark > * {
+.rootglobal_theme_dark > * {
   grid-column: 4;
 }
 .heroSectionHero:global(.__wab_instance):global(.__wab_instance) {

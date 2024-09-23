@@ -15,59 +15,71 @@
   justify-content: center;
   max-width: 100%;
 }
-.freeBoxsize_xxs {
-  width: var(--token-NEhTB-e0_KXF);
-  height: var(--token-NEhTB-e0_KXF);
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.freeBoxsize_xs {
-  width: var(--token-Y5ElMPZ0R-KJ);
-  height: var(--token-Gl4n7i6AMIO4);
-  flex-shrink: 0;
-}
-.freeBoxsize_sm {
-  width: var(--token-xsnkr3PqmyZ3);
-  height: var(--token-ev0MCwfyo0go);
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.freeBoxsize_md {
-  width: var(--token--ZGgjdnYujjf);
-  height: var(--token-3sWrI7NoZbER);
-  flex-shrink: 0;
-}
-.freeBoxsize_lg {
-  width: var(--token-N1e9CcudajTF);
-  height: var(--token-7HJQ-R2_Di2t);
-  flex-shrink: 0;
-}
-.freeBoxsize_xl {
-  width: var(--token-bxyiWhbUVzkZ);
-  height: var(--token-ZzNdt01b0DT3);
-  flex-shrink: 0;
-}
-.freeBoxsize_xxl {
-  width: var(--token-0nDO0Pl4tHt8);
-  height: var(--token-WnGRwfjWSPxA);
-  flex-shrink: 0;
-}
-.freeBoxdisabled {
+.freeBoxisDisabled {
   opacity: 0.5;
+}
+.freeBoxsize_body3Xl {
+  width: var(--token-8UbsZJIpRMB_);
+  height: var(--token-8UbsZJIpRMB_);
+  flex-shrink: 0;
+}
+.freeBoxsize_heading2Xl {
+  width: var(--token-8UbsZJIpRMB_);
+  height: var(--token-8UbsZJIpRMB_);
+  flex-shrink: 0;
+}
+.freeBoxsize_heading3Xl {
+  width: var(--token-8UbsZJIpRMB_);
+  height: var(--token-8UbsZJIpRMB_);
+  flex-shrink: 0;
 }
 .slotTargetChildren {
   color: var(--token-cRFpyIORwg8Y);
+}
+.slotTargetChildrensize_body2Xs {
+  font-size: var(--token-e_9E-0k9gOQs);
+}
+.slotTargetChildrensize_bodyXs {
+  font-size: var(--token-AVk_w-j_4g4x);
+}
+.slotTargetChildrensize_bodySm {
+  font-size: var(--token-nZ2jRQvvHwPl);
+}
+.slotTargetChildrensize_bodyMd {
+  font-size: var(--token-o9gNPQs_chqn);
+}
+.slotTargetChildrensize_bodyLg {
+  font-size: var(--token-GchwEUkMqHDv);
+}
+.slotTargetChildrensize_bodyXl {
+  font-size: var(--token-m93XQIGKR3_9);
+}
+.slotTargetChildrensize_body3Xl {
+  font-size: var(--token-9N9BpPjk3BrZ);
+}
+.slotTargetChildrensize_heading4Xl {
+  font-size: var(--token-qFznZhg2lzq4);
+}
+.slotTargetChildrensize_heading5Xl {
+  font-size: var(--token-t81MzC1nvZSN);
+}
+.slotTargetChildrensize_headingXl {
+  font-size: var(--token-GlROTqsfapk2);
+}
+.slotTargetChildrensize_headingLg {
+  font-size: var(--token-6A5fyfk_w9UV);
+}
+.slotTargetChildrensize_headingMd {
+  font-size: var(--token-KBEj3K9HZ4iV);
 }
 .slotTargetChildrenboldColor_basic {
   color: var(--token-cRFpyIORwg8Y);
 }
 .slotTargetChildrenboldColor_themePrimary {
-  color: var(--token-6H-0sFr115vz);
+  color: var(--token-pWAM8O0zSelI);
 }
 .slotTargetChildrenboldColor_themeSecondary {
-  color: var(--token-NJTGOh8-bPSn);
+  color: var(--token-BiI4-TKsEOyE);
 }
 .slotTargetChildrenboldColor_themeStandard {
   color: var(--token-PV-3TuJlgz5d);
@@ -76,7 +88,7 @@
   color: var(--token-93CdaKL6VxaW);
 }
 .slotTargetChildrenboldColor_information {
-  color: var(--token-GlGk70pHdYsK);
+  color: var(--token-o6rvTyGapE0-);
 }
 .slotTargetChildrenboldColor_warning {
   color: var(--token-jsfRPUeIFGG2);
@@ -104,12 +116,6 @@
 }
 .slotTargetChildrensubtleColor_error {
   color: var(--token-JoXw85kWrEZO);
-}
-.root:hover .slotTargetChildren {
-  color: var(--token-yEuKJIdIyvsl);
-}
-.root:active .slotTargetChildren {
-  color: var(--token-ebrcONFI3vwI);
 }
 .svg__pSqZn {
   object-fit: cover;

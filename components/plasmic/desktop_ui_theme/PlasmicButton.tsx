@@ -61,14 +61,14 @@ import {
 
 import * as pp from "@plasmicapp/react-web";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_core_css from "../core/plasmic.module.css"; // plasmic-import: 3BHMWCYAenCmWb8ThbnzeF/projectcss
 import plasmic_switch_css from "../switch/plasmic.module.css"; // plasmic-import: i4n9AbVD4xq7VvHzvrVDh9/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_avatar_css from "../avatar/plasmic.module.css"; // plasmic-import: wjwfXMtbnYisAPU4bK5cC5/projectcss
 import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import: 4JFyEcvXaxQ6TZ3SJQYzp6/projectcss
 import plasmic_form_input_css from "../form_input/plasmic.module.css"; // plasmic-import: teUZ7d8BEHskoXuvEf1pBj/projectcss
@@ -86,8 +86,8 @@ import plasmic_container_css from "../container/plasmic.module.css"; // plasmic-
 import projectcss from "./plasmic.module.css"; // plasmic-import: 6eqm1KNiFrAWEs21Xh4t1D/projectcss
 import sty from "./PlasmicButton.module.css"; // plasmic-import: 3AR6h0473ToW/css
 
-import FaChecksvgIcon from "../icons/icons/PlasmicIcon__FaChecksvg"; // plasmic-import: 0ji8kkpc0bva/icon
-import FaArrowRightsvgIcon from "../icons/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: laMKK4I5P9un/icon
+import FaCheckSvgIcon from "../icons/icons/PlasmicIcon__FaChecksvg"; // plasmic-import: 0ji8kkpc0bva/icon
+import FaArrowRightSvgIcon from "../icons/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: laMKK4I5P9un/icon
 
 createPlasmicElementProxy;
 
@@ -205,7 +205,16 @@ function PlasmicButton__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -292,7 +301,7 @@ function PlasmicButton__RenderFunc(props: {
   };
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -313,7 +322,7 @@ function PlasmicButton__RenderFunc(props: {
         projectcss.plasmic_tokens,
         plasmic_core_css.plasmic_tokens,
         plasmic_switch_css.plasmic_tokens,
-        plasmic_badge_css.plasmic_tokens,
+        plasmic_label_css.plasmic_tokens,
         plasmic_avatar_css.plasmic_tokens,
         plasmic_button_css.plasmic_tokens,
         plasmic_form_input_css.plasmic_tokens,
@@ -330,19 +339,19 @@ function PlasmicButton__RenderFunc(props: {
         plasmic_container_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
@@ -475,7 +484,7 @@ function PlasmicButton__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <FaChecksvgIcon
+              <FaCheckSvgIcon
                 className={classNames(projectcss.all, sty.svg__heUm7)}
                 role={"img"}
               />
@@ -718,7 +727,7 @@ function PlasmicButton__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <FaArrowRightsvgIcon
+              <FaArrowRightSvgIcon
                 className={classNames(projectcss.all, sty.svg__hWj1Q)}
                 role={"img"}
               />
@@ -828,7 +837,7 @@ function PlasmicButton__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <FaArrowRightsvgIcon
+              <FaArrowRightSvgIcon
                 className={classNames(projectcss.all, sty.svg__yjIu8)}
                 role={"img"}
               />

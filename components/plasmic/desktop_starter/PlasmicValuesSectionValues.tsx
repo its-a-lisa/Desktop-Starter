@@ -60,11 +60,14 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Container from "../../Container"; // plasmic-import: yjb-qhVvhQe-/component
+import SiteCard from "../../SiteCard"; // plasmic-import: E8631JBF9yCl/component
+import ValuesComponentValueItem from "../../ValuesComponentValueItem"; // plasmic-import: zRe01nSPDKfT/component
+import Icon from "../../Icon"; // plasmic-import: X9_ep2TqKQPK/component
 import Button from "../../Button"; // plasmic-import: 3AR6h0473ToW/component
 
 import { useScreenVariants as useScreenVariantst0N9QbVX87V } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: T0n9qbV-X87V/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -80,7 +83,7 @@ import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import
 import plasmic_image_css from "../image/plasmic.module.css"; // plasmic-import: d4FLWyib3U2TEbmJ38D5i3/projectcss
 import plasmic_container_css from "../container/plasmic.module.css"; // plasmic-import: d9PrY1SRs2wAiwFXTkwPXt/projectcss
 import plasmic_switch_css from "../switch/plasmic.module.css"; // plasmic-import: i4n9AbVD4xq7VvHzvrVDh9/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_menu_item_css from "../menu_item/plasmic.module.css"; // plasmic-import: 2ejMdvJDoJWjwd6DCNSCHJ/projectcss
 import plasmic_separator_css from "../separator/plasmic.module.css"; // plasmic-import: mGt6E9beS9xM1LmsApto9L/projectcss
 import plasmic_form_checkbox_css from "../form_checkbox/plasmic.module.css"; // plasmic-import: bEVQSMSYHutfoPgsCgDaki/projectcss
@@ -89,8 +92,9 @@ import plasmic_list_item_css from "../list_item/plasmic.module.css"; // plasmic-
 import projectcss from "./plasmic.module.css"; // plasmic-import: xoA7omHX1aucC3LFX3rgWp/projectcss
 import sty from "./PlasmicValuesSectionValues.module.css"; // plasmic-import: NSHccciyxRK_/css
 
+import FaStarSolidSvgIcon from "../icon/icons/PlasmicIcon__FaStarSolidSvg"; // plasmic-import: AryIHXd_TIRF/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: 1l0k0f8No_g4/icon
-import FaArrowRightsvgIcon from "../icons/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: laMKK4I5P9un/icon
+import FaArrowRightSvgIcon from "../icons/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: laMKK4I5P9un/icon
 
 createPlasmicElementProxy;
 
@@ -111,6 +115,7 @@ export type PlasmicValuesSectionValues__OverridesType = {
   h2?: Flex__<"h2">;
   valuesGroup?: Flex__<"div">;
   valuesRow1?: Flex__<"div">;
+  siteCard?: Flex__<typeof SiteCard>;
   valuesRow2?: Flex__<"div">;
   valuesRow3?: Flex__<"div">;
   button?: Flex__<typeof Button>;
@@ -137,7 +142,16 @@ function PlasmicValuesSectionValues__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -152,7 +166,7 @@ function PlasmicValuesSectionValues__RenderFunc(props: {
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantst0N9QbVX87V(),
     screen: useScreenVariantsohEUf6Jd0EV8(),
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -209,36 +223,34 @@ function PlasmicValuesSectionValues__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.valuesRow1)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__os6Wi)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__eQVvq)}
-                    displayHeight={"24px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"24px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/desktop_starter/images/image8.svg",
-                      fullWidth: 144,
-                      fullHeight: 150,
-                      aspectRatio: 0.96
-                    }}
-                  />
+                <SiteCard
+                  data-plasmic-name={"siteCard"}
+                  data-plasmic-override={overrides.siteCard}
+                  className={classNames("__wab_instance", sty.siteCard)}
+                  usage={"goals"}
+                />
 
-                  <h5
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h5,
-                      projectcss.__wab_text,
-                      sty.h5__ni3Pk
-                    )}
-                  >
-                    {"Newsletters"}
-                  </h5>
-                </div>
+                <ValuesComponentValueItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.valuesComponentValueItem__kyi0B
+                  )}
+                />
+
+                <ValuesComponentValueItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.valuesComponentValueItem__jZo1M
+                  )}
+                />
+
+                <ValuesComponentValueItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.valuesComponentValueItem__c4PQh
+                  )}
+                />
+
                 <div className={classNames(projectcss.all, sty.freeBox__iif0B)}>
                   <PlasmicImg__
                     alt={""}
@@ -605,6 +617,7 @@ const PlasmicDescendants = {
     "h2",
     "valuesGroup",
     "valuesRow1",
+    "siteCard",
     "valuesRow2",
     "valuesRow3",
     "button"
@@ -615,6 +628,7 @@ const PlasmicDescendants = {
     "h2",
     "valuesGroup",
     "valuesRow1",
+    "siteCard",
     "valuesRow2",
     "valuesRow3",
     "button"
@@ -624,6 +638,7 @@ const PlasmicDescendants = {
     "h2",
     "valuesGroup",
     "valuesRow1",
+    "siteCard",
     "valuesRow2",
     "valuesRow3",
     "button"
@@ -632,11 +647,13 @@ const PlasmicDescendants = {
   valuesGroup: [
     "valuesGroup",
     "valuesRow1",
+    "siteCard",
     "valuesRow2",
     "valuesRow3",
     "button"
   ],
-  valuesRow1: ["valuesRow1"],
+  valuesRow1: ["valuesRow1", "siteCard"],
+  siteCard: ["siteCard"],
   valuesRow2: ["valuesRow2"],
   valuesRow3: ["valuesRow3"],
   button: ["button"]
@@ -651,6 +668,7 @@ type NodeDefaultElementType = {
   h2: "h2";
   valuesGroup: "div";
   valuesRow1: "div";
+  siteCard: typeof SiteCard;
   valuesRow2: "div";
   valuesRow3: "div";
   button: typeof Button;
@@ -721,6 +739,7 @@ export const PlasmicValuesSectionValues = Object.assign(
     h2: makeNodeComponent("h2"),
     valuesGroup: makeNodeComponent("valuesGroup"),
     valuesRow1: makeNodeComponent("valuesRow1"),
+    siteCard: makeNodeComponent("siteCard"),
     valuesRow2: makeNodeComponent("valuesRow2"),
     valuesRow3: makeNodeComponent("valuesRow3"),
     button: makeNodeComponent("button"),

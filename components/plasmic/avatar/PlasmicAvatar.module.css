@@ -7,25 +7,21 @@
   width: var(--token-34VqD5weh6FT);
   height: var(--token-EN8jycILR0rv);
 }
-.avatarBasesize_xs {
-  width: var(--token--rczFiQ_4-G1);
-  height: var(--token-cJ95GfJmG8mg);
-}
-.avatarBasesize_sm {
+.avatarBasesize_small {
   width: var(--token-D1WEMJy_pWtE);
   height: var(--token-rRaHyF47oUGE);
 }
-.avatarBasesize_md {
-  width: 32px;
-  height: 32px;
+.avatarBasesize_medium {
+  width: var(--token-34VqD5weh6FT);
+  height: var(--token-34VqD5weh6FT);
 }
-.avatarBasesize_lg {
+.avatarBasesize_large {
   width: var(--token-PKYaBjT8o0sw);
-  height: var(--token-Jy1hyBQYavQt);
+  height: var(--token-PKYaBjT8o0sw);
 }
-.avatarBasesize_xl {
+.avatarBasesize_extraLarge {
   width: var(--token-rKgkjmsiUrEe);
-  height: var(--token-NCkbUAOtxHux);
+  height: var(--token-rKgkjmsiUrEe);
 }
 .avatarStack {
   display: flex;
@@ -41,30 +37,7 @@
   min-height: 0;
   border-radius: var(--token-BNU064Y-OoCh);
   padding: var(--token-9s6mW4XYmApu);
-}
-.avatarStacksize_xs {
-  padding: 2px;
-}
-.avatarStacksize_sm {
-  padding: var(--token-XU8tQ0VyPwji);
-}
-.avatarStacksize_lg {
-  padding: 8px;
-}
-.avatarStacksize_xl {
-  padding: 10px;
-}
-.avatarStackstatus_error {
-  background: var(--token-T6W3QjiHZPmT);
-}
-.avatarStackstatus_warning {
-  background: var(--token-waSSQlUu6lGF);
-}
-.avatarStackstatus_success {
-  background: var(--token-kK57Xp8Z_2zD);
-}
-.avatarStackstatus_information {
-  background: var(--token-jK_bA5atRETt);
+  border: var(--token-JWDihaHZWbr2) solid var(--token-9ZcCNtG8WQEf);
 }
 .avatarStackshape_square {
   border-radius: var(--token-Rrev-4uUCZj-);
@@ -87,7 +60,7 @@
 .avatarStackcolor_teal {
   background: var(--token-5PSeEOaXzzlJ);
 }
-.avatarStackcolor_turquiose {
+.avatarStackcolor_turquoise {
   background: var(--token-T5dc1F60WtrY);
 }
 .avatarStackcolor_aqua {
@@ -104,6 +77,14 @@
 }
 .avatarStackemphasis_minimal {
   background: var(--token-2ps106l912RM);
+}
+.avatarStackborder_dark {
+  border-width: var(--token-yYPCaiwfQXlQ);
+  border-color: var(--token-QGXLvAjvgdaQ);
+}
+.avatarStackborder_light {
+  border-width: var(--token-yYPCaiwfQXlQ);
+  border-color: var(--token-S__6IB854kpc);
 }
 .slotTargetAvatarIconSlot {
   color: var(--token-juSsID-Z5vrP);

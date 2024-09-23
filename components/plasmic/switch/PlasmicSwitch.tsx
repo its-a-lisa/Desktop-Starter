@@ -61,8 +61,7 @@ import {
 
 import * as pp from "@plasmicapp/react-web";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
-import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -78,22 +77,19 @@ export type PlasmicSwitch__VariantMembers = {
   isDisabled: "isDisabled";
   isChecked: "isChecked";
   label: "bottom" | "top" | "reversed";
-  size: "sm" | "md" | "lg";
 };
 export type PlasmicSwitch__VariantsArgs = {
   noLabel?: SingleBooleanChoiceArg<"noLabel">;
   isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
   isChecked?: SingleBooleanChoiceArg<"isChecked">;
   label?: SingleChoiceArg<"bottom" | "top" | "reversed">;
-  size?: SingleChoiceArg<"sm" | "md" | "lg">;
 };
 type VariantPropType = keyof PlasmicSwitch__VariantsArgs;
 export const PlasmicSwitch__VariantProps = new Array<VariantPropType>(
   "noLabel",
   "isDisabled",
   "isChecked",
-  "label",
-  "size"
+  "label"
 );
 
 export type PlasmicSwitch__ArgsType = {
@@ -130,7 +126,6 @@ export interface DefaultSwitchProps extends pp.SwitchProps {
   "aria-labelledby"?: string;
   onChange?: (isChecked: boolean) => void;
   label?: SingleChoiceArg<"bottom" | "top" | "reversed">;
-  size?: SingleChoiceArg<"sm" | "md" | "lg">;
 }
 
 const $$ = {};
@@ -150,7 +145,16 @@ function PlasmicSwitch__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -189,12 +193,6 @@ function PlasmicSwitch__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.label
-      },
-      {
-        path: "size",
-        type: "private",
-        variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.size
       }
     ],
     [$props, $ctx, $refs]
@@ -206,17 +204,8 @@ function PlasmicSwitch__RenderFunc(props: {
     $refs
   });
 
-  const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
-    useTrigger("useFocusVisibleWithin", {
-      isTextInput: false
-    });
-  const triggers = {
-    focusVisibleWithin_root: isRootFocusVisibleWithin
-  };
-
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
-    screen: useScreenVariantsohEUf6Jd0EV8()
+    theme: useTheme()
   });
 
   return (
@@ -237,25 +226,24 @@ function PlasmicSwitch__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
-          [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-          [sty.rootglobal_mode_dark]: hasVariant(
+          [sty.rootglobal_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
           [sty.rootisChecked]: hasVariant($state, "isChecked", "isChecked"),
@@ -263,17 +251,14 @@ function PlasmicSwitch__RenderFunc(props: {
           [sty.rootlabel_bottom]: hasVariant($state, "label", "bottom"),
           [sty.rootlabel_reversed]: hasVariant($state, "label", "reversed"),
           [sty.rootlabel_top]: hasVariant($state, "label", "top"),
-          [sty.rootnoLabel]: hasVariant($state, "noLabel", "noLabel"),
-          [sty.rootsize_lg]: hasVariant($state, "size", "lg")
+          [sty.rootnoLabel]: hasVariant($state, "noLabel", "noLabel")
         }
       )}
-      data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
     >
       <div
         data-plasmic-name={"_switch"}
         data-plasmic-override={overrides._switch}
         className={classNames(projectcss.all, sty._switch, {
-          [sty._switch___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty._switchisChecked]: hasVariant($state, "isChecked", "isChecked"),
           [sty._switchisDisabled]: hasVariant(
             $state,
@@ -281,19 +266,16 @@ function PlasmicSwitch__RenderFunc(props: {
             "isDisabled"
           ),
           [sty._switchlabel_bottom]: hasVariant($state, "label", "bottom"),
-          [sty._switchlabel_top]: hasVariant($state, "label", "top"),
-          [sty._switchsize_lg]: hasVariant($state, "size", "lg"),
-          [sty._switchsize_sm]: hasVariant($state, "size", "sm")
+          [sty._switchlabel_top]: hasVariant($state, "label", "top")
         })}
       >
         <div
           data-plasmic-name={"track"}
           data-plasmic-override={overrides.track}
           className={classNames(projectcss.all, sty.track, {
-            [sty.track___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-            [sty.trackglobal_mode_dark]: hasVariant(
+            [sty.trackglobal_theme_dark]: hasVariant(
               globalVariants,
-              "mode",
+              "theme",
               "dark"
             ),
             [sty.trackisChecked]: hasVariant($state, "isChecked", "isChecked"),
@@ -301,29 +283,23 @@ function PlasmicSwitch__RenderFunc(props: {
               $state,
               "isDisabled",
               "isDisabled"
-            ),
-            [sty.tracksize_lg]: hasVariant($state, "size", "lg"),
-            [sty.tracksize_sm]: hasVariant($state, "size", "sm")
+            )
           })}
         >
           <div
             data-plasmic-name={"handle"}
             data-plasmic-override={overrides.handle}
             className={classNames(projectcss.all, sty.handle, {
-              [sty.handle___focusVisibleWithin]:
-                triggers.focusVisibleWithin_root,
-              [sty.handleglobal_mode_dark]: hasVariant(
+              [sty.handleglobal_theme_dark]: hasVariant(
                 globalVariants,
-                "mode",
+                "theme",
                 "dark"
               ),
               [sty.handleisChecked]: hasVariant(
                 $state,
                 "isChecked",
                 "isChecked"
-              ),
-              [sty.handlesize_lg]: hasVariant($state, "size", "lg"),
-              [sty.handlesize_sm]: hasVariant($state, "size", "sm")
+              )
             })}
           />
         </div>
@@ -369,8 +345,11 @@ function PlasmicSwitch__RenderFunc(props: {
           data-plasmic-name={"labelContainer"}
           data-plasmic-override={overrides.labelContainer}
           className={classNames(projectcss.all, sty.labelContainer, {
-            [sty.labelContainer___focusVisibleWithin]:
-              triggers.focusVisibleWithin_root,
+            [sty.labelContainerisChecked]: hasVariant(
+              $state,
+              "isChecked",
+              "isChecked"
+            ),
             [sty.labelContainerlabel_bottom]: hasVariant(
               $state,
               "label",
@@ -393,11 +372,9 @@ function PlasmicSwitch__RenderFunc(props: {
             defaultContents: "Switch me",
             value: args.children,
             className: classNames(sty.slotTargetChildren, {
-              [sty.slotTargetChildren___focusVisibleWithin]:
-                triggers.focusVisibleWithin_root,
-              [sty.slotTargetChildrenglobal_mode_dark]: hasVariant(
+              [sty.slotTargetChildrenglobal_theme_dark]: hasVariant(
                 globalVariants,
-                "mode",
+                "theme",
                 "dark"
               ),
               [sty.slotTargetChildrenisChecked]: hasVariant(
@@ -414,8 +391,7 @@ function PlasmicSwitch__RenderFunc(props: {
                 $state,
                 "noLabel",
                 "noLabel"
-              ),
-              [sty.slotTargetChildrensize_sm]: hasVariant($state, "size", "sm")
+              )
             })
           })}
         </div>

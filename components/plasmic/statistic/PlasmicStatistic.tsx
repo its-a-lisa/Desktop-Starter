@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -77,9 +77,9 @@ export type PlasmicStatistic__VariantMembers = {
   label: "bottom" | "top" | "left" | "right";
   lineWrap: "lineWrap";
   secondaryStat: "secondaryStat";
-  background: "_default" | "primary" | "secondary" | "tertiary";
+  background: "primary" | "secondary" | "tertiary";
   shape: "square";
-  border: "none";
+  noShadow: "none";
 };
 export type PlasmicStatistic__VariantsArgs = {
   noLabel?: SingleBooleanChoiceArg<"noLabel">;
@@ -87,11 +87,9 @@ export type PlasmicStatistic__VariantsArgs = {
   label?: SingleChoiceArg<"bottom" | "top" | "left" | "right">;
   lineWrap?: SingleBooleanChoiceArg<"lineWrap">;
   secondaryStat?: SingleBooleanChoiceArg<"secondaryStat">;
-  background?: SingleChoiceArg<
-    "_default" | "primary" | "secondary" | "tertiary"
-  >;
+  background?: SingleChoiceArg<"primary" | "secondary" | "tertiary">;
   shape?: SingleChoiceArg<"square">;
-  border?: SingleChoiceArg<"none">;
+  noShadow?: SingleChoiceArg<"none">;
 };
 type VariantPropType = keyof PlasmicStatistic__VariantsArgs;
 export const PlasmicStatistic__VariantProps = new Array<VariantPropType>(
@@ -102,7 +100,7 @@ export const PlasmicStatistic__VariantProps = new Array<VariantPropType>(
   "secondaryStat",
   "background",
   "shape",
-  "border"
+  "noShadow"
 );
 
 export type PlasmicStatistic__ArgsType = {
@@ -133,11 +131,9 @@ export interface DefaultStatisticProps {
   label?: SingleChoiceArg<"bottom" | "top" | "left" | "right">;
   lineWrap?: SingleBooleanChoiceArg<"lineWrap">;
   secondaryStat?: SingleBooleanChoiceArg<"secondaryStat">;
-  background?: SingleChoiceArg<
-    "_default" | "primary" | "secondary" | "tertiary"
-  >;
+  background?: SingleChoiceArg<"primary" | "secondary" | "tertiary">;
   shape?: SingleChoiceArg<"square">;
-  border?: SingleChoiceArg<"none">;
+  noShadow?: SingleChoiceArg<"none">;
   className?: string;
 }
 
@@ -158,7 +154,16 @@ function PlasmicStatistic__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -215,10 +220,10 @@ function PlasmicStatistic__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.shape
       },
       {
-        path: "border",
+        path: "noShadow",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.border
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.noShadow
       }
     ],
     [$props, $ctx, $refs]
@@ -231,7 +236,7 @@ function PlasmicStatistic__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -253,19 +258,19 @@ function PlasmicStatistic__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.rootbackground_primary]: hasVariant(
@@ -283,11 +288,11 @@ function PlasmicStatistic__RenderFunc(props: {
             "background",
             "tertiary"
           ),
-          [sty.rootborder_none]: hasVariant($state, "border", "none"),
           [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
           [sty.rootlabel_left]: hasVariant($state, "label", "left"),
           [sty.rootlabel_right]: hasVariant($state, "label", "right"),
           [sty.rootlabel_top]: hasVariant($state, "label", "top"),
+          [sty.rootnoShadow_none]: hasVariant($state, "noShadow", "none"),
           [sty.rootshape_square]: hasVariant($state, "shape", "square")
         }
       )}

@@ -46,20 +46,20 @@
   border: 1px solid var(--token-kT6GbYmF-VnR);
 }
 .root:hover {
-  background: var(--token-R8oCj9E8pCf9);
-  border-color: var(--token-Jlc3Svg4n4cj);
+  background: var(--token-VXSCWTH2B8KY);
+  border-color: var(--token-kT6GbYmF-VnR);
 }
 .root:focus-within {
   box-shadow: 0px 0px 0px 3px var(--token-_dJRdGmN0sUn);
   background: var(--token-VXSCWTH2B8KY);
   outline: none;
-  border-color: var(--token-UOeG9l7smYT_);
+  border-color: var(--token-LV3nUgwcBBaK);
 }
 .root___focusVisibleWithin {
   box-shadow: 0px 0px 0px 3px var(--token-_dJRdGmN0sUn);
   background: var(--token-VXSCWTH2B8KY);
   outline: none;
-  border-color: var(--token-UOeG9l7smYT_);
+  border-color: var(--token-LV3nUgwcBBaK);
 }
 .startIconContainer {
   position: relative;

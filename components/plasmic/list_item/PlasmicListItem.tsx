@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,7 +68,7 @@ import plasmic_semantic_css from "../semantic/plasmic.module.css"; // plasmic-im
 import projectcss from "./plasmic.module.css"; // plasmic-import: fKizj5juSSuZK31zh3BBJE/projectcss
 import sty from "./PlasmicListItem.module.css"; // plasmic-import: HmsKVTz2YTwg/css
 
-import FaSolidCirclesvgIcon from "./icons/PlasmicIcon__FaSolidCirclesvg"; // plasmic-import: zSKd3jb3cXsa/icon
+import FaSolidCircleSvgIcon from "./icons/PlasmicIcon__FaSolidCircleSvg"; // plasmic-import: zSKd3jb3cXsa/icon
 
 createPlasmicElementProxy;
 
@@ -210,7 +210,16 @@ function PlasmicListItem__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -284,7 +293,7 @@ function PlasmicListItem__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -303,19 +312,19 @@ function PlasmicListItem__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.listItemBase,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           )
         }
@@ -373,7 +382,7 @@ function PlasmicListItem__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <FaSolidCirclesvgIcon
+              <FaSolidCircleSvgIcon
                 className={classNames(projectcss.all, sty.svg__yx5Fl)}
                 role={"img"}
               />

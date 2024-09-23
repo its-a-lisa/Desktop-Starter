@@ -20,16 +20,16 @@
 .rootisDisabled {
   opacity: 0.5;
 }
-.rootsize_s > :global(.__wab_flex-container) {
+.rootsize_small > :global(.__wab_flex-container) {
   margin-left: calc(0px - var(--token-G31nwzkRcsWo));
   width: calc(100% + var(--token-G31nwzkRcsWo));
   margin-top: calc(0px - 0px);
   height: calc(100% + 0px);
 }
-.rootsize_s > :global(.__wab_flex-container) > *,
-.rootsize_s > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.rootsize_s > :global(.__wab_flex-container) > picture > img,
-.rootsize_s
+.rootsize_small > :global(.__wab_flex-container) > *,
+.rootsize_small > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.rootsize_small > :global(.__wab_flex-container) > picture > img,
+.rootsize_small
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
@@ -88,24 +88,24 @@
   height: var(--token-_df_f2ThPR9A);
   flex-shrink: 0;
 }
-.svgisChecked {
-  color: var(--token-CimO4yHNDxn1);
-}
-.svgisIndeterminate {
-  color: var(--token-eY1ghBAUSY0p);
-}
-.svgsize_s {
+.svgsize_small {
   width: var(--token-j-3jXtj79lx5);
   height: var(--token-nrB6DisPBcPt);
   flex-shrink: 0;
 }
-.svgsize_lg {
+.svgsize_large {
   width: var(--token-QrOrwOMT5zd-);
   height: var(--token-Wo_Dds1PoBay);
   flex-shrink: 0;
 }
+.svgisChecked {
+  color: var(--token-rvWmu0I03Axy);
+}
+.svgisIndeterminate {
+  color: var(--token-rvWmu0I03Axy);
+}
 .root:hover .svg {
-  color: var(--token-peB_HECUu_YM);
+  color: var(--token-g79RI1c1r_j7);
 }
 .rootisDisabled:hover .svgisDisabled {
   color: #dbdbd7;
@@ -114,14 +114,14 @@
   color: #0081f1;
 }
 .rootisIndeterminate:hover .svgisIndeterminate {
-  color: var(--token-3uKlQwetq5nB);
+  color: var(--token-rvWmu0I03Axy);
 }
 .root:focus-within .svg {
-  color: var(--token-Hs9_OfClPdOY);
+  color: var(--token-g79RI1c1r_j7);
   outline: none;
 }
 .root .svg___focusVisibleWithin {
-  color: var(--token-Hs9_OfClPdOY);
+  color: var(--token-g79RI1c1r_j7);
   outline: none;
 }
 .labelContainer {
@@ -140,6 +140,7 @@
 .slotTargetChildren {
   white-space: pre;
   color: var(--token-d__FDKjeQ83e);
+  font-size: var(--token-F1F1zMGeBEbL);
 }
 .slotTargetChildren > :global(.__wab_text),
 .slotTargetChildren > :global(.__wab_expr_html_text),
@@ -201,7 +202,7 @@
   > img {
   overflow: hidden;
 }
-.slotTargetChildrensize_s {
+.slotTargetChildrensize_small {
   font-size: var(--token-60q15gbK5t2P);
 }
 .root:focus-within .slotTargetChildren {

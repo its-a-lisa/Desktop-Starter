@@ -65,7 +65,7 @@ import Button from "../../Button"; // plasmic-import: 3AR6h0473ToW/component
 
 import { useScreenVariants as useScreenVariantst0N9QbVX87V } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: T0n9qbV-X87V/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -81,7 +81,7 @@ import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import
 import plasmic_image_css from "../image/plasmic.module.css"; // plasmic-import: d4FLWyib3U2TEbmJ38D5i3/projectcss
 import plasmic_container_css from "../container/plasmic.module.css"; // plasmic-import: d9PrY1SRs2wAiwFXTkwPXt/projectcss
 import plasmic_switch_css from "../switch/plasmic.module.css"; // plasmic-import: i4n9AbVD4xq7VvHzvrVDh9/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_menu_item_css from "../menu_item/plasmic.module.css"; // plasmic-import: 2ejMdvJDoJWjwd6DCNSCHJ/projectcss
 import plasmic_separator_css from "../separator/plasmic.module.css"; // plasmic-import: mGt6E9beS9xM1LmsApto9L/projectcss
 import plasmic_form_checkbox_css from "../form_checkbox/plasmic.module.css"; // plasmic-import: bEVQSMSYHutfoPgsCgDaki/projectcss
@@ -93,7 +93,7 @@ import sty from "./PlasmicCallToActionSectionCallToAction.module.css"; // plasmi
 import Icon3Icon from "./icons/PlasmicIcon__Icon3"; // plasmic-import: ncbGhhPH29HJ/icon
 import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: ra_xVl5-KB_J/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: 1l0k0f8No_g4/icon
-import FaArrowRightsvgIcon from "../icons/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: laMKK4I5P9un/icon
+import FaArrowRightSvgIcon from "../icons/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: laMKK4I5P9un/icon
 
 createPlasmicElementProxy;
 
@@ -141,7 +141,16 @@ function PlasmicCallToActionSectionCallToAction__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -174,7 +183,7 @@ function PlasmicCallToActionSectionCallToAction__RenderFunc(props: {
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantst0N9QbVX87V(),
     screen: useScreenVariantsohEUf6Jd0EV8(),
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (

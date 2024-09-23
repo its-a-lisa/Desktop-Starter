@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -76,7 +76,7 @@ export type PlasmicSeparator__VariantMembers = {
   emphasis:
     | "extraSubtle"
     | "subtle"
-    | "_default"
+    | "normal"
     | "emphasis"
     | "extraEmphasis"
     | "low"
@@ -88,7 +88,7 @@ export type PlasmicSeparator__VariantsArgs = {
   emphasis?: SingleChoiceArg<
     | "extraSubtle"
     | "subtle"
-    | "_default"
+    | "normal"
     | "emphasis"
     | "extraEmphasis"
     | "low"
@@ -116,7 +116,7 @@ export interface DefaultSeparatorProps {
   emphasis?: SingleChoiceArg<
     | "extraSubtle"
     | "subtle"
-    | "_default"
+    | "normal"
     | "emphasis"
     | "extraEmphasis"
     | "low"
@@ -142,7 +142,16 @@ function PlasmicSeparator__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -186,7 +195,7 @@ function PlasmicSeparator__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -205,19 +214,19 @@ function PlasmicSeparator__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.rootlength__75]: hasVariant($state, "length", "_75"),
@@ -246,11 +255,6 @@ function PlasmicSeparator__RenderFunc(props: {
       >
         <div
           className={classNames(projectcss.all, sty.freeBox___5W5Ms, {
-            [sty.freeBoxemphasis__default___5W5MsXe4Iq]: hasVariant(
-              $state,
-              "emphasis",
-              "_default"
-            ),
             [sty.freeBoxemphasis_emphasis___5W5MsjtyFs]: hasVariant(
               $state,
               "emphasis",
@@ -275,6 +279,11 @@ function PlasmicSeparator__RenderFunc(props: {
               $state,
               "emphasis",
               "low"
+            ),
+            [sty.freeBoxemphasis_normal___5W5MsXe4Iq]: hasVariant(
+              $state,
+              "emphasis",
+              "normal"
             ),
             [sty.freeBoxemphasis_subtle___5W5MsIuXob]: hasVariant(
               $state,

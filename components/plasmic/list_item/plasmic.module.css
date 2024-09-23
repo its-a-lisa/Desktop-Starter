@@ -2,37 +2,47 @@
 
 .plasmic_tokens {
   --token-O53E_jb-QUZX: var(--token-pk_1Z9QFM4r7);
-  --plasmic-token-list-item-type-color-normal: var(--token-O53E_jb-QUZX);
+  --plasmic-token-list-item-color-type-color-list-item-type-color-normal: var(
+    --token-O53E_jb-QUZX
+  );
   --token-PHoGWTylrCoI: var(--token-Lg_D8lDOPdk9);
-  --plasmic-token-list-item-type-color-emphasis-color: var(
+  --plasmic-token-list-item-color-type-color-list-item-type-color-emphasis: var(
     --token-PHoGWTylrCoI
   );
   --token-1SmRtVTDsNVw: var(--token-kIiIOw_bUl8D);
-  --plasmic-token-list-item-type-color-helper-color: var(--token-1SmRtVTDsNVw);
+  --plasmic-token-list-item-color-type-color-list-item-type-color-helper: var(
+    --token-1SmRtVTDsNVw
+  );
   --token-PG8WAxTqPz54: var(--token-lWEO2ZudSDrD);
-  --plasmic-token-list-item-type-color-on-color: var(--token-PG8WAxTqPz54);
+  --plasmic-token-list-item-color-type-color-list-item-type-color-on-color: var(
+    --token-PG8WAxTqPz54
+  );
   --token-ppbhxHltzhGx: var(--token-Bus8cwXd8WG7);
-  --plasmic-token-list-item-type-color-disabled-color: var(
+  --plasmic-token-list-item-color-type-color-status-list-item-type-color-standard-bold: var(
     --token-ppbhxHltzhGx
   );
   --token-aH3l6vC1IyzV: var(--token-IY7haS73fBUX);
-  --plasmic-token-list-item-type-color-error-color: var(--token-aH3l6vC1IyzV);
+  --plasmic-token-list-item-color-type-color-status-list-item-type-color-error-bold: var(
+    --token-aH3l6vC1IyzV
+  );
   --token-D-80lT67DWRW: var(--token-pmmltM-TYoqS);
-  --plasmic-token-list-item-type-color-information-color: var(
+  --plasmic-token-list-item-color-type-color-status-list-item-type-color-info-bold: var(
     --token-D-80lT67DWRW
   );
   --token-PWRdsR-Q8dRb: var(--token-aob4eJ7jGN8F);
-  --plasmic-token-list-item-type-color-success-color: var(--token-PWRdsR-Q8dRb);
+  --plasmic-token-list-item-color-type-color-status-list-item-type-color-success-bold: var(
+    --token-PWRdsR-Q8dRb
+  );
   --token-seWgtLYrUU-b: var(--token-1nsZ9eFjcPqQ);
-  --plasmic-token-list-item-type-color-brand-main-color: var(
+  --plasmic-token-list-item-color-type-color-brand-icon-main-bold: var(
     --token-seWgtLYrUU-b
   );
   --token-DfvFp5qPxply: var(--token-ELMZ4I9cKBM1);
-  --plasmic-token-list-item-type-color-brand-ancillary-color: var(
+  --plasmic-token-list-item-color-type-color-brand-icon-ancillary-bold: var(
     --token-DfvFp5qPxply
   );
   --token-NQZ6D_zhLpkW: var(--token-jUnX-jMNff6B);
-  --plasmic-token-list-item-type-color-brand-standard-color: var(
+  --plasmic-token-list-item-color-type-color-brand-icon-standard-bold: var(
     --token-NQZ6D_zhLpkW
   );
   --token-7Bwb1hsDZr-S: var(--token-KaPc7LWHkyvB);
@@ -54,33 +64,49 @@
   --token-qSXoXx_-unk6: var(--token-7Q6Tq4DaBVj1);
   --plasmic-token-list-item-icon-gap-lg: var(--token-qSXoXx_-unk6);
   --token-C8h5icYh1Xei: var(--token-xZ2klggI5XbJ);
-  --plasmic-token-list-item-icon-brand-main-color: var(--token-C8h5icYh1Xei);
+  --plasmic-token-list-item-color-icon-brand-list-item-icon-main-bold: var(
+    --token-C8h5icYh1Xei
+  );
   --token-TBNqbCk3Qhnb: var(--token-lwNU-2BKlR7L);
-  --plasmic-token-list-item-icon-brand-ancillary-color: var(
+  --plasmic-token-list-item-color-icon-brand-list-item-icon-ancillary-bold: var(
     --token-TBNqbCk3Qhnb
   );
   --token-IuV20ntkZaLU: var(--token-pk_1Z9QFM4r7);
-  --plasmic-token-list-item-icon-normal: var(--token-IuV20ntkZaLU);
+  --plasmic-token-list-item-color-icon-list-item-icon-normal: var(
+    --token-IuV20ntkZaLU
+  );
   --token-ovZBY3_eKjRp: var(--token-BTFaSVySz1Rz);
-  --plasmic-token-list-item-icon-brand-standard-color: var(
+  --plasmic-token-list-item-color-icon-brand-list-item-icon-standard-bold: var(
     --token-ovZBY3_eKjRp
   );
-  --token-dBZI0c2YHXqD: var(--token-UryOpF4cmLPA);
-  --plasmic-token-list-item-icon-information-color: var(--token-dBZI0c2YHXqD);
-  --token-PZcjMz7R1jZK: var(--token-sKSyOc4fIH5Q);
-  --plasmic-token-list-item-icon-success-color: var(--token-PZcjMz7R1jZK);
+  --token-dBZI0c2YHXqD: var(--token-7Wv_o_9TKNVj);
+  --plasmic-token-list-item-color-icon-status-list-item-icon-info-bold: var(
+    --token-dBZI0c2YHXqD
+  );
+  --token-PZcjMz7R1jZK: #077d55;
+  --plasmic-token-list-item-color-icon-status-list-item-icon-success-bold: var(
+    --token-PZcjMz7R1jZK
+  );
   --token-MTqIwtLSZ8Sz: var(--token-dxvNs_t726zZ);
-  --plasmic-token-list-item-icon-error-color: var(--token-MTqIwtLSZ8Sz);
+  --plasmic-token-list-item-color-icon-status-list-item-icon-error-bold: var(
+    --token-MTqIwtLSZ8Sz
+  );
   --token-pLxA2L1F3iwC: var(--token-Bus8cwXd8WG7);
-  --plasmic-token-list-item-icon-disabled-color: var(--token-pLxA2L1F3iwC);
+  --plasmic-token-list-item-color-icon-status-list-item-icon-disabled-bold: var(
+    --token-pLxA2L1F3iwC
+  );
   --token-llmgt3zj4B68: var(--token-PG8WAxTqPz54);
-  --plasmic-token-list-item-icon-on-color: var(--token-llmgt3zj4B68);
+  --plasmic-token-list-item-color-icon-list-item-icon-on-color: var(
+    --token-llmgt3zj4B68
+  );
   --token-GO1UTCayvGBp: var(--token-7Q6Tq4DaBVj1);
   --plasmic-token-list-group-gap-md: var(--token-GO1UTCayvGBp);
   --token-hqWQKpN6ciEf: var(--token-6cXnwEcO9xuu);
-  --plasmic-token-list-item-icon-brand-accent-color: var(--token-hqWQKpN6ciEf);
+  --plasmic-token-list-item-color-icon-brand-list-item-icon-accent-bold: var(
+    --token-hqWQKpN6ciEf
+  );
   --token-IwvE8qKVk1ND: var(--token-18ML8UJB4uG-);
-  --plasmic-token-list-item-type-color-brand-accent-color: var(
+  --plasmic-token-list-item-color-type-color-brand-icon-accent-bold: var(
     --token-IwvE8qKVk1ND
   );
 }

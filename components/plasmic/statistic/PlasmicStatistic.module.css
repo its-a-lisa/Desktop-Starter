@@ -4,9 +4,9 @@
   position: relative;
   width: auto;
   height: auto;
-  box-shadow: 0px 0px 4px 0px #0000001a;
+  box-shadow: 0px 0px 4px 0px var(--token-vxrxICSW8ZXr);
   justify-self: flex-start;
-  border-radius: 4px;
+  border-radius: var(--token-h8ukHsHil0uu);
 }
 .root > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -96,9 +96,9 @@
   background: var(--token-WG2PahCBYN1Q);
 }
 .rootshape_square {
-  border-radius: 0px;
+  border-radius: var(--token-KngMwja7ZDq-);
 }
-.rootborder_none {
+.rootnoShadow_none {
   box-shadow: none;
 }
 .primaryNumberStack {
@@ -110,21 +110,21 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  padding: 0px;
 }
 .primaryNumberStacksecondaryStat {
   display: none;
 }
 .slotTargetPrimaryNumber {
-  font-size: 24px;
+  color: var(--token-3BlpGLsmRTtS);
+  font-size: var(--token-6JZyrol5JUqh);
+  text-align: center;
 }
 .text__yWe9B {
   position: relative;
   width: auto;
   height: auto;
   max-width: 100%;
-  text-align: center;
-  color: var(--token-KI60Bzx8eQks);
+  color: var(--token-3BlpGLsmRTtS);
 }
 .secondaryNumberStack {
   position: relative;
@@ -135,13 +135,13 @@
   height: auto;
   max-width: 100%;
   display: none;
-  padding: 0px;
 }
 .secondaryNumberStacksecondaryStat {
   display: flex;
 }
 .slotTargetSecondaryNumber {
-  font-size: 24px;
+  font-size: var(--token-6JZyrol5JUqh);
+  color: var(--token-3BlpGLsmRTtS);
   text-align: center;
 }
 .text__wSW0 {
@@ -149,8 +149,6 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  color: var(--token-BLNLShLHF_8Q);
-  font-size: var(--token-CFFEqlmqKUYW);
 }
 .labelStack {
   display: flex;
@@ -162,14 +160,15 @@
   height: auto;
   max-width: 100%;
   opacity: 0.7;
-  padding: 0px;
 }
 .labelStacknoLabel {
   display: none;
 }
 .slotTargetStatLabel {
-  text-align: center;
   white-space: pre;
+  text-align: center;
+  color: var(--token-KI60Bzx8eQks);
+  font-size: var(--token-khTUN2Z4EhFt);
 }
 .slotTargetStatLabel > *,
 .slotTargetStatLabel > :global(.__wab_slot) > *,
@@ -206,4 +205,5 @@
   height: auto;
   max-width: 100%;
   color: var(--token-KI60Bzx8eQks);
+  font-size: var(--token-khTUN2Z4EhFt);
 }

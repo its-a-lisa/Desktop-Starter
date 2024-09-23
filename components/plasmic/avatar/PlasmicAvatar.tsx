@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,61 +68,57 @@ import plasmic_core_css from "../core/plasmic.module.css"; // plasmic-import: 3B
 import projectcss from "./plasmic.module.css"; // plasmic-import: wjwfXMtbnYisAPU4bK5cC5/projectcss
 import sty from "./PlasmicAvatar.module.css"; // plasmic-import: Lfk_eMQEaUtt/css
 
-import FaUsersvgIcon from "./icons/PlasmicIcon__FaUsersvg"; // plasmic-import: bYFO2lGp6qKL/icon
+import FaUserSvgIcon from "./icons/PlasmicIcon__FaUserSvg"; // plasmic-import: bYFO2lGp6qKL/icon
 
 createPlasmicElementProxy;
 
 export type PlasmicAvatar__VariantMembers = {
-  size: "xs" | "sm" | "md" | "lg" | "xl";
+  size: "small" | "medium" | "large" | "extraLarge";
   type: "icon" | "image" | "text";
-  status: "none" | "error" | "warning" | "success" | "information";
   shape: "circle" | "square";
   color:
-    | "none"
     | "red"
     | "yellow"
     | "green"
     | "blue"
     | "lime"
     | "teal"
-    | "turquiose"
+    | "turquoise"
     | "aqua"
     | "indigo"
     | "pink"
     | "purple";
   emphasis: "minimal" | "bold";
+  border: "dark" | "light";
 };
 export type PlasmicAvatar__VariantsArgs = {
-  size?: SingleChoiceArg<"xs" | "sm" | "md" | "lg" | "xl">;
+  size?: SingleChoiceArg<"small" | "medium" | "large" | "extraLarge">;
   type?: SingleChoiceArg<"icon" | "image" | "text">;
-  status?: SingleChoiceArg<
-    "none" | "error" | "warning" | "success" | "information"
-  >;
   shape?: SingleChoiceArg<"circle" | "square">;
   color?: SingleChoiceArg<
-    | "none"
     | "red"
     | "yellow"
     | "green"
     | "blue"
     | "lime"
     | "teal"
-    | "turquiose"
+    | "turquoise"
     | "aqua"
     | "indigo"
     | "pink"
     | "purple"
   >;
   emphasis?: SingleChoiceArg<"minimal" | "bold">;
+  border?: SingleChoiceArg<"dark" | "light">;
 };
 type VariantPropType = keyof PlasmicAvatar__VariantsArgs;
 export const PlasmicAvatar__VariantProps = new Array<VariantPropType>(
   "size",
   "type",
-  "status",
   "shape",
   "color",
-  "emphasis"
+  "emphasis",
+  "border"
 );
 
 export type PlasmicAvatar__ArgsType = {
@@ -146,27 +142,24 @@ export interface DefaultAvatarProps {
   avatarIconSlot?: React.ReactNode;
   avatarImageSlot?: React.ReactNode;
   avatarInitialsSlot?: React.ReactNode;
-  size?: SingleChoiceArg<"xs" | "sm" | "md" | "lg" | "xl">;
+  size?: SingleChoiceArg<"small" | "medium" | "large" | "extraLarge">;
   type?: SingleChoiceArg<"icon" | "image" | "text">;
-  status?: SingleChoiceArg<
-    "none" | "error" | "warning" | "success" | "information"
-  >;
   shape?: SingleChoiceArg<"circle" | "square">;
   color?: SingleChoiceArg<
-    | "none"
     | "red"
     | "yellow"
     | "green"
     | "blue"
     | "lime"
     | "teal"
-    | "turquiose"
+    | "turquoise"
     | "aqua"
     | "indigo"
     | "pink"
     | "purple"
   >;
   emphasis?: SingleChoiceArg<"minimal" | "bold">;
+  border?: SingleChoiceArg<"dark" | "light">;
   className?: string;
 }
 
@@ -187,7 +180,16 @@ function PlasmicAvatar__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -214,12 +216,6 @@ function PlasmicAvatar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.type
       },
       {
-        path: "status",
-        type: "private",
-        variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.status
-      },
-      {
         path: "shape",
         type: "private",
         variableType: "variant",
@@ -236,6 +232,12 @@ function PlasmicAvatar__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.emphasis
+      },
+      {
+        path: "border",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.border
       }
     ],
     [$props, $ctx, $refs]
@@ -248,7 +250,7 @@ function PlasmicAvatar__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -267,44 +269,32 @@ function PlasmicAvatar__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.avatarBase,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
-          [sty.avatarBasecolor_none]: hasVariant($state, "color", "none"),
+          [sty.avatarBaseborder_dark]: hasVariant($state, "border", "dark"),
           [sty.avatarBasecolor_purple]: hasVariant($state, "color", "purple"),
           [sty.avatarBasecolor_red]: hasVariant($state, "color", "red"),
-          [sty.avatarBasesize_lg]: hasVariant($state, "size", "lg"),
-          [sty.avatarBasesize_md]: hasVariant($state, "size", "md"),
-          [sty.avatarBasesize_sm]: hasVariant($state, "size", "sm"),
-          [sty.avatarBasesize_xl]: hasVariant($state, "size", "xl"),
-          [sty.avatarBasesize_xs]: hasVariant($state, "size", "xs"),
-          [sty.avatarBasestatus_information]: hasVariant(
+          [sty.avatarBasesize_extraLarge]: hasVariant(
             $state,
-            "status",
-            "information"
+            "size",
+            "extraLarge"
           ),
-          [sty.avatarBasestatus_success]: hasVariant(
-            $state,
-            "status",
-            "success"
-          ),
-          [sty.avatarBasestatus_warning]: hasVariant(
-            $state,
-            "status",
-            "warning"
-          ),
+          [sty.avatarBasesize_large]: hasVariant($state, "size", "large"),
+          [sty.avatarBasesize_medium]: hasVariant($state, "size", "medium"),
+          [sty.avatarBasesize_small]: hasVariant($state, "size", "small"),
           [sty.avatarBasetype_icon]: hasVariant($state, "type", "icon"),
           [sty.avatarBasetype_image]: hasVariant($state, "type", "image"),
           [sty.avatarBasetype_text]: hasVariant($state, "type", "text")
@@ -315,20 +305,21 @@ function PlasmicAvatar__RenderFunc(props: {
         data-plasmic-name={"avatarStack"}
         data-plasmic-override={overrides.avatarStack}
         className={classNames(projectcss.all, sty.avatarStack, {
+          [sty.avatarStackborder_dark]: hasVariant($state, "border", "dark"),
+          [sty.avatarStackborder_light]: hasVariant($state, "border", "light"),
           [sty.avatarStackcolor_aqua]: hasVariant($state, "color", "aqua"),
           [sty.avatarStackcolor_blue]: hasVariant($state, "color", "blue"),
           [sty.avatarStackcolor_green]: hasVariant($state, "color", "green"),
           [sty.avatarStackcolor_indigo]: hasVariant($state, "color", "indigo"),
           [sty.avatarStackcolor_lime]: hasVariant($state, "color", "lime"),
-          [sty.avatarStackcolor_none]: hasVariant($state, "color", "none"),
           [sty.avatarStackcolor_pink]: hasVariant($state, "color", "pink"),
           [sty.avatarStackcolor_purple]: hasVariant($state, "color", "purple"),
           [sty.avatarStackcolor_red]: hasVariant($state, "color", "red"),
           [sty.avatarStackcolor_teal]: hasVariant($state, "color", "teal"),
-          [sty.avatarStackcolor_turquiose]: hasVariant(
+          [sty.avatarStackcolor_turquoise]: hasVariant(
             $state,
             "color",
-            "turquiose"
+            "turquoise"
           ),
           [sty.avatarStackcolor_yellow]: hasVariant($state, "color", "yellow"),
           [sty.avatarStackemphasis_minimal]: hasVariant(
@@ -337,27 +328,14 @@ function PlasmicAvatar__RenderFunc(props: {
             "minimal"
           ),
           [sty.avatarStackshape_square]: hasVariant($state, "shape", "square"),
-          [sty.avatarStacksize_lg]: hasVariant($state, "size", "lg"),
-          [sty.avatarStacksize_md]: hasVariant($state, "size", "md"),
-          [sty.avatarStacksize_sm]: hasVariant($state, "size", "sm"),
-          [sty.avatarStacksize_xl]: hasVariant($state, "size", "xl"),
-          [sty.avatarStacksize_xs]: hasVariant($state, "size", "xs"),
-          [sty.avatarStackstatus_error]: hasVariant($state, "status", "error"),
-          [sty.avatarStackstatus_information]: hasVariant(
+          [sty.avatarStacksize_extraLarge]: hasVariant(
             $state,
-            "status",
-            "information"
+            "size",
+            "extraLarge"
           ),
-          [sty.avatarStackstatus_success]: hasVariant(
-            $state,
-            "status",
-            "success"
-          ),
-          [sty.avatarStackstatus_warning]: hasVariant(
-            $state,
-            "status",
-            "warning"
-          )
+          [sty.avatarStacksize_large]: hasVariant($state, "size", "large"),
+          [sty.avatarStacksize_medium]: hasVariant($state, "size", "medium"),
+          [sty.avatarStacksize_small]: hasVariant($state, "size", "small")
         })}
       >
         {(
@@ -369,7 +347,7 @@ function PlasmicAvatar__RenderFunc(props: {
         )
           ? renderPlasmicSlot({
               defaultContents: (
-                <FaUsersvgIcon
+                <FaUserSvgIcon
                   className={classNames(projectcss.all, sty.svg__bze7A)}
                   role={"img"}
                 />
@@ -386,11 +364,6 @@ function PlasmicAvatar__RenderFunc(props: {
                   $state,
                   "emphasis",
                   "minimal"
-                ),
-                [sty.slotTargetAvatarIconSlotsize_xs]: hasVariant(
-                  $state,
-                  "size",
-                  "xs"
                 ),
                 [sty.slotTargetAvatarIconSlottype_image]: hasVariant(
                   $state,

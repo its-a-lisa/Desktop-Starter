@@ -47,8 +47,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "dNqcW7FYVqnkjtbdVGjyS8",
@@ -76,8 +75,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "4JFyEcvXaxQ6TZ3SJQYzp6",
@@ -104,13 +102,13 @@
       "icons": [
         {
           "id": "L4y0LCanLhk0",
-          "name": "FaChecksvgIcon",
-          "moduleFilePath": "plasmic/button/icons/PlasmicIcon__FaChecksvg.tsx"
+          "name": "FaCheckSvgIcon",
+          "moduleFilePath": "plasmic/button/icons/PlasmicIcon__FaCheckSvg.tsx"
         },
         {
           "id": "vqTI491KdiJ9",
-          "name": "FaArrowRightsvgIcon",
-          "moduleFilePath": "plasmic/button/icons/PlasmicIcon__FaArrowRightsvg.tsx"
+          "name": "FaArrowRightSvgIcon",
+          "moduleFilePath": "plasmic/button/icons/PlasmicIcon__FaArrowRightSvg.tsx"
         }
       ],
       "images": [],
@@ -131,13 +129,12 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "6PoNur73nfoJqbzNtkNpAX",
       "projectApiToken": "KdopO8m0meKgqwyoiPWlrkQ6iPjPuiDjQH8TbHywAMeyh8kvya7j3vKlCte3iejCXjESTQKuMFt20Ifj3gwg",
-      "projectName": "Badge",
+      "projectName": "Label",
       "version": ">0.0.0",
       "cssFilePath": "plasmic/badge/plasmic.module.css",
       "components": [
@@ -174,8 +171,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "wjwfXMtbnYisAPU4bK5cC5",
@@ -201,8 +197,8 @@
       "icons": [
         {
           "id": "bYFO2lGp6qKL",
-          "name": "FaUsersvgIcon",
-          "moduleFilePath": "plasmic/avatar/icons/PlasmicIcon__FaUsersvg.tsx"
+          "name": "FaUserSvgIcon",
+          "moduleFilePath": "plasmic/avatar/icons/PlasmicIcon__FaUserSvg.tsx"
         }
       ],
       "images": [],
@@ -223,8 +219,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "nVTL6BvP7Knk1RSNkBbJCm",
@@ -263,38 +258,38 @@
       "icons": [
         {
           "id": "AryIHXd_TIRF",
-          "name": "FaStarSolidsvgIcon",
-          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaStarSolidsvg.tsx"
+          "name": "FaStarSolidSvgIcon",
+          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaStarSolidSvg.tsx"
         },
         {
           "id": "q9GoLH3R9G15",
-          "name": "FaExpandsvgIcon",
-          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaExpandsvg.tsx"
+          "name": "FaExpandSvgIcon",
+          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaExpandSvg.tsx"
         },
         {
           "id": "hFVluwV25wZJ",
-          "name": "FaPencilAltsvgIcon",
-          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaPencilAltsvg.tsx"
+          "name": "FaPencilAltSvgIcon",
+          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaPencilAltSvg.tsx"
         },
         {
           "id": "vz7Hh9XIGz3N",
-          "name": "PfIconSavesvgIcon",
-          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__PfIconSavesvg.tsx"
+          "name": "PfIconSaveSvgIcon",
+          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__PfIconSaveSvg.tsx"
         },
         {
           "id": "lyrwhGb6_6s8",
-          "name": "FaTimessvgIcon",
-          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaTimessvg.tsx"
+          "name": "FaTimesSvgIcon",
+          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaTimesSvg.tsx"
         },
         {
           "id": "Z-C9oYi3JF4t",
-          "name": "FaMinussvgIcon",
-          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaMinussvg.tsx"
+          "name": "FaMinusSvgIcon",
+          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__FaMinusSvg.tsx"
         },
         {
           "id": "dGGJK1SZU_8q",
-          "name": "PeArrowLeftsvgIcon",
-          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__PeArrowLeftsvg.tsx"
+          "name": "PeArrowLeftSvgIcon",
+          "moduleFilePath": "plasmic/icon/icons/PlasmicIcon__PeArrowLeftSvg.tsx"
         }
       ],
       "images": [],
@@ -315,8 +310,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "d4FLWyib3U2TEbmJ38D5i3",
@@ -358,8 +352,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "mGt6E9beS9xM1LmsApto9L",
@@ -401,8 +394,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "d9PrY1SRs2wAiwFXTkwPXt",
@@ -441,58 +433,58 @@
       "icons": [
         {
           "id": "esOtS9SxqOZA",
-          "name": "WavyMotionTopsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyMotionTopsvg.tsx"
+          "name": "WavyMotionTopSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyMotionTopSvg.tsx"
         },
         {
           "id": "jpsysP_dRP6W",
-          "name": "WavyMotionBottomsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyMotionBottomsvg.tsx"
+          "name": "WavyMotionBottomSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyMotionBottomSvg.tsx"
         },
         {
           "id": "qgBkwveFBCDN",
-          "name": "WavyLoopsTopsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyLoopsTopsvg.tsx"
+          "name": "WavyLoopsTopSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyLoopsTopSvg.tsx"
         },
         {
           "id": "gBdMY2f7QRlK",
-          "name": "WavyLoopsBottomsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyLoopsBottomsvg.tsx"
+          "name": "WavyLoopsBottomSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyLoopsBottomSvg.tsx"
         },
         {
           "id": "vweIwICuyq3b",
-          "name": "WavyDashedTopsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyDashedTopsvg.tsx"
+          "name": "WavyDashedTopSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyDashedTopSvg.tsx"
         },
         {
           "id": "bcwLwvT543Ci",
-          "name": "WavyDashedBottomsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyDashedBottomsvg.tsx"
+          "name": "WavyDashedBottomSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__WavyDashedBottomSvg.tsx"
         },
         {
           "id": "9fHxOYJ5nM3f",
-          "name": "TriTriangleTopsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__TriTriangleTopsvg.tsx"
+          "name": "TriTriangleTopSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__TriTriangleTopSvg.tsx"
         },
         {
           "id": "URA9I28M0ACM",
-          "name": "TriTriangleBottomsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__TriTriangleBottomsvg.tsx"
+          "name": "TriTriangleBottomSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__TriTriangleBottomSvg.tsx"
         },
         {
           "id": "Aod56OttLUDs",
-          "name": "TriangleUnevenTopsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__TriangleUnevenTopsvg.tsx"
+          "name": "TriangleUnevenTopSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__TriangleUnevenTopSvg.tsx"
         },
         {
           "id": "XDpdxGrLnyhV",
-          "name": "TriangleUnevenBottomsvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__TriangleUnevenBottomsvg.tsx"
+          "name": "TriangleUnevenBottomSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__TriangleUnevenBottomSvg.tsx"
         },
         {
           "id": "xUUqGg9vMqKi",
-          "name": "ChecksvgIcon",
-          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__Checksvg.tsx"
+          "name": "CheckSvgIcon",
+          "moduleFilePath": "plasmic/container/icons/PlasmicIcon__CheckSvg.tsx"
         },
         {
           "id": "S-JcSiYxFXQ0",
@@ -519,7 +511,7 @@
         {
           "id": "bK7IFb7D7t7Y",
           "name": "basic-triangle-bottom.svg",
-          "filePath": "../public/plasmic/container/images/basicTriangleBottomsvg.svg"
+          "filePath": "../public/plasmic/container/images/basicTriangleBottomSvg.svg"
         }
       ],
       "indirect": true,
@@ -539,8 +531,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "tq1m84LuCppLaXTJBWMK12",
@@ -582,8 +573,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "87d7TuXZRr3ZmtRaMhbt33",
@@ -2362,18 +2352,18 @@
       "icons": [
         {
           "id": "7rrr4nC2lnac",
-          "name": "FaHomesvgIcon",
-          "moduleFilePath": "plasmic/advance_card/icons/PlasmicIcon__FaHomesvg.tsx"
+          "name": "FaHomeSvgIcon",
+          "moduleFilePath": "plasmic/advance_card/icons/PlasmicIcon__FaHomeSvg.tsx"
         },
         {
           "id": "OofxvfuVT_eU",
-          "name": "FaStarSolidsvgIcon",
-          "moduleFilePath": "plasmic/advance_card/icons/PlasmicIcon__FaStarSolidsvg.tsx"
+          "name": "FaStarSolidSvgIcon",
+          "moduleFilePath": "plasmic/advance_card/icons/PlasmicIcon__FaStarSolidSvg.tsx"
         },
         {
           "id": "PbEob5XiVdjo",
-          "name": "FaAngleRightsvgIcon",
-          "moduleFilePath": "plasmic/advance_card/icons/PlasmicIcon__FaAngleRightsvg.tsx"
+          "name": "FaAngleRightSvgIcon",
+          "moduleFilePath": "plasmic/advance_card/icons/PlasmicIcon__FaAngleRightSvg.tsx"
         }
       ],
       "images": [],
@@ -2394,8 +2384,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "fKizj5juSSuZK31zh3BBJE",
@@ -2434,8 +2423,8 @@
       "icons": [
         {
           "id": "zSKd3jb3cXsa",
-          "name": "FaSolidCirclesvgIcon",
-          "moduleFilePath": "plasmic/list_item/icons/PlasmicIcon__FaSolidCirclesvg.tsx"
+          "name": "FaSolidCircleSvgIcon",
+          "moduleFilePath": "plasmic/list_item/icons/PlasmicIcon__FaSolidCircleSvg.tsx"
         }
       ],
       "images": [],
@@ -2456,8 +2445,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "ivrmEdvdUKbShkHq3Wnmy4",
@@ -2526,13 +2514,13 @@
       "icons": [
         {
           "id": "dgXxJTSyNm6D",
-          "name": "PeAngleDownsvgIcon",
-          "moduleFilePath": "plasmic/form_select/icons/PlasmicIcon__PeAngleDownsvg.tsx"
+          "name": "PeAngleDownSvgIcon",
+          "moduleFilePath": "plasmic/form_select/icons/PlasmicIcon__PeAngleDownSvg.tsx"
         },
         {
           "id": "XW3Za2cKm3s-",
-          "name": "PeAngleUpsvgIcon",
-          "moduleFilePath": "plasmic/form_select/icons/PlasmicIcon__PeAngleUpsvg.tsx"
+          "name": "PeAngleUpSvgIcon",
+          "moduleFilePath": "plasmic/form_select/icons/PlasmicIcon__PeAngleUpSvg.tsx"
         }
       ],
       "images": [],
@@ -2553,8 +2541,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "bEVQSMSYHutfoPgsCgDaki",
@@ -2581,18 +2568,18 @@
       "icons": [
         {
           "id": "omU8kWpQWe9D",
-          "name": "FaSquareRegularsvgIcon",
-          "moduleFilePath": "plasmic/form_checkbox/icons/PlasmicIcon__FaSquareRegularsvg.tsx"
+          "name": "FaSquareRegularSvgIcon",
+          "moduleFilePath": "plasmic/form_checkbox/icons/PlasmicIcon__FaSquareRegularSvg.tsx"
         },
         {
           "id": "xXgLo02AR7Kn",
-          "name": "FaSquareCheckRegularsvgIcon",
-          "moduleFilePath": "plasmic/form_checkbox/icons/PlasmicIcon__FaSquareCheckRegularsvg.tsx"
+          "name": "FaSquareCheckRegularSvgIcon",
+          "moduleFilePath": "plasmic/form_checkbox/icons/PlasmicIcon__FaSquareCheckRegularSvg.tsx"
         },
         {
           "id": "sNKHTFy0gM13",
-          "name": "FaSquareMinusRegularsvgIcon",
-          "moduleFilePath": "plasmic/form_checkbox/icons/PlasmicIcon__FaSquareMinusRegularsvg.tsx"
+          "name": "FaSquareMinusRegularSvgIcon",
+          "moduleFilePath": "plasmic/form_checkbox/icons/PlasmicIcon__FaSquareMinusRegularSvg.tsx"
         }
       ],
       "images": [],
@@ -2613,8 +2600,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "2ejMdvJDoJWjwd6DCNSCHJ",
@@ -2641,8 +2627,8 @@
       "icons": [
         {
           "id": "1IdES9d_WahC",
-          "name": "FaArrowRightsvgIcon",
-          "moduleFilePath": "plasmic/menu_item/icons/PlasmicIcon__FaArrowRightsvg.tsx"
+          "name": "FaArrowRightSvgIcon",
+          "moduleFilePath": "plasmic/menu_item/icons/PlasmicIcon__FaArrowRightSvg.tsx"
         }
       ],
       "images": [],
@@ -2663,8 +2649,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "teUZ7d8BEHskoXuvEf1pBj",
@@ -2691,13 +2676,13 @@
       "icons": [
         {
           "id": "BdhwNvPCWyrW",
-          "name": "FaSearchsvgIcon",
-          "moduleFilePath": "plasmic/form_input/icons/PlasmicIcon__FaSearchsvg.tsx"
+          "name": "FaSearchSvgIcon",
+          "moduleFilePath": "plasmic/form_input/icons/PlasmicIcon__FaSearchSvg.tsx"
         },
         {
           "id": "wNR_8uqkLc1W",
-          "name": "FaChecksvgIcon",
-          "moduleFilePath": "plasmic/form_input/icons/PlasmicIcon__FaChecksvg.tsx"
+          "name": "FaCheckSvgIcon",
+          "moduleFilePath": "plasmic/form_input/icons/PlasmicIcon__FaCheckSvg.tsx"
         }
       ],
       "images": [],
@@ -2718,8 +2703,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
@@ -2762,8 +2746,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -2821,8 +2804,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "6eqm1KNiFrAWEs21Xh4t1D",
@@ -3143,8 +3125,8 @@
       "icons": [
         {
           "id": "Pa2_HWl8Jd3H",
-          "name": "ChecksvgIcon",
-          "moduleFilePath": "plasmic/desktop_ui_theme/icons/PlasmicIcon__Checksvg.tsx"
+          "name": "CheckSvgIcon",
+          "moduleFilePath": "plasmic/desktop_ui_theme/icons/PlasmicIcon__CheckSvg.tsx"
         },
         {
           "id": "T7MsAnkzu19l",
@@ -3253,8 +3235,8 @@
         },
         {
           "id": "hvLUcIvPKTOG",
-          "name": "OldLeftArrowsvgIcon",
-          "moduleFilePath": "plasmic/desktop_ui_theme/icons/PlasmicIcon__OldLeftArrowsvg.tsx"
+          "name": "OldLeftArrowSvgIcon",
+          "moduleFilePath": "plasmic/desktop_ui_theme/icons/PlasmicIcon__OldLeftArrowSvg.tsx"
         },
         {
           "id": "n0rBElCsOq-6",
@@ -3506,8 +3488,7 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "gLnoj82AzKVVT7qXiqAbHD",
@@ -3534,8 +3515,8 @@
       "icons": [
         {
           "id": "zq2s7N0xWucT",
-          "name": "ChecksvgIcon",
-          "moduleFilePath": "plasmic/plasmic_tabs/icons/PlasmicIcon__Checksvg.tsx"
+          "name": "CheckSvgIcon",
+          "moduleFilePath": "plasmic/plasmic_tabs/icons/PlasmicIcon__CheckSvg.tsx"
         },
         {
           "id": "8K40faRNhuCj",
@@ -3573,8 +3554,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-tabs"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
@@ -3596,8 +3576,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "xoA7omHX1aucC3LFX3rgWp",
@@ -3814,6 +3793,19 @@
           "cssFilePath": "plasmic/desktop_starter/PlasmicAboutComponentAboutItem.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "zRe01nSPDKfT",
+          "name": "ValuesComponentValueItem",
+          "type": "managed",
+          "projectId": "xoA7omHX1aucC3LFX3rgWp",
+          "renderModuleFilePath": "plasmic/desktop_starter/PlasmicValuesComponentValueItem.tsx",
+          "importSpec": {
+            "modulePath": "ValuesComponentValueItem.tsx"
+          },
+          "cssFilePath": "plasmic/desktop_starter/PlasmicValuesComponentValueItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -3866,6 +3858,11 @@
           "id": "2IR2pt71T6h8",
           "name": "Icon10Icon",
           "moduleFilePath": "plasmic/desktop_starter/icons/PlasmicIcon__Icon10.tsx"
+        },
+        {
+          "id": "Ebu-Eks2gIuz",
+          "name": "WaveyFingerprintSvgIcon",
+          "moduleFilePath": "plasmic/desktop_starter/icons/PlasmicIcon__WaveyFingerprintSvg.tsx"
         }
       ],
       "images": [
@@ -4080,9 +4077,9 @@
       },
       {
         "id": "yBTVTgAz2Co9",
-        "name": "Mode",
+        "name": "Theme",
         "projectId": "3BHMWCYAenCmWb8ThbnzeF",
-        "contextFilePath": "plasmic/core/PlasmicGlobalVariant__Mode.tsx"
+        "contextFilePath": "plasmic/core/PlasmicGlobalVariant__Theme.tsx"
       },
       {
         "id": "KU6ZMPleDsvH",

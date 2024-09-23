@@ -1107,6 +1107,32 @@
 .img > picture > img {
   object-fit: cover;
 }
+.image2 {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  left: 0px;
+  top: 0px;
+}
+.image2testIcon {
+  display: block;
+}
+.image2includeImage {
+  display: block;
+}
+.image2overlayLayout_flipLayout {
+  left: 0px;
+  top: 0px;
+}
+.svg__vcz0N {
+  object-fit: cover;
+  max-width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 1em;
+}
 .icon {
   flex-direction: column;
   position: absolute;
@@ -1124,11 +1150,14 @@
 .iconincludeIcon {
   display: flex;
 }
+.icontestIcon {
+  display: none;
+}
 .iconoverlayLayout_flipLayout {
   left: 0px;
   top: 0px;
 }
-.svg {
+.svg___3HXc1 {
   object-fit: cover;
   max-width: 100%;
   width: 100%;

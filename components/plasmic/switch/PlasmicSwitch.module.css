@@ -76,12 +76,6 @@
   > img {
   margin-top: 0px;
 }
-.root:focus-within {
-  outline: none;
-}
-.root___focusVisibleWithin {
-  outline: none;
-}
 ._switch {
   display: flex;
   position: relative;
@@ -92,116 +86,51 @@
   height: 32px;
   flex-shrink: 0;
 }
-.root:focus-within ._switch {
-  outline: none;
-}
-.root ._switch___focusVisibleWithin {
-  outline: none;
-}
 .track {
   display: flex;
   position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
+  width: var(--token-Vvp1HkUD7yOu);
   height: var(--token-GeXPU6lThbJV);
   transition-property: background;
   transition-duration: 0.2s;
   background: var(--token-lvjjbWNOwpCq);
-  min-width: 0;
+  flex-shrink: 0;
   -webkit-transition-property: background;
   -webkit-transition-duration: 0.2s;
   border-radius: var(--token-HoqjpSK2B0wv);
-  border: 1px solid var(--token-vzOdAz2E3458);
 }
 .trackisChecked {
   background: var(--token-O9icv3zTilBT);
   justify-content: flex-end;
-  border-color: var(--token-GyWWlc4uvFoE);
-}
-.tracksize_sm {
-  justify-content: flex-start;
   align-items: center;
-  height: var(--token-8_HxAcC33ONE);
-}
-.tracksize_lg {
-  height: var(--token-5zr1ZrdGP5e1);
-}
-.root:hover .track {
-  background: var(--token-pFTK6gurRko9);
-}
-.rootisChecked:hover .trackisChecked {
-  background: #0081f1;
-}
-.root:focus-within .track {
-  box-shadow: 0px 0px 0px 1px var(--token-kANVII0Zjh9O);
-  background: var(--token-vCJY_kscFNjX);
-  outline: none;
-  border-color: var(--token-0zq9erD7xMdL);
-}
-.root .track___focusVisibleWithin {
-  box-shadow: 0px 0px 0px 1px var(--token-kANVII0Zjh9O);
-  outline: none;
-  border-color: var(--token-0zq9erD7xMdL);
-}
-.root:active .track {
-  background: var(--token-XPmrDzAM-hPg);
-  border-color: var(--token-d7sm9_GxSkPX);
 }
 .handle {
-  display: block;
+  display: flex;
   position: relative;
   left: auto;
   top: auto;
-  width: var(--token-CVdCYXnaTfF1);
-  height: var(--token-sKDlPlxCf5Nc);
   transition-property: all;
   transition-duration: 0.2s;
   background: var(--token--8k1qyhj6xol);
+  width: var(--token-CVdCYXnaTfF1);
+  height: var(--token-sKDlPlxCf5Nc);
+  flex-direction: row;
+  margin-left: var(--token-BQFFLDHF_QWI);
+  margin-right: 0px;
   flex-shrink: 0;
   -webkit-transition-property: all;
   -webkit-transition-duration: 0.2s;
   border-radius: var(--token-I3YUUrsSXvHC);
-  border: 1px solid var(--token-T3qzSOEy13fn);
 }
-.handleglobal_mode_dark {
+.handleglobal_theme_dark {
   border-color: var(--token-gTsETxwy1SUs);
 }
 .handleisChecked {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
-  left: 21px;
-  border-style: none;
-}
-.handlesize_sm {
-  width: var(--token--miqJDk85LJ9);
-  height: var(--token-mV1BcIv_TgAR);
-  left: 2px;
-  top: 1px;
-  flex-shrink: 0;
-}
-.handlesize_lg {
-  width: var(--token-z7rmylLdVzZ4);
-  height: var(--token-1ExCA7918UEk);
-  flex-shrink: 0;
-}
-.root:hover .handle {
-  background: var(--token--8k1qyhj6xol);
-  border-color: var(--token-JB8sSC9OFLZP);
-}
-.root:focus-within .handle {
-  background: var(--token-Ke67RgY5MnLf);
-  outline: none;
-  border-color: var(--token-xTepea-YUQkd);
-}
-.root .handle___focusVisibleWithin {
-  outline: none;
-}
-.root:active .handle {
-  background: var(--token-4WgexPUKjqHd);
-  border-color: var(--token-q9b2H7KGs0Rb);
+  margin-left: 0px;
+  margin-right: var(--token-Qfx51KhK12Ax);
 }
 .track2 {
   position: relative;
@@ -298,29 +227,15 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
-  margin-left: calc(8px + var(--token-frm9Ydm9EB_b)) !important;
-}
-.labelContainernoLabel {
-  margin-left: calc(8px + var(--token-frm9Ydm9EB_b)) !important;
-}
-.labelContainerlabel_bottom {
-  margin-left: calc(8px + 0px) !important;
-}
-.labelContainerlabel_top {
-  margin-left: calc(8px + 0px) !important;
+  padding-left: var(--token-CSvRO2lSLnVD);
 }
 .labelContainerlabel_reversed {
   justify-content: flex-start;
   align-items: center;
-  margin-left: calc(8px + var(--token-frm9Ydm9EB_b)) !important;
-}
-.root .labelContainer___focusVisibleWithin {
-  margin-left: calc(8px + var(--token-frm9Ydm9EB_b)) !important;
-  outline: none;
 }
 .slotTargetChildren {
   white-space: pre;
-  color: var(--token-p7RqZGWog3u_);
+  color: var(--token-WUl3RqN9JOwK);
 }
 .slotTargetChildren > :global(.__wab_text),
 .slotTargetChildren > :global(.__wab_expr_html_text),
@@ -382,82 +297,6 @@
   > img {
   overflow: hidden;
 }
-.slotTargetChildrensize_sm {
-  font-size: var(--token-60q15gbK5t2P);
-}
-.root:hover .slotTargetChildren {
-  color: var(--token-NYAqeou0WKHv);
-}
-.root:focus-within .slotTargetChildren {
-  color: var(--token-vXHV-SO16tNQ);
-}
-.root:focus-within .slotTargetChildren > *,
-.root:focus-within .slotTargetChildren > :global(.__wab_slot) > *,
-.root:focus-within
-  .slotTargetChildren
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > *,
-.root:focus-within
-  .slotTargetChildren
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > *,
-.root:focus-within .slotTargetChildren > picture > img,
-.root:focus-within .slotTargetChildren > :global(.__wab_slot) > picture > img,
-.root:focus-within
-  .slotTargetChildren
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > picture
-  > img,
-.root:focus-within
-  .slotTargetChildren
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  outline: none;
-}
-.root .slotTargetChildren___focusVisibleWithin {
-  color: var(--token-vXHV-SO16tNQ);
-}
-.root .slotTargetChildren___focusVisibleWithin > *,
-.root .slotTargetChildren___focusVisibleWithin > :global(.__wab_slot) > *,
-.root
-  .slotTargetChildren___focusVisibleWithin
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > *,
-.root
-  .slotTargetChildren___focusVisibleWithin
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > *,
-.root .slotTargetChildren___focusVisibleWithin > picture > img,
-.root
-  .slotTargetChildren___focusVisibleWithin
-  > :global(.__wab_slot)
-  > picture
-  > img,
-.root
-  .slotTargetChildren___focusVisibleWithin
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > picture
-  > img,
-.root
-  .slotTargetChildren___focusVisibleWithin
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  outline: none;
-}
-.root:active .slotTargetChildren {
-  color: var(--token-WUl3RqN9JOwK);
+.slotTargetChildrenisChecked {
+  color: var(--token-vW0xoD5jaCcG);
 }

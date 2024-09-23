@@ -64,7 +64,7 @@ import Separator from "../../Separator"; // plasmic-import: iWSZkUWMNfpu/compone
 import Button from "../../Button"; // plasmic-import: 3BnfwULcRUyf/component
 import Badge from "../../Badge"; // plasmic-import: pnXQiYjPocAS/component
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -74,16 +74,16 @@ import plasmic_separator_css from "../separator/plasmic.module.css"; // plasmic-
 import plasmic_image_css from "../image/plasmic.module.css"; // plasmic-import: d4FLWyib3U2TEbmJ38D5i3/projectcss
 import plasmic_icon_css from "../icon/plasmic.module.css"; // plasmic-import: nVTL6BvP7Knk1RSNkBbJCm/projectcss
 import plasmic_avatar_css from "../avatar/plasmic.module.css"; // plasmic-import: wjwfXMtbnYisAPU4bK5cC5/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import: 4JFyEcvXaxQ6TZ3SJQYzp6/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 71RGmKESGHwX1FQiVTH6Ch/projectcss
 import sty from "./PlasmicCourseCard.module.css"; // plasmic-import: RvTt0xcBF8rg/css
 
-import FaHomesvgIcon from "./icons/PlasmicIcon__FaHomesvg"; // plasmic-import: 7rrr4nC2lnac/icon
-import FaStarSolidsvgIcon from "./icons/PlasmicIcon__FaStarSolidsvg"; // plasmic-import: OofxvfuVT_eU/icon
-import FaChecksvgIcon from "../button/icons/PlasmicIcon__FaChecksvg"; // plasmic-import: L4y0LCanLhk0/icon
-import FaArrowRightsvgIcon from "../button/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: vqTI491KdiJ9/icon
-import FaAngleRightsvgIcon from "./icons/PlasmicIcon__FaAngleRightsvg"; // plasmic-import: PbEob5XiVdjo/icon
+import FaHomeSvgIcon from "./icons/PlasmicIcon__FaHomeSvg"; // plasmic-import: 7rrr4nC2lnac/icon
+import FaStarSolidSvgIcon from "./icons/PlasmicIcon__FaStarSolidSvg"; // plasmic-import: OofxvfuVT_eU/icon
+import FaCheckSvgIcon from "../button/icons/PlasmicIcon__FaCheckSvg"; // plasmic-import: L4y0LCanLhk0/icon
+import FaArrowRightSvgIcon from "../button/icons/PlasmicIcon__FaArrowRightSvg"; // plasmic-import: vqTI491KdiJ9/icon
+import FaAngleRightSvgIcon from "./icons/PlasmicIcon__FaAngleRightSvg"; // plasmic-import: PbEob5XiVdjo/icon
 
 createPlasmicElementProxy;
 
@@ -348,7 +348,16 @@ function PlasmicCourseCard__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -418,7 +427,7 @@ function PlasmicCourseCard__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -441,23 +450,23 @@ function PlasmicCourseCard__RenderFunc(props: {
         plasmic_image_css.plasmic_tokens,
         plasmic_icon_css.plasmic_tokens,
         plasmic_avatar_css.plasmic_tokens,
-        plasmic_badge_css.plasmic_tokens,
+        plasmic_label_css.plasmic_tokens,
         plasmic_button_css.plasmic_tokens,
         sty.card,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.cardbackgroundChanges_darken]: hasVariant(
@@ -760,7 +769,7 @@ function PlasmicCourseCard__RenderFunc(props: {
             >
               {renderPlasmicSlot({
                 defaultContents: (
-                  <FaHomesvgIcon
+                  <FaHomeSvgIcon
                     className={classNames(projectcss.all, sty.svg__fwPlA)}
                     role={"img"}
                   />
@@ -1057,7 +1066,7 @@ function PlasmicCourseCard__RenderFunc(props: {
                     )
                   })}
                 >
-                  <FaStarSolidsvgIcon
+                  <FaStarSolidSvgIcon
                     className={classNames(projectcss.all, sty.svg__yiMXb, {
                       [sty.svgusage_course__yiMXbcUpAv]: hasVariant(
                         $state,
@@ -1302,7 +1311,7 @@ function PlasmicCourseCard__RenderFunc(props: {
                         }
                       )}
                     >
-                      <FaStarSolidsvgIcon
+                      <FaStarSolidSvgIcon
                         className={classNames(projectcss.all, sty.svg__yHJk, {
                           [sty.svgusage_course__yHJkCUpAv]: hasVariant(
                             $state,
@@ -2275,7 +2284,7 @@ function PlasmicCourseCard__RenderFunc(props: {
                 hasVariant($state, "usage", "courseTopic") ? undefined : true
               }
               startIcon={
-                <FaAngleRightsvgIcon
+                <FaAngleRightSvgIcon
                   className={classNames(projectcss.all, sty.svg__pKHbU, {
                     [sty.svgusage_courseTopic__pKHbU08YtE]: hasVariant(
                       $state,
@@ -2368,7 +2377,7 @@ function PlasmicCourseCard__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <FaHomesvgIcon
+              <FaHomeSvgIcon
                 className={classNames(projectcss.all, sty.svg__hzZrq)}
                 role={"img"}
               />

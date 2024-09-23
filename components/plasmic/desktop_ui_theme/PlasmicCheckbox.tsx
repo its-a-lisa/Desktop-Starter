@@ -61,14 +61,14 @@ import {
 
 import * as pp from "@plasmicapp/react-web";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_core_css from "../core/plasmic.module.css"; // plasmic-import: 3BHMWCYAenCmWb8ThbnzeF/projectcss
 import plasmic_switch_css from "../switch/plasmic.module.css"; // plasmic-import: i4n9AbVD4xq7VvHzvrVDh9/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_avatar_css from "../avatar/plasmic.module.css"; // plasmic-import: wjwfXMtbnYisAPU4bK5cC5/projectcss
 import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import: 4JFyEcvXaxQ6TZ3SJQYzp6/projectcss
 import plasmic_form_input_css from "../form_input/plasmic.module.css"; // plasmic-import: teUZ7d8BEHskoXuvEf1pBj/projectcss
@@ -86,9 +86,9 @@ import plasmic_container_css from "../container/plasmic.module.css"; // plasmic-
 import projectcss from "./plasmic.module.css"; // plasmic-import: 6eqm1KNiFrAWEs21Xh4t1D/projectcss
 import sty from "./PlasmicCheckbox.module.css"; // plasmic-import: gIAG8bQPaETo/css
 
-import FaSquareRegularsvgIcon from "../icons/icons/PlasmicIcon__FaSquareRegularsvg"; // plasmic-import: rS1Pya07v6Ph/icon
-import FaSquareCheckRegularsvgIcon from "../icons/icons/PlasmicIcon__FaSquareCheckRegularsvg"; // plasmic-import: tIXM01Nd7aha/icon
-import FaSquareMinusRegularsvgIcon from "../icons/icons/PlasmicIcon__FaSquareMinusRegularsvg"; // plasmic-import: 1Eu_Oh-5WwPP/icon
+import FaSquareRegularSvgIcon from "../icons/icons/PlasmicIcon__FaSquareRegularsvg"; // plasmic-import: rS1Pya07v6Ph/icon
+import FaSquareCheckRegularSvgIcon from "../icons/icons/PlasmicIcon__FaSquareCheckRegularsvg"; // plasmic-import: tIXM01Nd7aha/icon
+import FaSquareMinusRegularSvgIcon from "../icons/icons/PlasmicIcon__FaSquareMinusRegularsvg"; // plasmic-import: 1Eu_Oh-5WwPP/icon
 
 createPlasmicElementProxy;
 
@@ -168,7 +168,16 @@ function PlasmicCheckbox__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -239,7 +248,7 @@ function PlasmicCheckbox__RenderFunc(props: {
   };
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -259,7 +268,7 @@ function PlasmicCheckbox__RenderFunc(props: {
         projectcss.plasmic_tokens,
         plasmic_core_css.plasmic_tokens,
         plasmic_switch_css.plasmic_tokens,
-        plasmic_badge_css.plasmic_tokens,
+        plasmic_label_css.plasmic_tokens,
         plasmic_avatar_css.plasmic_tokens,
         plasmic_button_css.plasmic_tokens,
         plasmic_form_input_css.plasmic_tokens,
@@ -276,19 +285,19 @@ function PlasmicCheckbox__RenderFunc(props: {
         plasmic_container_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
@@ -330,10 +339,10 @@ function PlasmicCheckbox__RenderFunc(props: {
           data-plasmic-override={overrides.svg}
           PlasmicIconType={
             hasVariant($state, "isIndeterminate", "isIndeterminate")
-              ? FaSquareMinusRegularsvgIcon
+              ? FaSquareMinusRegularSvgIcon
               : hasVariant($state, "isChecked", "isChecked")
-              ? FaSquareCheckRegularsvgIcon
-              : FaSquareRegularsvgIcon
+              ? FaSquareCheckRegularSvgIcon
+              : FaSquareRegularSvgIcon
           }
           className={classNames(projectcss.all, sty.svg, {
             [sty.svg___focusVisibleWithin]: triggers.focusVisibleWithin_root,

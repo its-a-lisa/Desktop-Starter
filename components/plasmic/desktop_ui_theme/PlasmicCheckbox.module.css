@@ -89,10 +89,10 @@
   flex-shrink: 0;
 }
 .svgisChecked {
-  color: var(--token-CimO4yHNDxn1);
+  color: #ffffff1a;
 }
 .svgisIndeterminate {
-  color: var(--token-eY1ghBAUSY0p);
+  color: #ffffff1a;
 }
 .svgsize_s {
   width: var(--token-j-3jXtj79lx5);
@@ -105,7 +105,7 @@
   flex-shrink: 0;
 }
 .root:hover .svg {
-  color: var(--token-peB_HECUu_YM);
+  color: #27272a;
 }
 .rootisDisabled:hover .svgisDisabled {
   color: #dbdbd7;
@@ -114,14 +114,14 @@
   color: #0081f1;
 }
 .rootisIndeterminate:hover .svgisIndeterminate {
-  color: var(--token-3uKlQwetq5nB);
+  color: #ffffff1a;
 }
 .root:focus-within .svg {
-  color: var(--token-Hs9_OfClPdOY);
+  color: #27272a;
   outline: none;
 }
 .root .svg___focusVisibleWithin {
-  color: var(--token-Hs9_OfClPdOY);
+  color: #27272a;
   outline: none;
 }
 .labelContainer {

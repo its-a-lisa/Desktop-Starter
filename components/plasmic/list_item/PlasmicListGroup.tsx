@@ -61,7 +61,7 @@ import {
 
 import ListItem from "../../ListItem"; // plasmic-import: HmsKVTz2YTwg/component
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -70,7 +70,7 @@ import plasmic_semantic_css from "../semantic/plasmic.module.css"; // plasmic-im
 import projectcss from "./plasmic.module.css"; // plasmic-import: fKizj5juSSuZK31zh3BBJE/projectcss
 import sty from "./PlasmicListGroup.module.css"; // plasmic-import: 33a-sFH_XWlm/css
 
-import FaSolidCirclesvgIcon from "./icons/PlasmicIcon__FaSolidCirclesvg"; // plasmic-import: zSKd3jb3cXsa/icon
+import FaSolidCircleSvgIcon from "./icons/PlasmicIcon__FaSolidCircleSvg"; // plasmic-import: zSKd3jb3cXsa/icon
 
 createPlasmicElementProxy;
 
@@ -216,7 +216,16 @@ function PlasmicListGroup__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -265,7 +274,7 @@ function PlasmicListGroup__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -284,19 +293,19 @@ function PlasmicListGroup__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.listGroupBase,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           )
         }
@@ -343,7 +352,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__lAa62)}
                   role={"img"}
                 />
@@ -383,7 +392,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__cvao9)}
                   role={"img"}
                 />
@@ -423,7 +432,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__xFmh2)}
                   role={"img"}
                 />
@@ -463,7 +472,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__lHCpK)}
                   role={"img"}
                 />
@@ -503,7 +512,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg___9Raw6)}
                   role={"img"}
                 />
@@ -543,7 +552,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__x6BZh)}
                   role={"img"}
                 />
@@ -583,7 +592,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__lCe6G)}
                   role={"img"}
                 />
@@ -623,7 +632,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__tnEgE)}
                   role={"img"}
                 />
@@ -663,7 +672,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__elvQh)}
                   role={"img"}
                 />
@@ -719,7 +728,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__e9Tkd)}
                   role={"img"}
                 />
@@ -775,7 +784,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__efrQb)}
                   role={"img"}
                 />
@@ -831,7 +840,7 @@ function PlasmicListGroup__RenderFunc(props: {
                   </div>
                 }
               >
-                <FaSolidCirclesvgIcon
+                <FaSolidCircleSvgIcon
                   className={classNames(projectcss.all, sty.svg__wsHh)}
                   role={"img"}
                 />

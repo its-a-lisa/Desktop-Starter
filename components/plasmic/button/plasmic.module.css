@@ -2,135 +2,131 @@
 
 .plasmic_tokens {
   --token-CqgpETt_s0FB: var(--token-jUnX-jMNff6B);
-  --plasmic-token-button-default-background-universal-standard-color: var(
+  --plasmic-token-button-color-background-universal-button-background-universal-standard: var(
     --token-CqgpETt_s0FB
   );
   --token-wHlWaql4CCLU: var(--token-sDkCX19iqWXj);
-  --plasmic-token-button-default-background-brand-ancillary-color: var(
+  --plasmic-token-button-color-background-brand-button-background-ancillary-bold: var(
     --token-wHlWaql4CCLU
   );
   --token--PHB9gzBIZpT: var(--token-dxvNs_t726zZ);
-  --plasmic-token-button-default-background-status-danger-color: var(
+  --plasmic-token-button-color-background-status-button-background-danger-bold: var(
     --token--PHB9gzBIZpT
   );
-  --token-jWwfiQsxNPd-: var(--token-UryOpF4cmLPA);
-  --plasmic-token-button-default-background-status-action-color: var(
+  --token-jWwfiQsxNPd-: var(--token-pmmltM-TYoqS);
+  --plasmic-token-button-color-background-status-button-background-action-bold: var(
     --token-jWwfiQsxNPd-
   );
   --token-HBLBtyoMqWFA: var(--token-DfkTqbzYJOdi);
-  --plasmic-token-button-default-background-brand-accent-color: var(
+  --plasmic-token-button-color-background-brand-button-background-accent-bold: var(
     --token-HBLBtyoMqWFA
   );
   --token-utkWp2bSsfIB: var(--token-0Wi4-uPa1R04);
-  --plasmic-token-button-default-icon-universal-bright-color: var(
+  --plasmic-token-button-color-icon-universal-button-icon-low-bold: var(
     --token-utkWp2bSsfIB
   );
   --token-rJm1LfJ-Gdnt: var(--token-MWQMPSVubdO1);
-  --plasmic-token-button-default-background-universal-overlay-color: var(
+  --plasmic-token-button-color-background-universal-button-background-universal-overlay: var(
     --token-rJm1LfJ-Gdnt
   );
-  --token-WQD5MjdU94lK: var(--token-jUnX-jMNff6B);
-  --plasmic-token-button-default-icon-universal-standard-color: var(
+  --token-WQD5MjdU94lK: var(--token-A1drDqgahFC7);
+  --plasmic-token-button-color-icon-universal-button-icon-standard-bold: var(
     --token-WQD5MjdU94lK
   );
   --token-RtRtUSjoOGH7: var(--token-jUnX-jMNff6B);
-  --plasmic-token-button-default-type-color-brand-standard-color: var(
+  --plasmic-token-button-color-type-color-brand-button-brand-type-standard-bold: var(
     --token-RtRtUSjoOGH7
   );
   --token-3VkZAC7SK5D1: var(--token-mZMghYMnBUOV);
-  --plasmic-token-button-hover-background-universal-overlay-color: var(
+  --plasmic-token-button-color-interaction-background-button-interaction-overlay-background: var(
     --token-3VkZAC7SK5D1
   );
-  --token-Y2XNG-EPggPE: var(--token-LSqAr0VRW41W);
-  --plasmic-token-button-active-background-universal-overlay-color: var(
-    --token-Y2XNG-EPggPE
-  );
   --token-B1kSDB6XpDES: var(--token-tSSoz3W-L2RQ);
-  --plasmic-token-button-default-background-universal-bright-color: var(
+  --plasmic-token-button-color-background-universal-button-background-universal-bright: var(
     --token-B1kSDB6XpDES
   );
   --token-2PxS9uOmpJtG: var(--token-UViPLtUgj48y);
-  --plasmic-token-button-default-border-universal-standard-color: var(
+  --plasmic-token-button-color-border-universal-button-border-standard-bold: var(
     --token-2PxS9uOmpJtG
   );
   --token-JG4JZbt-YrRV: var(--token-xZ2klggI5XbJ);
-  --plasmic-token-button-default-background-brand-main-color: var(
+  --plasmic-token-button-color-background-brand-button-background-main-bold: var(
     --token-JG4JZbt-YrRV
   );
   --token-WLBAYClhTigc: var(--token-ikGwwJXF58sD);
-  --plasmic-token-button-default-type-color-brand-main-color: var(
+  --plasmic-token-button-color-type-color-brand-button-brand-type-main-bold: var(
     --token-WLBAYClhTigc
   );
   --token-57f0yhmVV6C6: var(--token-v6ThsaLTU9ci);
-  --plasmic-token-button-default-type-color-brand-ancillary-color: var(
+  --plasmic-token-button-color-type-color-brand-button-brand-type-ancillary-bold: var(
     --token-57f0yhmVV6C6
   );
   --token-3HkJ21bcIwF2: var(--token-HBLBtyoMqWFA);
-  --plasmic-token-button-default-type-color-brand-accent-color: var(
+  --plasmic-token-button-color-type-color-brand-button-brand-type-accent-bold: var(
     --token-3HkJ21bcIwF2
   );
   --token-nqGJiF96z8hF: var(--token-IY7haS73fBUX);
-  --plasmic-token-button-default-type-color-destructive-color: var(
+  --plasmic-token-button-color-type-color-status-button-status-type-destructive-bold: var(
     --token-nqGJiF96z8hF
   );
   --token-EVta4tF-m8aY: var(--token-pmmltM-TYoqS);
-  --plasmic-token-button-default-type-color-status-action-color: var(
+  --plasmic-token-button-color-type-color-status-button-status-type-action-bold: var(
     --token-EVta4tF-m8aY
   );
   --token-9yW6jetbzSV8: var(--token-pmmltM-TYoqS);
-  --plasmic-token-button-default-icon-status-action-color: var(
+  --plasmic-token-button-color-icon-status-button-icon-action-bold: var(
     --token-9yW6jetbzSV8
   );
   --token-KmU1pkgsocgu: var(--token-dxvNs_t726zZ);
-  --plasmic-token-button-default-icon-status-destructive-color: var(
+  --plasmic-token-button-color-icon-status-button-icon-destructive-bold: var(
     --token-KmU1pkgsocgu
   );
   --token-4Rk8McbiF71C: var(--token-ikGwwJXF58sD);
-  --plasmic-token-button-default-icon-brand-main-color: var(
+  --plasmic-token-button-color-icon-brand-button-icon-main-bold: var(
     --token-4Rk8McbiF71C
   );
   --token-vnD5D4mJTV_K: var(--token-v6ThsaLTU9ci);
-  --plasmic-token-button-default-icon-brand-ancillary-color: var(
+  --plasmic-token-button-color-icon-brand-button-icon-ancillary-bold: var(
     --token-vnD5D4mJTV_K
   );
   --token-3Cx_MtOry1Ne: var(--token-jUnX-jMNff6B);
-  --plasmic-token-button-default-icon-brand-standard-color: var(
+  --plasmic-token-button-color-icon-brand-button-icon-standard-bold: var(
     --token-3Cx_MtOry1Ne
   );
   --token-vrPv_HM35OM2: var(--token-pmmltM-TYoqS);
-  --plasmic-token-button-default-border-status-action-color: var(
+  --plasmic-token-button-color-border-status-button-border-action-bold: var(
     --token-vrPv_HM35OM2
   );
   --token-BKVSJOsxWBJf: var(--token-dxvNs_t726zZ);
-  --plasmic-token-button-default-border-status-destructive-color: var(
+  --plasmic-token-button-color-border-status-button-border-desctructive-bold: var(
     --token-BKVSJOsxWBJf
   );
   --token-FPx9bnMEPsOk: var(--token-ikGwwJXF58sD);
-  --plasmic-token-button-default-border-brand-main-color: var(
+  --plasmic-token-button-color-border-brand-button-border-main-bold: var(
     --token-FPx9bnMEPsOk
   );
   --token-KxuxOQYbpvQU: var(--token-v6ThsaLTU9ci);
-  --plasmic-token-button-default-border-brand-ancillary-color: var(
+  --plasmic-token-button-color-border-brand-button-border-ancillary-bold: var(
     --token-KxuxOQYbpvQU
   );
   --token-33xCy3SftwoX: var(--token-jUnX-jMNff6B);
-  --plasmic-token-button-default-border-brand-standard-color: var(
+  --plasmic-token-button-color-border-brand-button-border-standard-bold: var(
     --token-33xCy3SftwoX
   );
   --token-kE7yZtsfFzcb: var(--token-8GVt7Kvg2raU);
-  --plasmic-token-button-interaction-background-universal-focus: var(
+  --plasmic-token-button-color-interaction-background-button-interaction-focus-background: var(
     --token-kE7yZtsfFzcb
   );
   --token-RRjAe7FlwZZy: var(--token-8GVt7Kvg2raU);
-  --plasmic-token-button-interaction-background-universal-focus-within: var(
+  --plasmic-token-button-color-interaction-background-button-interaction-focus-within-background: var(
     --token-RRjAe7FlwZZy
   );
   --token-rQqpxHUU5LQP: var(--token-jMPTi2rhCNhY);
-  --plasmic-token-button-interaction-background-universal-hover: var(
+  --plasmic-token-button-color-interaction-background-button-interaction-hover-background: var(
     --token-rQqpxHUU5LQP
   );
   --token--q6x4i-QJlKF: var(--token-XVtO9xnb0odw);
-  --plasmic-token-button-interaction-background-universal-pressed: var(
+  --plasmic-token-button-color-interaction-background-button-interaction-pressed-background: var(
     --token--q6x4i-QJlKF
   );
   --token-ETQCor1Wkm90: var(--token-ooyqpeY3PJfm);
@@ -146,7 +142,7 @@
   --token-MUFGUyyAJQH8: var(--token-EDf-UQY9l_Rz);
   --plasmic-token-button-size-2-xl-sh: var(--token-MUFGUyyAJQH8);
   --token-7hcuJPlaYmqp: var(--token-gTsETxwy1SUs);
-  --plasmic-token-button-default-background-universal-contrast-color: var(
+  --plasmic-token-button-color-background-universal-button-background-universal-contrast: var(
     --token-7hcuJPlaYmqp
   );
   --token--RVThiaPb3ma: var(--token-2RB-LlABK1rQ);
@@ -174,7 +170,7 @@
   --token-gHjUGW6JHZt5: var(--token-aexU-vAUAEga);
   --plasmic-token-button-cta-icon-expressive: var(--token-gHjUGW6JHZt5);
   --token-2r0-H2iofsa1: var(--token-pk_1Z9QFM4r7);
-  --plasmic-token-button-default-type-color-universal-normal: var(
+  --plasmic-token-button-color-type-color-universal-button-universal-type-normal: var(
     --token-2r0-H2iofsa1
   );
   --token-Cs3EO77m53gH: var(--token-BRN8eUKYNMIr);
@@ -184,7 +180,7 @@
   --token-mTud4BUT_B4x: var(--token-NCIUQdaSQglZ);
   --plasmic-token-button-shape-round-rounded: var(--token-mTud4BUT_B4x);
   --token-sIXrBk6wErWp: var(--token-DfkTqbzYJOdi);
-  --plasmic-token-button-default-border-brand-accent-color: var(
+  --plasmic-token-button-color-border-brand-button-border-accent-bold: var(
     --token-sIXrBk6wErWp
   );
 }

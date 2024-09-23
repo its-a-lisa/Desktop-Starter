@@ -2,23 +2,39 @@
 
 .plasmic_tokens {
   --token-u3SEJ0RZzKJT: var(--token-gmTkI8CV6ysl);
-  --plasmic-token-stat-gap-md: var(--token-u3SEJ0RZzKJT);
-  --token-kK0cpiE4rwm5: var(--token-pk_1Z9QFM4r7);
-  --plasmic-token-stat-type-color-number-primary-default: var(
-    --token-kK0cpiE4rwm5
-  );
-  --token-KI60Bzx8eQks: var(--token-pk_1Z9QFM4r7);
-  --plasmic-token-stat-type-color-label-default: var(--token-KI60Bzx8eQks);
-  --token-BLNLShLHF_8Q: var(--token-pk_1Z9QFM4r7);
-  --plasmic-token-stat-type-color-number-secondary-default: var(
-    --token-BLNLShLHF_8Q
+  --plasmic-token-layout-gap-stat-gap-base: var(--token-u3SEJ0RZzKJT);
+  --token-KI60Bzx8eQks: var(--token-Lg_D8lDOPdk9);
+  --plasmic-token-type-color-label-stat-label-color-default: var(
+    --token-KI60Bzx8eQks
   );
   --token-KUOGMB1SMxfg: var(--token-tSSoz3W-L2RQ);
-  --plasmic-token-stat-surface-layer-primary: var(--token-KUOGMB1SMxfg);
+  --plasmic-token-background-stat-background-color-00: var(
+    --token-KUOGMB1SMxfg
+  );
   --token-StyW6dPo9Vaj: var(--token-1CRbvGlg6ewu);
-  --plasmic-token-stat-surface-layer-secondary: var(--token-StyW6dPo9Vaj);
+  --plasmic-token-background-stat-background-color-01: var(
+    --token-StyW6dPo9Vaj
+  );
   --token-WG2PahCBYN1Q: var(--token-Ot9tdOY-wz83);
-  --plasmic-token-stat-surface-layer-tertiary: var(--token-WG2PahCBYN1Q);
+  --plasmic-token-background-stat-background-color-02: var(
+    --token-WG2PahCBYN1Q
+  );
+  --token-h8ukHsHil0uu: var(--token-3YfeYBOUJRlS);
+  --plasmic-token-radius-stat-radii-base: var(--token-h8ukHsHil0uu);
+  --token-vxrxICSW8ZXr: var(--token-yq-4QiFp2VV4);
+  --plasmic-token-shadow-stat-shadow-color-base: var(--token-vxrxICSW8ZXr);
+  --token-3BlpGLsmRTtS: var(--token-pk_1Z9QFM4r7);
+  --plasmic-token-type-color-stat-number-stat-number-color-base: var(
+    --token-3BlpGLsmRTtS
+  );
+  --token-6JZyrol5JUqh: var(--token-CFFEqlmqKUYW);
+  --plasmic-token-stat-number-stat-font-size-stat-number: var(
+    --token-6JZyrol5JUqh
+  );
+  --token-khTUN2Z4EhFt: var(--token-nzhJo5rxzpC3);
+  --plasmic-token-label-stat-font-size-label: var(--token-khTUN2Z4EhFt);
+  --token-KngMwja7ZDq-: var(--token-FSqDT5nZAqaG);
+  --plasmic-token-radius-stat-radii-square: var(--token-KngMwja7ZDq-);
 }
 
 .plasmic_tokens {

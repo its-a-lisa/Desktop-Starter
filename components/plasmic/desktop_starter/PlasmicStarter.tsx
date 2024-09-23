@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import HeroSectionHero from "../../HeroSectionHero"; // plasmic-import: oRIHpDY8-rTC/component
-import SocialProofSectionSocialProof from "../../SocialProofSectionSocialProof"; // plasmic-import: d5TK5QUCA6Bk/component
 import ValuesSectionValues from "../../ValuesSectionValues"; // plasmic-import: NSHccciyxRK_/component
 import AboutSectionAbout from "../../AboutSectionAbout"; // plasmic-import: ljjoE6e4rGJl/component
 import MissionSectionMission from "../../MissionSectionMission"; // plasmic-import: M_deSSxLuHjN/component
@@ -70,7 +69,7 @@ import FeaturesSectionFeatures from "../../FeaturesSectionFeatures"; // plasmic-
 import CallToActionSectionCallToAction from "../../CallToActionSectionCallToAction"; // plasmic-import: d2D5FO4eIVp0/component
 import FooterSectionFooter from "../../FooterSectionFooter"; // plasmic-import: VS9THT0wvN1q/component
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -87,7 +86,7 @@ import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import
 import plasmic_image_css from "../image/plasmic.module.css"; // plasmic-import: d4FLWyib3U2TEbmJ38D5i3/projectcss
 import plasmic_container_css from "../container/plasmic.module.css"; // plasmic-import: d9PrY1SRs2wAiwFXTkwPXt/projectcss
 import plasmic_switch_css from "../switch/plasmic.module.css"; // plasmic-import: i4n9AbVD4xq7VvHzvrVDh9/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_menu_item_css from "../menu_item/plasmic.module.css"; // plasmic-import: 2ejMdvJDoJWjwd6DCNSCHJ/projectcss
 import plasmic_separator_css from "../separator/plasmic.module.css"; // plasmic-import: mGt6E9beS9xM1LmsApto9L/projectcss
 import plasmic_form_checkbox_css from "../form_checkbox/plasmic.module.css"; // plasmic-import: bEVQSMSYHutfoPgsCgDaki/projectcss
@@ -110,7 +109,6 @@ export const PlasmicStarter__ArgProps = new Array<ArgPropType>();
 export type PlasmicStarter__OverridesType = {
   root?: Flex__<"div">;
   heroSectionHero?: Flex__<typeof HeroSectionHero>;
-  socialProofSectionSocialProof?: Flex__<typeof SocialProofSectionSocialProof>;
   valuesSectionValues?: Flex__<typeof ValuesSectionValues>;
   aboutSectionAbout?: Flex__<typeof AboutSectionAbout>;
   missionSectionMission?: Flex__<typeof MissionSectionMission>;
@@ -144,7 +142,16 @@ function PlasmicStarter__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -156,26 +163,8 @@ function PlasmicStarter__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
-    () => [
-      {
-        path: "socialProofSectionSocialProof.variable",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      }
-    ],
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
-
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -213,7 +202,7 @@ function PlasmicStarter__RenderFunc(props: {
             plasmic_image_css.plasmic_tokens,
             plasmic_container_css.plasmic_tokens,
             plasmic_switch_css.plasmic_tokens,
-            plasmic_badge_css.plasmic_tokens,
+            plasmic_label_css.plasmic_tokens,
             plasmic_menu_item_css.plasmic_tokens,
             plasmic_separator_css.plasmic_tokens,
             plasmic_form_checkbox_css.plasmic_tokens,
@@ -221,24 +210,24 @@ function PlasmicStarter__RenderFunc(props: {
             plasmic_list_item_css.plasmic_tokens,
             sty.root,
             {
-              [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+              [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
                 globalVariants,
-                "mode",
+                "theme",
                 "darkGrayscale"
               ),
-              [plasmic_core_css.global_mode_dark]: hasVariant(
+              [plasmic_core_css.global_theme_dark]: hasVariant(
                 globalVariants,
-                "mode",
+                "theme",
                 "dark"
               ),
-              [plasmic_core_css.global_mode_grayscale]: hasVariant(
+              [plasmic_core_css.global_theme_grayscale]: hasVariant(
                 globalVariants,
-                "mode",
+                "theme",
                 "grayscale"
               ),
-              [sty.rootglobal_mode_dark]: hasVariant(
+              [sty.rootglobal_theme_dark]: hasVariant(
                 globalVariants,
-                "mode",
+                "theme",
                 "dark"
               )
             }
@@ -248,19 +237,6 @@ function PlasmicStarter__RenderFunc(props: {
             data-plasmic-name={"heroSectionHero"}
             data-plasmic-override={overrides.heroSectionHero}
             className={classNames("__wab_instance", sty.heroSectionHero)}
-          />
-
-          <SocialProofSectionSocialProof
-            data-plasmic-name={"socialProofSectionSocialProof"}
-            data-plasmic-override={overrides.socialProofSectionSocialProof}
-            className={classNames(
-              "__wab_instance",
-              sty.socialProofSectionSocialProof
-            )}
-            onVariableChange={generateStateOnChangeProp($state, [
-              "socialProofSectionSocialProof",
-              "variable"
-            ])}
           />
 
           <ValuesSectionValues
@@ -273,9 +249,9 @@ function PlasmicStarter__RenderFunc(props: {
             data-plasmic-name={"aboutSectionAbout"}
             data-plasmic-override={overrides.aboutSectionAbout}
             className={classNames("__wab_instance", sty.aboutSectionAbout, {
-              [sty.aboutSectionAboutglobal_mode_dark]: hasVariant(
+              [sty.aboutSectionAboutglobal_theme_dark]: hasVariant(
                 globalVariants,
-                "mode",
+                "theme",
                 "dark"
               )
             })}
@@ -335,7 +311,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "heroSectionHero",
-    "socialProofSectionSocialProof",
     "valuesSectionValues",
     "aboutSectionAbout",
     "missionSectionMission",
@@ -346,7 +321,6 @@ const PlasmicDescendants = {
     "footerSectionFooter"
   ],
   heroSectionHero: ["heroSectionHero"],
-  socialProofSectionSocialProof: ["socialProofSectionSocialProof"],
   valuesSectionValues: ["valuesSectionValues"],
   aboutSectionAbout: ["aboutSectionAbout"],
   missionSectionMission: ["missionSectionMission"],
@@ -362,7 +336,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   heroSectionHero: typeof HeroSectionHero;
-  socialProofSectionSocialProof: typeof SocialProofSectionSocialProof;
   valuesSectionValues: typeof ValuesSectionValues;
   aboutSectionAbout: typeof AboutSectionAbout;
   missionSectionMission: typeof MissionSectionMission;
@@ -434,9 +407,6 @@ export const PlasmicStarter = Object.assign(
   {
     // Helper components rendering sub-elements
     heroSectionHero: makeNodeComponent("heroSectionHero"),
-    socialProofSectionSocialProof: makeNodeComponent(
-      "socialProofSectionSocialProof"
-    ),
     valuesSectionValues: makeNodeComponent("valuesSectionValues"),
     aboutSectionAbout: makeNodeComponent("aboutSectionAbout"),
     missionSectionMission: makeNodeComponent("missionSectionMission"),

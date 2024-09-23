@@ -61,7 +61,7 @@ import {
 
 import * as pp from "@plasmicapp/react-web";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -70,7 +70,7 @@ import plasmic_core_css from "../core/plasmic.module.css"; // plasmic-import: 3B
 import projectcss from "./plasmic.module.css"; // plasmic-import: 2ejMdvJDoJWjwd6DCNSCHJ/projectcss
 import sty from "./PlasmicMenuItem.module.css"; // plasmic-import: MphHr_PH49b9/css
 
-import FaArrowRightsvgIcon from "./icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: 1IdES9d_WahC/icon
+import FaArrowRightSvgIcon from "./icons/PlasmicIcon__FaArrowRightSvg"; // plasmic-import: 1IdES9d_WahC/icon
 
 createPlasmicElementProxy;
 
@@ -81,9 +81,9 @@ export type PlasmicMenuItem__VariantMembers = {
   showStartIcon: "showStartIcon";
   showEndIcon: "showEndIcon";
   iconOnly: "iconOnly";
-  background: "main" | "ancillary" | "accent" | "destructive" | "action";
+  background: "main" | "ancillary" | "accent";
   emphasis: "bold" | "subtle" | "minimal" | "clear";
-  foreground: "main" | "ancillary" | "accent" | "destructive" | "action";
+  foreground: "main" | "ancillary" | "accent";
   unnamedVariant: "unnamedVariant";
 };
 export type PlasmicMenuItem__VariantsArgs = {
@@ -93,13 +93,9 @@ export type PlasmicMenuItem__VariantsArgs = {
   showStartIcon?: SingleBooleanChoiceArg<"showStartIcon">;
   showEndIcon?: SingleBooleanChoiceArg<"showEndIcon">;
   iconOnly?: SingleBooleanChoiceArg<"iconOnly">;
-  background?: SingleChoiceArg<
-    "main" | "ancillary" | "accent" | "destructive" | "action"
-  >;
+  background?: SingleChoiceArg<"main" | "ancillary" | "accent">;
   emphasis?: MultiChoiceArg<"bold" | "subtle" | "minimal" | "clear">;
-  foreground?: SingleChoiceArg<
-    "main" | "ancillary" | "accent" | "destructive" | "action"
-  >;
+  foreground?: SingleChoiceArg<"main" | "ancillary" | "accent">;
   unnamedVariant?: SingleBooleanChoiceArg<"unnamedVariant">;
 };
 type VariantPropType = keyof PlasmicMenuItem__VariantsArgs;
@@ -148,13 +144,9 @@ export interface DefaultMenuItemProps extends pp.BaseButtonProps {
   shape?: SingleChoiceArg<"rounded" | "round" | "sharp">;
   size?: SingleChoiceArg<"sm" | "md" | "lg" | "xl">;
   iconOnly?: SingleBooleanChoiceArg<"iconOnly">;
-  background?: SingleChoiceArg<
-    "main" | "ancillary" | "accent" | "destructive" | "action"
-  >;
+  background?: SingleChoiceArg<"main" | "ancillary" | "accent">;
   emphasis?: MultiChoiceArg<"bold" | "subtle" | "minimal" | "clear">;
-  foreground?: SingleChoiceArg<
-    "main" | "ancillary" | "accent" | "destructive" | "action"
-  >;
+  foreground?: SingleChoiceArg<"main" | "ancillary" | "accent">;
   unnamedVariant?: SingleBooleanChoiceArg<"unnamedVariant">;
 }
 
@@ -175,7 +167,16 @@ function PlasmicMenuItem__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -268,7 +269,7 @@ function PlasmicMenuItem__RenderFunc(props: {
   };
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -290,19 +291,19 @@ function PlasmicMenuItem__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
@@ -311,20 +312,10 @@ function PlasmicMenuItem__RenderFunc(props: {
             "background",
             "accent"
           ),
-          [sty.rootbackground_action]: hasVariant(
-            $state,
-            "background",
-            "action"
-          ),
           [sty.rootbackground_ancillary]: hasVariant(
             $state,
             "background",
             "ancillary"
-          ),
-          [sty.rootbackground_destructive]: hasVariant(
-            $state,
-            "background",
-            "destructive"
           ),
           [sty.rootbackground_main]: hasVariant($state, "background", "main"),
           [sty.rootemphasis_bold]: hasVariant($state, "emphasis", "bold"),
@@ -385,7 +376,7 @@ function PlasmicMenuItem__RenderFunc(props: {
       >
         {renderPlasmicSlot({
           defaultContents: (
-            <FaArrowRightsvgIcon
+            <FaArrowRightSvgIcon
               className={classNames(projectcss.all, sty.svg__tf8)}
               role={"img"}
             />
@@ -398,20 +389,10 @@ function PlasmicMenuItem__RenderFunc(props: {
               "background",
               "accent"
             ),
-            [sty.slotTargetStartIconbackground_action]: hasVariant(
-              $state,
-              "background",
-              "action"
-            ),
             [sty.slotTargetStartIconbackground_ancillary]: hasVariant(
               $state,
               "background",
               "ancillary"
-            ),
-            [sty.slotTargetStartIconbackground_destructive]: hasVariant(
-              $state,
-              "background",
-              "destructive"
             ),
             [sty.slotTargetStartIconbackground_main]: hasVariant(
               $state,
@@ -438,20 +419,10 @@ function PlasmicMenuItem__RenderFunc(props: {
               "foreground",
               "accent"
             ),
-            [sty.slotTargetStartIconforeground_action]: hasVariant(
-              $state,
-              "foreground",
-              "action"
-            ),
             [sty.slotTargetStartIconforeground_ancillary]: hasVariant(
               $state,
               "foreground",
               "ancillary"
-            ),
-            [sty.slotTargetStartIconforeground_destructive]: hasVariant(
-              $state,
-              "foreground",
-              "destructive"
             ),
             [sty.slotTargetStartIconforeground_main]: hasVariant(
               $state,
@@ -498,20 +469,10 @@ function PlasmicMenuItem__RenderFunc(props: {
                 "background",
                 "accent"
               ),
-              [sty.slotTargetChildrenbackground_action]: hasVariant(
-                $state,
-                "background",
-                "action"
-              ),
               [sty.slotTargetChildrenbackground_ancillary]: hasVariant(
                 $state,
                 "background",
                 "ancillary"
-              ),
-              [sty.slotTargetChildrenbackground_destructive]: hasVariant(
-                $state,
-                "background",
-                "destructive"
               ),
               [sty.slotTargetChildrenbackground_main]: hasVariant(
                 $state,
@@ -538,20 +499,10 @@ function PlasmicMenuItem__RenderFunc(props: {
                 "foreground",
                 "accent"
               ),
-              [sty.slotTargetChildrenforeground_action]: hasVariant(
-                $state,
-                "foreground",
-                "action"
-              ),
               [sty.slotTargetChildrenforeground_ancillary]: hasVariant(
                 $state,
                 "foreground",
                 "ancillary"
-              ),
-              [sty.slotTargetChildrenforeground_destructive]: hasVariant(
-                $state,
-                "foreground",
-                "destructive"
               ),
               [sty.slotTargetChildrenforeground_main]: hasVariant(
                 $state,
@@ -606,7 +557,7 @@ function PlasmicMenuItem__RenderFunc(props: {
       >
         {renderPlasmicSlot({
           defaultContents: (
-            <FaArrowRightsvgIcon
+            <FaArrowRightSvgIcon
               className={classNames(projectcss.all, sty.svg__wnhKx)}
               role={"img"}
             />
@@ -619,20 +570,10 @@ function PlasmicMenuItem__RenderFunc(props: {
               "background",
               "accent"
             ),
-            [sty.slotTargetEndIconbackground_action]: hasVariant(
-              $state,
-              "background",
-              "action"
-            ),
             [sty.slotTargetEndIconbackground_ancillary]: hasVariant(
               $state,
               "background",
               "ancillary"
-            ),
-            [sty.slotTargetEndIconbackground_destructive]: hasVariant(
-              $state,
-              "background",
-              "destructive"
             ),
             [sty.slotTargetEndIconbackground_main]: hasVariant(
               $state,
@@ -659,20 +600,10 @@ function PlasmicMenuItem__RenderFunc(props: {
               "foreground",
               "accent"
             ),
-            [sty.slotTargetEndIconforeground_action]: hasVariant(
-              $state,
-              "foreground",
-              "action"
-            ),
             [sty.slotTargetEndIconforeground_ancillary]: hasVariant(
               $state,
               "foreground",
               "ancillary"
-            ),
-            [sty.slotTargetEndIconforeground_destructive]: hasVariant(
-              $state,
-              "foreground",
-              "destructive"
             ),
             [sty.slotTargetEndIconforeground_main]: hasVariant(
               $state,

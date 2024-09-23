@@ -2,19 +2,19 @@
 
 .plasmic_tokens {
   --token-OoiP-ZPnwGoE: var(--token-yJT84Kd1X9fB);
-  --plasmic-token-separator-color-default: var(--token-OoiP-ZPnwGoE);
-  --token-hkOko0Uv4qu3: var(--token-1CRbvGlg6ewu);
-  --plasmic-token-separator-color-subtle: var(--token-hkOko0Uv4qu3);
+  --plasmic-token-fill-separator-color-default: var(--token-OoiP-ZPnwGoE);
   --token-g2SnB1NPAbWC: var(--token-Ot9tdOY-wz83);
-  --plasmic-token-separator-color-extra-subtle: var(--token-g2SnB1NPAbWC);
+  --plasmic-token-fill-separator-color-subtle: var(--token-g2SnB1NPAbWC);
   --token-H_lyfJFI6Xi7: var(--token-tSSoz3W-L2RQ);
-  --plasmic-token-separator-color-low: var(--token-H_lyfJFI6Xi7);
+  --plasmic-token-fill-separator-color-low: var(--token-H_lyfJFI6Xi7);
   --token-WQmgwPPlqMF1: var(--token-mLff7tUIbNNh);
-  --plasmic-token-separator-color-emphasis: var(--token-WQmgwPPlqMF1);
+  --plasmic-token-fill-separator-color-emphasis: var(--token-WQmgwPPlqMF1);
   --token-sKqezKLuqmO7: var(--token-YFr65IVV_53s);
-  --plasmic-token-separator-color-extra-emphasis: var(--token-sKqezKLuqmO7);
+  --plasmic-token-fill-separator-color-extra-emphasis: var(
+    --token-sKqezKLuqmO7
+  );
   --token-XR1aB-I_SA-j: var(--token-gTsETxwy1SUs);
-  --plasmic-token-separator-color-high: var(--token-XR1aB-I_SA-j);
+  --plasmic-token-fill-separator-color-high: var(--token-XR1aB-I_SA-j);
 }
 
 .plasmic_tokens {

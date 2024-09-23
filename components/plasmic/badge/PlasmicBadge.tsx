@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -72,53 +72,51 @@ import sty from "./PlasmicBadge.module.css"; // plasmic-import: pnXQiYjPocAS/css
 createPlasmicElementProxy;
 
 export type PlasmicBadge__VariantMembers = {
-  size: "xs" | "sm" | "md" | "lg";
-  status: "none" | "error" | "warning" | "success" | "information";
-  shape: "circle" | "square";
-  color:
-    | "none"
+  emphasis: "outline" | "bold" | "ghost";
+  size: "small" | "medium" | "large";
+  shape: "square" | "pill";
+  background:
     | "red"
     | "yellow"
     | "green"
     | "blue"
     | "lime"
     | "teal"
-    | "turquiose"
+    | "turquoise"
     | "aqua"
     | "indigo"
     | "pink"
     | "purple";
-  emphasis: "outline" | "bold" | "ghost";
+  status: "neutral" | "negative" | "notice" | "positive" | "info";
 };
 export type PlasmicBadge__VariantsArgs = {
-  size?: SingleChoiceArg<"xs" | "sm" | "md" | "lg">;
-  status?: SingleChoiceArg<
-    "none" | "error" | "warning" | "success" | "information"
-  >;
-  shape?: SingleChoiceArg<"circle" | "square">;
-  color?: SingleChoiceArg<
-    | "none"
+  emphasis?: SingleChoiceArg<"outline" | "bold" | "ghost">;
+  size?: SingleChoiceArg<"small" | "medium" | "large">;
+  shape?: SingleChoiceArg<"square" | "pill">;
+  background?: SingleChoiceArg<
     | "red"
     | "yellow"
     | "green"
     | "blue"
     | "lime"
     | "teal"
-    | "turquiose"
+    | "turquoise"
     | "aqua"
     | "indigo"
     | "pink"
     | "purple"
   >;
-  emphasis?: SingleChoiceArg<"outline" | "bold" | "ghost">;
+  status?: SingleChoiceArg<
+    "neutral" | "negative" | "notice" | "positive" | "info"
+  >;
 };
 type VariantPropType = keyof PlasmicBadge__VariantsArgs;
 export const PlasmicBadge__VariantProps = new Array<VariantPropType>(
+  "emphasis",
   "size",
-  "status",
   "shape",
-  "color",
-  "emphasis"
+  "background",
+  "status"
 );
 
 export type PlasmicBadge__ArgsType = {
@@ -136,26 +134,25 @@ export type PlasmicBadge__OverridesType = {
 
 export interface DefaultBadgeProps {
   avatarInitialsSlot?: React.ReactNode;
-  size?: SingleChoiceArg<"xs" | "sm" | "md" | "lg">;
-  status?: SingleChoiceArg<
-    "none" | "error" | "warning" | "success" | "information"
-  >;
-  shape?: SingleChoiceArg<"circle" | "square">;
-  color?: SingleChoiceArg<
-    | "none"
+  emphasis?: SingleChoiceArg<"outline" | "bold" | "ghost">;
+  size?: SingleChoiceArg<"small" | "medium" | "large">;
+  shape?: SingleChoiceArg<"square" | "pill">;
+  background?: SingleChoiceArg<
     | "red"
     | "yellow"
     | "green"
     | "blue"
     | "lime"
     | "teal"
-    | "turquiose"
+    | "turquoise"
     | "aqua"
     | "indigo"
     | "pink"
     | "purple"
   >;
-  emphasis?: SingleChoiceArg<"outline" | "bold" | "ghost">;
+  status?: SingleChoiceArg<
+    "neutral" | "negative" | "notice" | "positive" | "info"
+  >;
   className?: string;
 }
 
@@ -176,7 +173,16 @@ function PlasmicBadge__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -209,10 +215,10 @@ function PlasmicBadge__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.shape
       },
       {
-        path: "color",
+        path: "background",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.color
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.background
       },
       {
         path: "emphasis",
@@ -231,7 +237,7 @@ function PlasmicBadge__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -251,39 +257,46 @@ function PlasmicBadge__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.badgeBase,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
-          [sty.badgeBasecolor_none]: hasVariant($state, "color", "none"),
-          [sty.badgeBasecolor_purple]: hasVariant($state, "color", "purple"),
-          [sty.badgeBasecolor_red]: hasVariant($state, "color", "red"),
-          [sty.badgeBasesize_lg]: hasVariant($state, "size", "lg"),
-          [sty.badgeBasesize_md]: hasVariant($state, "size", "md"),
-          [sty.badgeBasesize_sm]: hasVariant($state, "size", "sm"),
-          [sty.badgeBasesize_xs]: hasVariant($state, "size", "xs"),
-          [sty.badgeBasestatus_information]: hasVariant(
+          [sty.badgeBasebackground_purple]: hasVariant(
+            $state,
+            "background",
+            "purple"
+          ),
+          [sty.badgeBasebackground_red]: hasVariant(
+            $state,
+            "background",
+            "red"
+          ),
+          [sty.badgeBaseemphasis_outline]: hasVariant(
+            $state,
+            "emphasis",
+            "outline"
+          ),
+          [sty.badgeBasesize_large]: hasVariant($state, "size", "large"),
+          [sty.badgeBasesize_medium]: hasVariant($state, "size", "medium"),
+          [sty.badgeBasesize_small]: hasVariant($state, "size", "small"),
+          [sty.badgeBasestatus_info]: hasVariant($state, "status", "info"),
+          [sty.badgeBasestatus_notice]: hasVariant($state, "status", "notice"),
+          [sty.badgeBasestatus_positive]: hasVariant(
             $state,
             "status",
-            "information"
-          ),
-          [sty.badgeBasestatus_success]: hasVariant(
-            $state,
-            "status",
-            "success"
-          ),
-          [sty.badgeBasestatus_warning]: hasVariant($state, "status", "warning")
+            "positive"
+          )
         }
       )}
     >
@@ -291,22 +304,61 @@ function PlasmicBadge__RenderFunc(props: {
         data-plasmic-name={"badgeStack"}
         data-plasmic-override={overrides.badgeStack}
         className={classNames(projectcss.all, sty.badgeStack, {
-          [sty.badgeStackcolor_aqua]: hasVariant($state, "color", "aqua"),
-          [sty.badgeStackcolor_blue]: hasVariant($state, "color", "blue"),
-          [sty.badgeStackcolor_green]: hasVariant($state, "color", "green"),
-          [sty.badgeStackcolor_indigo]: hasVariant($state, "color", "indigo"),
-          [sty.badgeStackcolor_lime]: hasVariant($state, "color", "lime"),
-          [sty.badgeStackcolor_none]: hasVariant($state, "color", "none"),
-          [sty.badgeStackcolor_pink]: hasVariant($state, "color", "pink"),
-          [sty.badgeStackcolor_purple]: hasVariant($state, "color", "purple"),
-          [sty.badgeStackcolor_red]: hasVariant($state, "color", "red"),
-          [sty.badgeStackcolor_teal]: hasVariant($state, "color", "teal"),
-          [sty.badgeStackcolor_turquiose]: hasVariant(
+          [sty.badgeStackbackground_aqua]: hasVariant(
             $state,
-            "color",
-            "turquiose"
+            "background",
+            "aqua"
           ),
-          [sty.badgeStackcolor_yellow]: hasVariant($state, "color", "yellow"),
+          [sty.badgeStackbackground_blue]: hasVariant(
+            $state,
+            "background",
+            "blue"
+          ),
+          [sty.badgeStackbackground_green]: hasVariant(
+            $state,
+            "background",
+            "green"
+          ),
+          [sty.badgeStackbackground_indigo]: hasVariant(
+            $state,
+            "background",
+            "indigo"
+          ),
+          [sty.badgeStackbackground_lime]: hasVariant(
+            $state,
+            "background",
+            "lime"
+          ),
+          [sty.badgeStackbackground_pink]: hasVariant(
+            $state,
+            "background",
+            "pink"
+          ),
+          [sty.badgeStackbackground_purple]: hasVariant(
+            $state,
+            "background",
+            "purple"
+          ),
+          [sty.badgeStackbackground_red]: hasVariant(
+            $state,
+            "background",
+            "red"
+          ),
+          [sty.badgeStackbackground_teal]: hasVariant(
+            $state,
+            "background",
+            "teal"
+          ),
+          [sty.badgeStackbackground_turquoise]: hasVariant(
+            $state,
+            "background",
+            "turquoise"
+          ),
+          [sty.badgeStackbackground_yellow]: hasVariant(
+            $state,
+            "background",
+            "yellow"
+          ),
           [sty.badgeStackemphasis_ghost]: hasVariant(
             $state,
             "emphasis",
@@ -317,28 +369,27 @@ function PlasmicBadge__RenderFunc(props: {
             "emphasis",
             "outline"
           ),
-          [sty.badgeStackshape_circle]: hasVariant($state, "shape", "circle"),
+          [sty.badgeStackshape_pill]: hasVariant($state, "shape", "pill"),
           [sty.badgeStackshape_square]: hasVariant($state, "shape", "square"),
-          [sty.badgeStacksize_lg]: hasVariant($state, "size", "lg"),
-          [sty.badgeStacksize_md]: hasVariant($state, "size", "md"),
-          [sty.badgeStacksize_sm]: hasVariant($state, "size", "sm"),
-          [sty.badgeStacksize_xs]: hasVariant($state, "size", "xs"),
-          [sty.badgeStackstatus_error]: hasVariant($state, "status", "error"),
-          [sty.badgeStackstatus_information]: hasVariant(
+          [sty.badgeStacksize_large]: hasVariant($state, "size", "large"),
+          [sty.badgeStacksize_medium]: hasVariant($state, "size", "medium"),
+          [sty.badgeStacksize_small]: hasVariant($state, "size", "small"),
+          [sty.badgeStackstatus_info]: hasVariant($state, "status", "info"),
+          [sty.badgeStackstatus_negative]: hasVariant(
             $state,
             "status",
-            "information"
+            "negative"
           ),
-          [sty.badgeStackstatus_none]: hasVariant($state, "status", "none"),
-          [sty.badgeStackstatus_success]: hasVariant(
+          [sty.badgeStackstatus_neutral]: hasVariant(
             $state,
             "status",
-            "success"
+            "neutral"
           ),
-          [sty.badgeStackstatus_warning]: hasVariant(
+          [sty.badgeStackstatus_notice]: hasVariant($state, "status", "notice"),
+          [sty.badgeStackstatus_positive]: hasVariant(
             $state,
             "status",
-            "warning"
+            "positive"
           )
         })}
       >
@@ -356,6 +407,11 @@ function PlasmicBadge__RenderFunc(props: {
           ),
           value: args.avatarInitialsSlot,
           className: classNames(sty.slotTargetAvatarInitialsSlot, {
+            [sty.slotTargetAvatarInitialsSlotemphasis_bold]: hasVariant(
+              $state,
+              "emphasis",
+              "bold"
+            ),
             [sty.slotTargetAvatarInitialsSlotemphasis_ghost]: hasVariant(
               $state,
               "emphasis",
@@ -366,20 +422,15 @@ function PlasmicBadge__RenderFunc(props: {
               "emphasis",
               "outline"
             ),
-            [sty.slotTargetAvatarInitialsSlotsize_lg]: hasVariant(
+            [sty.slotTargetAvatarInitialsSlotsize_large]: hasVariant(
               $state,
               "size",
-              "lg"
+              "large"
             ),
-            [sty.slotTargetAvatarInitialsSlotsize_sm]: hasVariant(
+            [sty.slotTargetAvatarInitialsSlotsize_small]: hasVariant(
               $state,
               "size",
-              "sm"
-            ),
-            [sty.slotTargetAvatarInitialsSlotsize_xs]: hasVariant(
-              $state,
-              "size",
-              "xs"
+              "small"
             )
           })
         })}

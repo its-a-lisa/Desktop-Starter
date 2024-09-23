@@ -61,7 +61,7 @@ import {
 
 import * as pp from "@plasmicapp/react-web";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -71,8 +71,8 @@ import plasmic_core_css from "../core/plasmic.module.css"; // plasmic-import: 3B
 import projectcss from "./plasmic.module.css"; // plasmic-import: 4JFyEcvXaxQ6TZ3SJQYzp6/projectcss
 import sty from "./PlasmicButton.module.css"; // plasmic-import: 3BnfwULcRUyf/css
 
-import FaChecksvgIcon from "./icons/PlasmicIcon__FaChecksvg"; // plasmic-import: L4y0LCanLhk0/icon
-import FaArrowRightsvgIcon from "./icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: vqTI491KdiJ9/icon
+import FaCheckSvgIcon from "./icons/PlasmicIcon__FaCheckSvg"; // plasmic-import: L4y0LCanLhk0/icon
+import FaArrowRightSvgIcon from "./icons/PlasmicIcon__FaArrowRightSvg"; // plasmic-import: vqTI491KdiJ9/icon
 
 createPlasmicElementProxy;
 
@@ -198,7 +198,16 @@ function PlasmicButton__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -282,16 +291,8 @@ function PlasmicButton__RenderFunc(props: {
     $refs
   });
 
-  const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
-    useTrigger("useFocusVisibleWithin", {
-      isTextInput: false
-    });
-  const triggers = {
-    focusVisibleWithin_root: isRootFocusVisibleWithin
-  };
-
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -314,22 +315,21 @@ function PlasmicButton__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
-          [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.rootanatomy_ghost]: hasVariant($state, "anatomy", "ghost"),
           [sty.rootanatomy_naked]: hasVariant($state, "anatomy", "naked"),
           [sty.rootanatomy_outlined]: hasVariant($state, "anatomy", "outlined"),
@@ -392,7 +392,6 @@ function PlasmicButton__RenderFunc(props: {
           [sty.roottext_standard]: hasVariant($state, "text", "standard")
         }
       )}
-      data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
     >
       <Stack__
         as={"div"}
@@ -450,7 +449,7 @@ function PlasmicButton__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <FaChecksvgIcon
+              <FaCheckSvgIcon
                 className={classNames(projectcss.all, sty.svg__hQmMj)}
                 role={"img"}
               />
@@ -704,7 +703,7 @@ function PlasmicButton__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <FaArrowRightsvgIcon
+              <FaArrowRightSvgIcon
                 className={classNames(projectcss.all, sty.svg__lYvJ2)}
                 role={"img"}
               />
@@ -814,7 +813,7 @@ function PlasmicButton__RenderFunc(props: {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <FaArrowRightsvgIcon
+              <FaArrowRightSvgIcon
                 className={classNames(projectcss.all, sty.svg__eiQb4)}
                 role={"img"}
               />

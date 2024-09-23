@@ -61,7 +61,7 @@ import {
 
 import * as pp from "@plasmicapp/react-web";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -71,8 +71,8 @@ import plasmic_core_css from "../core/plasmic.module.css"; // plasmic-import: 3B
 import projectcss from "./plasmic.module.css"; // plasmic-import: teUZ7d8BEHskoXuvEf1pBj/projectcss
 import sty from "./PlasmicInput.module.css"; // plasmic-import: RHJkBmrpbhOs/css
 
-import FaSearchsvgIcon from "./icons/PlasmicIcon__FaSearchsvg"; // plasmic-import: BdhwNvPCWyrW/icon
-import FaChecksvgIcon from "./icons/PlasmicIcon__FaChecksvg"; // plasmic-import: wNR_8uqkLc1W/icon
+import FaSearchSvgIcon from "./icons/PlasmicIcon__FaSearchSvg"; // plasmic-import: BdhwNvPCWyrW/icon
+import FaCheckSvgIcon from "./icons/PlasmicIcon__FaCheckSvg"; // plasmic-import: wNR_8uqkLc1W/icon
 
 createPlasmicElementProxy;
 
@@ -189,7 +189,9 @@ function PlasmicInput__RenderFunc(props: {
         {
           placeholder: "Enter something…"
         },
-        props.args
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
       ),
     [props.args]
   );
@@ -269,7 +271,7 @@ function PlasmicInput__RenderFunc(props: {
   };
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode(),
+    theme: useTheme(),
     screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
@@ -289,19 +291,19 @@ function PlasmicInput__RenderFunc(props: {
         plasmic_core_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
@@ -345,7 +347,7 @@ function PlasmicInput__RenderFunc(props: {
       >
         {renderPlasmicSlot({
           defaultContents: (
-            <FaSearchsvgIcon
+            <FaSearchSvgIcon
               className={classNames(projectcss.all, sty.svg__meiA)}
               role={"img"}
             />
@@ -407,7 +409,7 @@ function PlasmicInput__RenderFunc(props: {
       >
         {renderPlasmicSlot({
           defaultContents: (
-            <FaChecksvgIcon
+            <FaCheckSvgIcon
               className={classNames(projectcss.all, sty.svg__bodbk)}
               role={"img"}
             />

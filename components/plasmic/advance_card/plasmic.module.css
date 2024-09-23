@@ -2,41 +2,43 @@
 
 .plasmic_tokens {
   --token-6V_eAaUUVvzN: var(--token-xZ2klggI5XbJ);
-  --plasmic-token-card-background-brand-bold-main-color: var(
+  --plasmic-token-card-color-background-brand-card-background-main-bold: var(
     --token-6V_eAaUUVvzN
   );
   --token-6JXHAr_z2fZS: var(--token-lwNU-2BKlR7L);
-  --plasmic-token-card-background-brand-bold-ancillary-color: var(
+  --plasmic-token-card-color-background-brand-card-background-ancillary-bold: var(
     --token-6JXHAr_z2fZS
   );
   --token-88vjIi0BR9Es: var(--token-DfkTqbzYJOdi);
-  --plasmic-token-card-background-brand-bold-accent-color: var(
+  --plasmic-token-card-color-background-brand-card-background-accent-bold: var(
     --token-88vjIi0BR9Es
   );
   --token-N4ue4LX6ioUn: var(--token-bVrfp7tpXQ2b);
-  --plasmic-token-card-background-brand-sublte-main-color: var(
+  --plasmic-token-card-color-background-brand-card-background-main-subtle: var(
     --token-N4ue4LX6ioUn
   );
   --token-TJBT9KLaccN3: var(--token-pVRsPVG0kvmS);
-  --plasmic-token-card-background-brand-subtle-accent-color: var(
+  --plasmic-token-card-color-background-brand-card-background-accent-subtle: var(
     --token-TJBT9KLaccN3
   );
   --token-vIRTTgHfdNWV: var(--token-MpoXNrBJpzTL);
-  --plasmic-token-card-background-brand-subtle-ancillary-color: var(
+  --plasmic-token-card-color-background-brand-card-background-ancillary-subtle: var(
     --token-vIRTTgHfdNWV
   );
   --token-veKp6Wvc0Fjx: var(--token-DaddpvAxOr0M);
-  --plasmic-token-card-background-brand-bold-standard-color: var(
+  --plasmic-token-card-color-background-brand-card-background-standard-bold: var(
     --token-veKp6Wvc0Fjx
   );
   --token-FbFNE_rn8Jaw: var(--token-zCFTBUQhnxXv);
-  --plasmic-token-card-background-brand-subtle-standard-color: var(
+  --plasmic-token-card-color-background-brand-card-background-standard-subtle: var(
     --token-FbFNE_rn8Jaw
   );
   --token-8iGcG7QIizD7: var(--token-IaNhyDEP_rZQ);
   --plasmic-token-card-padding-default: var(--token-8iGcG7QIizD7);
   --token-BCoZloYLpRMQ: #ffffff00;
-  --plasmic-token-card-background-clear: var(--token-BCoZloYLpRMQ);
+  --plasmic-token-card-color-background-universal-card-background-clear: var(
+    --token-BCoZloYLpRMQ
+  );
   --token-dgt5YlA0fUxn: var(--token-3YfeYBOUJRlS);
   --plasmic-token-card-radii-default: var(--token-dgt5YlA0fUxn);
   --token-AkR87bcE3d_6: var(--token-6WVZWyU4A9gH);

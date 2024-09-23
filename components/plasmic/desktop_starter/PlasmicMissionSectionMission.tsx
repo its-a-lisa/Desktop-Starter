@@ -61,9 +61,9 @@ import {
 
 import Container from "../../Container"; // plasmic-import: yjb-qhVvhQe-/component
 
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantst0N9QbVX87V } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: T0n9qbV-X87V/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -79,7 +79,7 @@ import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import
 import plasmic_image_css from "../image/plasmic.module.css"; // plasmic-import: d4FLWyib3U2TEbmJ38D5i3/projectcss
 import plasmic_container_css from "../container/plasmic.module.css"; // plasmic-import: d9PrY1SRs2wAiwFXTkwPXt/projectcss
 import plasmic_switch_css from "../switch/plasmic.module.css"; // plasmic-import: i4n9AbVD4xq7VvHzvrVDh9/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_menu_item_css from "../menu_item/plasmic.module.css"; // plasmic-import: 2ejMdvJDoJWjwd6DCNSCHJ/projectcss
 import plasmic_separator_css from "../separator/plasmic.module.css"; // plasmic-import: mGt6E9beS9xM1LmsApto9L/projectcss
 import plasmic_form_checkbox_css from "../form_checkbox/plasmic.module.css"; // plasmic-import: bEVQSMSYHutfoPgsCgDaki/projectcss
@@ -130,7 +130,16 @@ function PlasmicMissionSectionMission__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -143,9 +152,9 @@ function PlasmicMissionSectionMission__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const globalVariants = ensureGlobalVariants({
+    theme: useTheme(),
     screen: useScreenVariantst0N9QbVX87V(),
-    screen: useScreenVariantsohEUf6Jd0EV8(),
-    mode: useMode()
+    screen: useScreenVariantsohEUf6Jd0EV8()
   });
 
   return (
@@ -154,7 +163,13 @@ function PlasmicMissionSectionMission__RenderFunc(props: {
       data-plasmic-override={overrides.missionContainer}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames("__wab_instance", sty.missionContainer)}
+      className={classNames("__wab_instance", sty.missionContainer, {
+        [sty.missionContainerglobal_theme_dark]: hasVariant(
+          globalVariants,
+          "theme",
+          "dark"
+        )
+      })}
       containerLayout={["widthHug"]}
       containerSlot={
         <div
@@ -369,6 +384,9 @@ function PlasmicMissionSectionMission__RenderFunc(props: {
         </div>
       }
       contentLayout={["widthStretch", "heightHug"]}
+      iconUrl={"https://www.svgrepo.com/show/532033/cloud.svg"}
+      imageUrl={``}
+      includeIcon={true}
       layer01={["backgroundBold"]}
     />
   ) as React.ReactElement | null;

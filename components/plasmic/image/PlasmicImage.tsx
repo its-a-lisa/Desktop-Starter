@@ -69,7 +69,7 @@ import sty from "./PlasmicImage.module.css"; // plasmic-import: p-kJ8jBM6L2n/css
 createPlasmicElementProxy;
 
 export type PlasmicImage__VariantMembers = {
-  padding: "padding";
+  noPadding: "noPadding";
   width:
     | "w100"
     | "w99"
@@ -111,7 +111,7 @@ export type PlasmicImage__VariantMembers = {
   radii: "circle" | "lg" | "md" | "sm" | "xl";
 };
 export type PlasmicImage__VariantsArgs = {
-  padding?: SingleBooleanChoiceArg<"padding">;
+  noPadding?: SingleBooleanChoiceArg<"noPadding">;
   width?: SingleChoiceArg<
     | "w100"
     | "w99"
@@ -156,7 +156,7 @@ export type PlasmicImage__VariantsArgs = {
 };
 type VariantPropType = keyof PlasmicImage__VariantsArgs;
 export const PlasmicImage__VariantProps = new Array<VariantPropType>(
-  "padding",
+  "noPadding",
   "width",
   "height",
   "radii"
@@ -176,7 +176,7 @@ export type PlasmicImage__OverridesType = {
 
 export interface DefaultImageProps {
   imageUrl?: string;
-  padding?: SingleBooleanChoiceArg<"padding">;
+  noPadding?: SingleBooleanChoiceArg<"noPadding">;
   width?: SingleChoiceArg<
     | "w100"
     | "w99"
@@ -238,7 +238,16 @@ function PlasmicImage__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -253,10 +262,10 @@ function PlasmicImage__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "padding",
+        path: "noPadding",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.padding
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.noPadding
       },
       {
         path: "width",
@@ -324,7 +333,11 @@ function PlasmicImage__RenderFunc(props: {
             "height",
             "stretch"
           ),
-          [sty.imageBasepadding]: hasVariant($state, "padding", "padding"),
+          [sty.imageBasenoPadding]: hasVariant(
+            $state,
+            "noPadding",
+            "noPadding"
+          ),
           [sty.imageBaseradii_circle]: hasVariant($state, "radii", "circle"),
           [sty.imageBaseradii_lg]: hasVariant($state, "radii", "lg"),
           [sty.imageBaseradii_md]: hasVariant($state, "radii", "md"),
@@ -357,7 +370,8 @@ function PlasmicImage__RenderFunc(props: {
           [sty.imageStackradii_circle]: hasVariant($state, "radii", "circle"),
           [sty.imageStackradii_lg]: hasVariant($state, "radii", "lg"),
           [sty.imageStackradii_md]: hasVariant($state, "radii", "md"),
-          [sty.imageStackradii_sm]: hasVariant($state, "radii", "sm")
+          [sty.imageStackradii_sm]: hasVariant($state, "radii", "sm"),
+          [sty.imageStackwidth_w1]: hasVariant($state, "width", "w1")
         })}
       >
         <PlasmicImg__
@@ -368,7 +382,8 @@ function PlasmicImage__RenderFunc(props: {
             [sty.imgradii_circle]: hasVariant($state, "radii", "circle"),
             [sty.imgradii_lg]: hasVariant($state, "radii", "lg"),
             [sty.imgradii_md]: hasVariant($state, "radii", "md"),
-            [sty.imgradii_sm]: hasVariant($state, "radii", "sm")
+            [sty.imgradii_sm]: hasVariant($state, "radii", "sm"),
+            [sty.imgwidth_w100]: hasVariant($state, "width", "w100")
           })}
           displayHeight={"100%"}
           displayMaxHeight={"none"}

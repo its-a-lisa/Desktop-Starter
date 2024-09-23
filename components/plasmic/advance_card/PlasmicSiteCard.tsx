@@ -63,7 +63,7 @@ import Image from "../../Image"; // plasmic-import: p-kJ8jBM6L2n/component
 import Separator from "../../Separator"; // plasmic-import: iWSZkUWMNfpu/component
 import Button from "../../Button"; // plasmic-import: 3BnfwULcRUyf/component
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -73,18 +73,18 @@ import plasmic_separator_css from "../separator/plasmic.module.css"; // plasmic-
 import plasmic_image_css from "../image/plasmic.module.css"; // plasmic-import: d4FLWyib3U2TEbmJ38D5i3/projectcss
 import plasmic_icon_css from "../icon/plasmic.module.css"; // plasmic-import: nVTL6BvP7Knk1RSNkBbJCm/projectcss
 import plasmic_avatar_css from "../avatar/plasmic.module.css"; // plasmic-import: wjwfXMtbnYisAPU4bK5cC5/projectcss
-import plasmic_badge_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
+import plasmic_label_css from "../badge/plasmic.module.css"; // plasmic-import: 6PoNur73nfoJqbzNtkNpAX/projectcss
 import plasmic_button_css from "../button/plasmic.module.css"; // plasmic-import: 4JFyEcvXaxQ6TZ3SJQYzp6/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 71RGmKESGHwX1FQiVTH6Ch/projectcss
 import sty from "./PlasmicSiteCard.module.css"; // plasmic-import: E8631JBF9yCl/css
 
-import FaChecksvgIcon from "../button/icons/PlasmicIcon__FaChecksvg"; // plasmic-import: L4y0LCanLhk0/icon
-import FaArrowRightsvgIcon from "../button/icons/PlasmicIcon__FaArrowRightsvg"; // plasmic-import: vqTI491KdiJ9/icon
+import FaCheckSvgIcon from "../button/icons/PlasmicIcon__FaCheckSvg"; // plasmic-import: L4y0LCanLhk0/icon
+import FaArrowRightSvgIcon from "../button/icons/PlasmicIcon__FaArrowRightSvg"; // plasmic-import: vqTI491KdiJ9/icon
 
 createPlasmicElementProxy;
 
 export type PlasmicSiteCard__VariantMembers = {
-  usage: "hero" | "goals" | "testimonial";
+  usage: "hero" | "goals" | "testimonial" | "unnamedVariant";
   backgroundColor:
     | "clear"
     | "subtleBlue"
@@ -106,7 +106,7 @@ export type PlasmicSiteCard__VariantMembers = {
   changeCardOrientation: "changeCardOrientation";
 };
 export type PlasmicSiteCard__VariantsArgs = {
-  usage?: SingleChoiceArg<"hero" | "goals" | "testimonial">;
+  usage?: SingleChoiceArg<"hero" | "goals" | "testimonial" | "unnamedVariant">;
   backgroundColor?: SingleChoiceArg<
     | "clear"
     | "subtleBlue"
@@ -173,7 +173,7 @@ export interface DefaultSiteCardProps {
   children2?: React.ReactNode;
   slot2?: React.ReactNode;
   slot3?: React.ReactNode;
-  usage?: SingleChoiceArg<"hero" | "goals" | "testimonial">;
+  usage?: SingleChoiceArg<"hero" | "goals" | "testimonial" | "unnamedVariant">;
   backgroundColor?: SingleChoiceArg<
     | "clear"
     | "subtleBlue"
@@ -214,7 +214,16 @@ function PlasmicSiteCard__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -271,7 +280,7 @@ function PlasmicSiteCard__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -292,23 +301,23 @@ function PlasmicSiteCard__RenderFunc(props: {
         plasmic_image_css.plasmic_tokens,
         plasmic_icon_css.plasmic_tokens,
         plasmic_avatar_css.plasmic_tokens,
-        plasmic_badge_css.plasmic_tokens,
+        plasmic_label_css.plasmic_tokens,
         plasmic_button_css.plasmic_tokens,
         sty.card,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.cardbackgroundChanges_darken]: hasVariant(
@@ -453,7 +462,7 @@ function PlasmicSiteCard__RenderFunc(props: {
               data-plasmic-name={"image"}
               data-plasmic-override={overrides.image}
               className={classNames("__wab_instance", sty.image)}
-              padding={true}
+              noPadding={true}
             />
           </div>
           <div

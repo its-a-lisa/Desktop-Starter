@@ -1,40 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&display=swap");
 
 .plasmic_tokens {
-  --token-gjJJpSIx5Xyp: var(--token-2AiSuX3qcmlO);
-  --plasmic-token-input-color-input-enabled-background: var(
-    --token-gjJJpSIx5Xyp
-  );
   --token-kT6GbYmF-VnR: var(--token-LV3nUgwcBBaK);
-  --plasmic-token-input-color-input-enabled-border: var(--token-kT6GbYmF-VnR);
+  --plasmic-token-input-color-input-border: var(--token-kT6GbYmF-VnR);
   --token-kPBLEtUgNllD: var(--token-10BV8D3CuUzQ);
   --plasmic-token-input-padding-v-md: var(--token-kPBLEtUgNllD);
   --token-KUgTtDqCK080: var(--token-10BV8D3CuUzQ);
   --plasmic-token-input-padding-h-md: var(--token-KUgTtDqCK080);
-  --token-Jlc3Svg4n4cj: var(--token-djQLKh_CnO22);
-  --plasmic-token-input-color-input-hover-border: var(--token-Jlc3Svg4n4cj);
-  --token-R8oCj9E8pCf9: var(--token-2AiSuX3qcmlO);
-  --plasmic-token-input-color-input-hover-background: var(--token-R8oCj9E8pCf9);
-  --token-VXSCWTH2B8KY: var(--token-2AiSuX3qcmlO);
-  --plasmic-token-input-color-input-focus-background: var(--token-VXSCWTH2B8KY);
-  --token-UOeG9l7smYT_: var(--token-LV3nUgwcBBaK);
-  --plasmic-token-input-color-input-focus-border: var(--token-UOeG9l7smYT_);
+  --token-VXSCWTH2B8KY: var(--token-lWEO2ZudSDrD);
+  --plasmic-token-input-color-input-background: var(--token-VXSCWTH2B8KY);
   --token-xr7e0czKWYED: var(--token-kIiIOw_bUl8D);
-  --plasmic-token-input-color-input-interaction-type-color: var(
-    --token-xr7e0czKWYED
-  );
+  --plasmic-token-input-color-input-type-color: var(--token-xr7e0czKWYED);
   --token-_dJRdGmN0sUn: var(--token-L5Jm3kgWukCd);
-  --plasmic-token-input-color-track-focus-outline: var(--token-_dJRdGmN0sUn);
+  --plasmic-token-input-color-input-outline: var(--token-_dJRdGmN0sUn);
   --token-MGoQtn_vSURX: var(--token-EgNZEGGu_U6n);
   --plasmic-token-input-icon-width: var(--token-MGoQtn_vSURX);
   --token-FI87e4XJBPOg: var(--token-EgNZEGGu_U6n);
   --plasmic-token-input-icon-height: var(--token-FI87e4XJBPOg);
   --token-IEAUZsl2azV9: var(--token-xr7e0czKWYED);
-  --plasmic-token-input-color-input-enabled-icon: var(--token-IEAUZsl2azV9);
-  --token-d7SfTj8wzFV9: var(--token-pk_1Z9QFM4r7);
-  --plasmic-token-input-color-input-enabled-background-dark: var(
-    --token-d7SfTj8wzFV9
-  );
+  --plasmic-token-input-color-input-icon: var(--token-IEAUZsl2azV9);
 }
 
 .plasmic_tokens {

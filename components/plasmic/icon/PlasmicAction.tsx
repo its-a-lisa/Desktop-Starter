@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
+import { ThemeValue, useTheme } from "../core/PlasmicGlobalVariant__Theme"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,13 +68,13 @@ import plasmic_semantic_css from "../semantic/plasmic.module.css"; // plasmic-im
 import projectcss from "./plasmic.module.css"; // plasmic-import: nVTL6BvP7Knk1RSNkBbJCm/projectcss
 import sty from "./PlasmicAction.module.css"; // plasmic-import: 2myJ88m4oGUB/css
 
-import FaStarSolidsvgIcon from "./icons/PlasmicIcon__FaStarSolidsvg"; // plasmic-import: AryIHXd_TIRF/icon
-import FaExpandsvgIcon from "./icons/PlasmicIcon__FaExpandsvg"; // plasmic-import: q9GoLH3R9G15/icon
-import FaPencilAltsvgIcon from "./icons/PlasmicIcon__FaPencilAltsvg"; // plasmic-import: hFVluwV25wZJ/icon
-import PfIconSavesvgIcon from "./icons/PlasmicIcon__PfIconSavesvg"; // plasmic-import: vz7Hh9XIGz3N/icon
-import FaTimessvgIcon from "./icons/PlasmicIcon__FaTimessvg"; // plasmic-import: lyrwhGb6_6s8/icon
-import FaMinussvgIcon from "./icons/PlasmicIcon__FaMinussvg"; // plasmic-import: Z-C9oYi3JF4t/icon
-import PeArrowLeftsvgIcon from "./icons/PlasmicIcon__PeArrowLeftsvg"; // plasmic-import: dGGJK1SZU_8q/icon
+import FaStarSolidSvgIcon from "./icons/PlasmicIcon__FaStarSolidSvg"; // plasmic-import: AryIHXd_TIRF/icon
+import FaExpandSvgIcon from "./icons/PlasmicIcon__FaExpandSvg"; // plasmic-import: q9GoLH3R9G15/icon
+import FaPencilAltSvgIcon from "./icons/PlasmicIcon__FaPencilAltSvg"; // plasmic-import: hFVluwV25wZJ/icon
+import PfIconSaveSvgIcon from "./icons/PlasmicIcon__PfIconSaveSvg"; // plasmic-import: vz7Hh9XIGz3N/icon
+import FaTimesSvgIcon from "./icons/PlasmicIcon__FaTimesSvg"; // plasmic-import: lyrwhGb6_6s8/icon
+import FaMinusSvgIcon from "./icons/PlasmicIcon__FaMinusSvg"; // plasmic-import: Z-C9oYi3JF4t/icon
+import PeArrowLeftSvgIcon from "./icons/PlasmicIcon__PeArrowLeftSvg"; // plasmic-import: dGGJK1SZU_8q/icon
 
 createPlasmicElementProxy;
 
@@ -193,7 +193,16 @@ function PlasmicAction__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -248,7 +257,7 @@ function PlasmicAction__RenderFunc(props: {
   });
 
   const globalVariants = ensureGlobalVariants({
-    mode: useMode()
+    theme: useTheme()
   });
 
   return (
@@ -267,19 +276,19 @@ function PlasmicAction__RenderFunc(props: {
         plasmic_semantic_css.plasmic_tokens,
         sty.root,
         {
-          [plasmic_core_css.global_mode_darkGrayscale]: hasVariant(
+          [plasmic_core_css.global_theme_darkGrayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "darkGrayscale"
           ),
-          [plasmic_core_css.global_mode_dark]: hasVariant(
+          [plasmic_core_css.global_theme_dark]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "dark"
           ),
-          [plasmic_core_css.global_mode_grayscale]: hasVariant(
+          [plasmic_core_css.global_theme_grayscale]: hasVariant(
             globalVariants,
-            "mode",
+            "theme",
             "grayscale"
           ),
           [sty.rootaction_view]: hasVariant($state, "action", "view"),
@@ -338,18 +347,18 @@ function PlasmicAction__RenderFunc(props: {
           data-plasmic-override={overrides.svg}
           PlasmicIconType={
             hasVariant($state, "action", "back")
-              ? PeArrowLeftsvgIcon
+              ? PeArrowLeftSvgIcon
               : hasVariant($state, "action", "collapse")
-              ? FaMinussvgIcon
+              ? FaMinusSvgIcon
               : hasVariant($state, "action", "close")
-              ? FaTimessvgIcon
+              ? FaTimesSvgIcon
               : hasVariant($state, "action", "save")
-              ? PfIconSavesvgIcon
+              ? PfIconSaveSvgIcon
               : hasVariant($state, "action", "edit")
-              ? FaPencilAltsvgIcon
+              ? FaPencilAltSvgIcon
               : hasVariant($state, "action", "view")
-              ? FaExpandsvgIcon
-              : FaStarSolidsvgIcon
+              ? FaExpandSvgIcon
+              : FaStarSolidSvgIcon
           }
           className={classNames(projectcss.all, sty.svg, {
             [sty.svgaction_back]: hasVariant($state, "action", "back"),
